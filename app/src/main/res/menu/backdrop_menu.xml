@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+            android:id="@+id/nav1"
+            android:icon="@drawable/initial"
+            android:title="Profile Information"/>
+    <item
+            android:id="@+id/nav2"
+            android:icon="@drawable/initial"
+            android:title="Setting"/>
+    <item
+            android:id="@+id/nav3"
+            android:icon="@drawable/initial"
+            android:title="Contace Us"/>
+    <item
+            android:id="@+id/nav4"
+            android:icon="@drawable/initial"
+            android:title="LogOut"/>
+
+</menu>
