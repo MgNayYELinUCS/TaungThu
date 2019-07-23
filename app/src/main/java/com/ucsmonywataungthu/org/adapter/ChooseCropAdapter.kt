@@ -26,7 +26,7 @@ class ChooseCropAdapter (val context: Context, val cropList:List<HomeModel>) : R
     override fun onBindViewHolder(holder: MyHolder1, position: Int) {
         holder.homeImg.setImageResource(cropList[position].img)
         holder.txtCropName.text = cropList[position].name
-        holder.detail_view.setOnClickListener{
+        holder.homeImg.setOnClickListener{
             context.startActivity(Intent(context, CropDetailActivity::class.java))
         }
     }
@@ -35,6 +35,6 @@ class ChooseCropAdapter (val context: Context, val cropList:List<HomeModel>) : R
 class MyHolder1(view: View): RecyclerView.ViewHolder(view) {
     val txtCropName=view.findViewById<TextView>(R.id.choose_crop_name)
     val homeImg=view.findViewById<ImageView>(R.id.choose_crop_img)
-    val detail_view=view.findViewById<CardView>(R.id.choose_detail_view)
+    //val detail_view=view.findViewById<CardView>(R.id.choose_detail_view)
 
 }

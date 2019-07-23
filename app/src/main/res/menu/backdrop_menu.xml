@@ -2,19 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
             android:id="@+id/nav1"
-            android:icon="@drawable/initial"
+            android:icon="@mipmap/profile"
             android:title="Profile Information"/>
     <item
             android:id="@+id/nav2"
-            android:icon="@drawable/initial"
+            android:icon="@mipmap/setting"
             android:title="Setting"/>
     <item
             android:id="@+id/nav3"
-            android:icon="@drawable/initial"
+            android:icon="@mipmap/contactme"
             android:title="Contace Us"/>
     <item
             android:id="@+id/nav4"
-            android:icon="@drawable/initial"
+            android:icon="@mipmap/logout"
             android:title="LogOut"/>
 
 </menu>

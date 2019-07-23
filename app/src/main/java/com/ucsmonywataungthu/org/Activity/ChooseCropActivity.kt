@@ -15,12 +15,12 @@ class ChooseCropActivity : AppCompatActivity() {
         setContentView(R.layout.activity_choose_crop)
 
         val categoryList = ArrayList<HomeModel>()
-        categoryList.add(HomeModel(R.mipmap.cro, "ေျမပဲ"))
-        categoryList.add(HomeModel(R.mipmap.cro, "ေျပာင္းဖူး"))
-        categoryList.add(HomeModel(R.mipmap.cro, "ႏွမ္း"))
-        categoryList.add(HomeModel(R.mipmap.cro, "ဲ႕"))
-        categoryList.add(HomeModel(R.mipmap.cro, "ေနဲႀကာ"))
-        categoryList.add(HomeModel(R.mipmap.cro, "၀ါ"))
+        categoryList.add(HomeModel(R.mipmap.plant, "ေျမပဲ"))
+        categoryList.add(HomeModel(R.mipmap.plant, "ေျပာင္းဖူး"))
+        categoryList.add(HomeModel(R.mipmap.plant, "ႏွမ္း"))
+        categoryList.add(HomeModel(R.mipmap.plant, "ဲ႕"))
+        categoryList.add(HomeModel(R.mipmap.plant, "ေနဲႀကာ"))
+        categoryList.add(HomeModel(R.mipmap.plant, "၀ါ"))
 
         var mainListRecycler= findViewById<RecyclerView>(R.id.choose_crop_recycle)
         mainListRecycler.layoutManager = GridLayoutManager(this,3) as RecyclerView.LayoutManager?
