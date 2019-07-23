@@ -10,8 +10,7 @@
         tools:context=".MainActivity">
  <androidx.appcompat.widget.Toolbar
          android:id="@+id/toolbar"
-         app:titleTextColor="#fff"
-         android:background="@color/colorPrimaryDark"
+         android:background="@color/colorPrimary"
          android:layout_width="match_parent"
          android:layout_height="wrap_content">
   <RelativeLayout
@@ -20,7 +19,7 @@
    <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:textColor="#ffffff"
+           android:textColor="#fff"
            android:textSize="20dp"
            android:layout_centerVertical="true"
            android:text="Taung Thu"
@@ -33,7 +32,7 @@
           android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
           app:searchIcon="@drawable/ic_search"
           app:closeIcon="@drawable/close"
-          android:background="@color/colorPrimaryDark"
+          android:background="@color/colorPrimary"
           android:outlineSpotShadowColor="#FFF"
           android:autofillHints="#FFFFF"
           android:outlineAmbientShadowColor="#fff"
