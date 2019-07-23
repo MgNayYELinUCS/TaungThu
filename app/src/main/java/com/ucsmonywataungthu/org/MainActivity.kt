@@ -1,11 +1,11 @@
 package com.ucsmonywataungthu.org
 
 import android.os.Bundle
-import android.view.View
+import android.view.Menu
+import android.widget.TextView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.TextView
-import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.ucsmonywataungthu.org.fragment.HomeFargment
@@ -45,6 +45,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar)
+        toolbar.setTitle("Taung Thu")
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
         val transition = supportFragmentManager.beginTransaction()
@@ -53,4 +55,24 @@ class MainActivity : AppCompatActivity() {
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
 
    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.search, menu)
+        val mSearch = menu!!.findItem(R.id.search)
+        val searchView=mSearch.actionView as SearchView
+        /*searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                Toast.makeText(this@MainActivity,"helo",Toast.LENGTH_SHORT).show()
+                return false
+
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                Toast.makeText(this@MainActivity,"helo",Toast.LENGTH_SHORT).show()
+
+                return false
+            }
+        })*/
+        return super.onCreateOptionsMenu(menu)
+    }
 }

@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ucsmonywataungthu.org.adapter.ChooseCropAdapter
-import com.ucsmonywataungthu.org.adapter.HomeAdapter
 import com.ucsmonywataungthu.org.model.HomeModel
 
 class ChooseCropActivity : AppCompatActivity() {

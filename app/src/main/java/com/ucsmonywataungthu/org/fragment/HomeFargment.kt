@@ -16,6 +16,7 @@ class HomeFargment : Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view: View =inflater.inflate(R.layout.activity_home_fargment, container, false)
+
         val categoryList = ArrayList<HomeModel>()
         categoryList.add(HomeModel(R.mipmap.cro, "စိုက္ပ်ိဴးေရး"))
         categoryList.add(HomeModel(R.mipmap.house, "စိုက္ပ်ိဴးေရး"))
@@ -28,7 +29,6 @@ class HomeFargment : Fragment(){
         mainListRecycler.layoutManager = GridLayoutManager(context,3) as RecyclerView.LayoutManager?
         var adapter = HomeAdapter(context!!,categoryList)
         mainListRecycler.adapter = adapter
-
         return view
 
     }
