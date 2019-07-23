@@ -1,9 +1,10 @@
-package com.ucsmonywataungthu.org
+package com.ucsmonywataungthu.org.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import com.google.android.material.snackbar.Snackbar
+import com.ucsmonywataungthu.org.R
 import kotlinx.android.synthetic.main.activity_crop_detail.*
 
 class CropDetailActivity : AppCompatActivity() {

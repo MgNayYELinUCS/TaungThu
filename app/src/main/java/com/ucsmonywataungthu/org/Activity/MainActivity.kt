@@ -1,4 +1,4 @@
-package com.ucsmonywataungthu.org
+package com.ucsmonywataungthu.org.Activity
 
 import android.os.Bundle
 import android.view.Menu
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
+import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.fragment.HomeFargment
 import com.ucsmonywataungthu.org.fragment.MediaFragment
 import com.ucsmonywataungthu.org.fragment.NewsFragment
@@ -24,11 +25,11 @@ class MainActivity : AppCompatActivity() {
                 fragment=HomeFargment()
                 //return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_media-> {
+            R.id.navigation_media -> {
                 fragment=MediaFragment()
                 //return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_news->{
+            R.id.navigation_news ->{
                 fragment=NewsFragment()
             }
             R.id.navigation_notifications -> {

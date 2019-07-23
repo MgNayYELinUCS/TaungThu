@@ -9,8 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.ucsmonywataungthu.org.ChooseCropActivity
-import com.ucsmonywataungthu.org.CropDetailActivity
+import com.ucsmonywataungthu.org.Activity.ChooseCropActivity
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.HomeModel
 
