@@ -7,41 +7,34 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
- <androidx.appcompat.widget.Toolbar
-         android:id="@+id/toolbar"
-         android:background="@color/colorPrimary"
+        tools:context=".Activity.MainActivity">
+
+ <com.google.android.material.appbar.AppBarLayout
+         android:layout_height="wrap_content"
          android:layout_width="match_parent"
-         android:layout_height="wrap_content">
-  <RelativeLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-   <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textColor="#fff"
-           android:textSize="20dp"
-           android:layout_centerVertical="true"
-           android:text="Taung Thu"
-   />
-  <androidx.appcompat.widget.SearchView
-          android:id="@+id/searchView"
-          android:layout_alignParentRight="true"
-          android:layout_width="wrap_content"
-          app:queryHint="Search Item"
-          android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-          app:searchIcon="@drawable/ic_search"
-          app:closeIcon="@drawable/close"
-          android:background="@color/colorPrimary"
-          android:outlineSpotShadowColor="#FFF"
-          android:autofillHints="#FFFFF"
-          android:outlineAmbientShadowColor="#fff"
+         android:id="@+id/appBarLayout">
+  <FrameLayout
+          android:id="@+id/toolbar_container"
+          android:layout_width="match_parent"
           android:layout_height="wrap_content">
 
+   <androidx.appcompat.widget.Toolbar
+           android:id="@+id/toolbar"
+           android:layout_width="match_parent"
+           app:titleTextColor="#fff"
+           android:layout_height="?attr/actionBarSize"
+           android:background="?attr/colorPrimary" />
 
-  </androidx.appcompat.widget.SearchView>
-  </RelativeLayout>
- </androidx.appcompat.widget.Toolbar>
+   <com.miguelcatalan.materialsearchview.MaterialSearchView
+           android:id="@+id/search_main"
+           android:hint="Search"
+           style="@style/MaterialSearchViewStyle"
+           android:textColor="#000"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" />
+  </FrameLayout>
+
+ </com.google.android.material.appbar.AppBarLayout>
  <com.roacult.backdrop.BackdropLayout
          android:layout_width="match_parent"
          android:layout_height="match_parent"
@@ -55,7 +48,7 @@
            layout="@layout/back_layout_activity"/>
   <include
           android:id="@+id/idfont"
-          layout="@layout/font_layout_activity"/>
+          layout="@layout/front_layout_activity"/>
 
  </com.roacult.backdrop.BackdropLayout>
 

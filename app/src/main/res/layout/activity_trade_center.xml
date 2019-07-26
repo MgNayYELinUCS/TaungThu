@@ -6,21 +6,34 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".TradeCenter">
+        tools:context=".Activity.TradeCenter">
 
-    <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+    <com.google.android.material.appbar.AppBarLayout
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:theme="@style/AppTheme.PopupOverlay"
-            android:background="@color/colorPrimary" >
+            android:id="@+id/appBarLayout">
+        <FrameLayout
+                android:id="@+id/toolbar_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    <com.miguelcatalan.materialsearchview.MaterialSearchView
-            android:id="@+id/search_view"
-            android:layout_width="match_parent"
-            style="@style/MaterialSearchViewStyle"
-            android:layout_height="wrap_content" />
-    </androidx.appcompat.widget.Toolbar>
+            <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_trade_center"
+                    android:layout_width="match_parent"
+                    app:titleTextColor="#fff"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="?attr/colorPrimary" />
+
+            <com.miguelcatalan.materialsearchview.MaterialSearchView
+                    android:id="@+id/search_trade_center"
+                    android:hint="Search"
+                    style="@style/MaterialSearchViewStyle"
+                    android:textColor="#000"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+        </FrameLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
 
     <com.toptoche.searchablespinnerlibrary.SearchableSpinner
             android:id="@+id/spinner"

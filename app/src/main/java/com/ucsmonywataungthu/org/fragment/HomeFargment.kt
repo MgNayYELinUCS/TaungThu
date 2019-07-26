@@ -27,7 +27,7 @@ class HomeFargment : Fragment(){
 
 
         var mainListRecycler= view.findViewById<RecyclerView>(R.id.homeRecycle)
-        mainListRecycler.layoutManager = GridLayoutManager(context,3) as RecyclerView.LayoutManager?
+        mainListRecycler.layoutManager = GridLayoutManager(context,2) as RecyclerView.LayoutManager?
         var adapter = HomeAdapter(context!!,categoryList)
         mainListRecycler.adapter = adapter
         return view

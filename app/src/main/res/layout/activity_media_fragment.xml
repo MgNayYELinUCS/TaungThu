@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
+        android:orientation="vertical"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="30dp"
         tools:context=".fragment.MediaFragment">
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Media Fragment"
-    />
+    <VideoView
+            android:id="@+id/video"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ListView
+            android:id="@+id/video_listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+    </ListView>
+
+</LinearLayout>

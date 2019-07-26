@@ -10,7 +10,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
+import com.ucsmonywataungthu.org.Activity.AnimalHusbandry
 import com.ucsmonywataungthu.org.Activity.ChooseCropActivity
+import com.ucsmonywataungthu.org.Activity.LoginActivity
+import com.ucsmonywataungthu.org.Activity.TradeCenter
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.HomeModel
 
@@ -28,9 +31,12 @@ class HomeAdapter (val context: Context,val cropList:List<HomeModel>) : Recycler
         holder.homeImg.setImageResource(cropList[position].img)
         holder.txtCropName.text = cropList[position].name
         holder.homeImg.setOnClickListener{
-            val intent=Intent(context, ChooseCropActivity::class.java)
-            intent.putExtra("position",position)
-            context.startActivity(intent)
+            when(position) {
+                0 -> context.startActivity(Intent(context, ChooseCropActivity::class.java))
+                1-> context.startActivity(Intent(context, AnimalHusbandry::class.java))
+                2 -> context.startActivity(Intent(context, TradeCenter::class.java))
+                else ->  context.startActivity(Intent(context, LoginActivity::class.java))
+            }
 
         }
     }
