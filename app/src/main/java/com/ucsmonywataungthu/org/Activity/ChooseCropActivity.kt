@@ -18,6 +18,9 @@ import kotlinx.android.synthetic.main.activity_choose_crop.*
 import retrofit2.Call
 import retrofit2.Response
 import javax.security.auth.callback.Callback
+import com.google.android.material.chip.Chip
+
+
 
 class ChooseCropActivity : AppCompatActivity() {
     internal var api: APIService? = null
@@ -34,7 +37,7 @@ class ChooseCropActivity : AppCompatActivity() {
         mainListRecycler.layoutManager = GridLayoutManager(this,3) as RecyclerView.LayoutManager?
 
         var apiService: APIService = APIInitiate.client.create((APIService::class.java))
-        val call=apiService.getCropList()
+        val call=apiService.getCropSubCategory()
         call.enqueue(object : retrofit2.Callback<ServerResult> {
             override fun onFailure(call: Call<ServerResult>, t: Throwable) {
                     Toast.makeText(applicationContext,t.message,Toast.LENGTH_SHORT).show()
@@ -46,6 +49,15 @@ class ChooseCropActivity : AppCompatActivity() {
                 mainListRecycler.adapter = adapter
                 adapter.notifyDataSetChanged()
             }
+        })
+
+        chipGroup.setOnCheckedChangeListener(ChipGroup.OnCheckedChangeListener { chipGroup, i ->
+            val chip = chipGroup.findViewById<Chip>(i)
+
+
+            if (chip != null)
+                Toast.makeText(applicationContext, "Chip is " + chip.text.toString(), Toast.LENGTH_SHORT).show()
+
         })
     }
 
