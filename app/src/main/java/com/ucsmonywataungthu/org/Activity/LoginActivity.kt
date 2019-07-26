@@ -8,14 +8,17 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.google.android.material.textfield.TextInputEditText
 import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.Network.APIService
 
 
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.FailLogin
+import com.ucsmonywataungthu.org.model.LoginFail
 import com.ucsmonywataungthu.org.model.RequestSuccess
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_register.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,11 +26,19 @@ import retrofit2.Response
 class LoginActivity : AppCompatActivity() {
     lateinit var sharedPreferences: SharedPreferences
 
+    lateinit var ed_email:TextInputEditText
+    lateinit var ed_password:TextInputEditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         sharedPreferences=getSharedPreferences("MyPref", Context.MODE_PRIVATE)
+        ed_email=findViewById(R.id.ed_email)
 
+        ed_password=findViewById(R.id.ed_password)
+        sign_up.setOnClickListener {
+            startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
+        }
         btn_login.setOnClickListener {
             val email=ed_email.text.toString()
             val password=ed_password.text.toString()
@@ -57,7 +68,7 @@ class LoginActivity : AppCompatActivity() {
                         Log.i("Mail", success!!.success.name+"//"+success!!.success.token)
 
 
-                        Toast.makeText(loginActivity,success.success.token.toString(), Toast.LENGTH_SHORT).show()
+                        //Toast.makeText(loginActivity,success.success.token.toString(), Toast.LENGTH_SHORT).show()
                         loginActivity.saveToken(success!!.success.token)
 
 
@@ -68,13 +79,17 @@ class LoginActivity : AppCompatActivity() {
                     }
                     else{
 
-                        val converter= APIInitiate.client.responseBodyConverter<FailLogin>(
-                            FailLogin::class.java, arrayOfNulls<Annotation>(0))
+                        val converter= APIInitiate.client.responseBodyConverter<LoginFail>(
+                            LoginFail::class.java, arrayOfNulls<Annotation>(0))
                         var errorResponse=converter.convert(response.errorBody())
                         if (errorResponse!=null){
 
-                            Toast.makeText(loginActivity,errorResponse.error, Toast.LENGTH_SHORT).show()
-
+                            if (errorResponse.error.passrod!=null){
+                                loginActivity.ed_password.error=errorResponse.error.passrod
+                            }
+                            if (errorResponse.error.email!=null){
+                                loginActivity.ed_email.error=errorResponse.error.email
+                            }
 
                         }
 
@@ -82,7 +97,7 @@ class LoginActivity : AppCompatActivity() {
                 }
                 override fun onFailure(call: Call<RequestSuccess>, t: Throwable) {
 
-                    Toast.makeText(loginActivity,"no data", Toast.LENGTH_LONG).show()
+                    Toast.makeText(loginActivity,"Connection lose. !!Try again", Toast.LENGTH_LONG).show()
 
                 }
 
@@ -102,7 +117,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         override fun onPostExecute(result: String?) {
-            Toast.makeText(loginActivity,result, Toast.LENGTH_SHORT).show()
+           // Toast.makeText(loginActivity,result, Toast.LENGTH_SHORT).show()
 
         }
     }

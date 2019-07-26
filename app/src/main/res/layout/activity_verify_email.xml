@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:id="@+id/app_bar_layout" android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+                android:id="@id/toolbar"
+                android:layout_width="fill_parent"
+                android:layout_height="?actionBarSize"
+                app:contentInsetStartWithNavigation="0.0dip"
+                app:layout_collapseMode="pin"
+                app:navigationIcon="@drawable/ic_back"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+
+        </androidx.appcompat.widget.Toolbar>
+        <LinearLayout android:gravity="center"
+                      android:orientation="vertical"
+                      android:paddingBottom="25dp"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content">
+            <TextView android:textAppearance="@style/Base.TextAppearance.AppCompat.Subhead"
+                      android:textStyle="bold"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:text="VERIFICATION" />
+            <TextView android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                      android:gravity="center"
+                      android:layout_width="250.0dip"
+                      android:layout_height="wrap_content"
+                      android:layout_marginTop="5dp"
+                      android:text="You will get mail with a confirmation code to this email address." />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+
+            android:gravity="center_horizontal"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="300.0dip"
+            android:layout_height="wrap_content">
+
+    <TextView
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:id="@+id/user_email"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:layout_width="wrap_content"
+              android:layout_margin="10dp"
+            android:text="cosmas259@gmail.com"
+              android:layout_height="wrap_content"/>
+        <androidx.appcompat.widget.AppCompatImageButton
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_back"
+        />
+    </LinearLayout>
+
+    <View android:gravity="center_horizontal"
+          android:layout_marginBottom="20dp"
+          android:layout_marginTop="10dp"
+          android:layout_gravity="center"
+          android:orientation="vertical"
+          android:layout_width="300.0dip"
+          android:layout_height="2dp"
+          android:background="@color/grey_60"
+    />
+    <LinearLayout android:gravity="center_horizontal"
+                  android:layout_gravity="center"
+                  android:orientation="vertical"
+                  android:layout_width="300.0dip"
+                  android:layout_height="fill_parent">
+
+        <TextView android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                  android:gravity="center"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="5dp"
+                  android:text="Please input code below" />
+        <View android:layout_width="0.0dip"
+              android:layout_height="15dp" />
+
+        <com.poovam.pinedittextfield.LinePinField
+                android:textStyle="bold"
+                android:textColor="@color/grey_60"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                app:highlightType="allFields"
+                android:textSelectHandle="@drawable/text_handle"
+                app:noOfFields="4"
+                app:distanceInBetween="10dp"
+                app:highlightColor="@color/grey_60"
+                app:isCursorEnabled="true"
+                app:bottomTextPaddingDp="15dp"
+                android:id="@+id/lineField"/>
+        <TextView
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                android:textColor="@color/grey_60"
+                android:gravity="center"
+                android:id="@+id/tv_coundown"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="02:00" />
+        <View android:layout_width="0.0dip"
+              android:layout_height="0.0dip"
+              android:layout_weight="1.0" />
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_verify"
+                android:textColor="@color/grey_40"
+
+
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="200.0dip"
+                android:enabled="false"
+                android:layout_height="wrap_content"
+                android:text="V E R I F Y" />
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_resend"
+                android:textColor="@color/grey_40"
+                android:gravity="center"
+                android:enabled="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RESEND CODE"
+                style="@style/Widget.AppCompat.Button.Borderless" />
+        <View android:layout_width="0.0dip"
+              android:layout_height="10dp" />
+    </LinearLayout>
+</LinearLayout>

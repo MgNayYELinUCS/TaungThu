@@ -7,43 +7,20 @@
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".Activity.MainActivity">
  <androidx.appcompat.widget.Toolbar
          android:id="@+id/toolbar"
          app:titleTextColor="#fff"
-         android:background="@color/colorPrimaryDark"
+         android:background="@color/colorPrimary"
          android:layout_width="match_parent"
+
          android:layout_height="wrap_content">
-  <RelativeLayout
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content">
-   <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textColor="#ffffff"
-           android:textSize="20dp"
-           android:layout_centerVertical="true"
-           android:text="Taung Thu"
-   />
-  <androidx.appcompat.widget.SearchView
-          android:id="@+id/searchView"
-          android:layout_alignParentRight="true"
-          android:layout_width="wrap_content"
-          app:queryHint="Search Item"
-          android:theme="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-          app:searchIcon="@drawable/ic_search"
-          app:closeIcon="@drawable/close"
-          android:background="@color/colorPrimaryDark"
-          android:outlineSpotShadowColor="#FFF"
-          android:autofillHints="#FFFFF"
-          android:outlineAmbientShadowColor="#fff"
-          android:layout_height="wrap_content">
 
-
-  </androidx.appcompat.widget.SearchView>
-  </RelativeLayout>
  </androidx.appcompat.widget.Toolbar>
+ <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                    android:layout_height="match_parent">
  <com.roacult.backdrop.BackdropLayout
+
          android:layout_width="match_parent"
          android:layout_height="match_parent"
          app:back_layout="@id/idback"
@@ -56,8 +33,23 @@
            layout="@layout/back_layout_activity"/>
   <include
           android:id="@+id/idfont"
-          layout="@layout/font_layout_activity"/>
+          layout="@layout/front_layout_activity"/>
 
  </com.roacult.backdrop.BackdropLayout>
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+          android:id="@+id/nav_view"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/colorPrimary"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:itemBackground="@color/colorPrimary"
+          app:itemIconTint="?android:attr/windowBackground"
+          app:itemTextColor="?android:attr/windowBackground"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:menu="@menu/bottom_nav_menu">
 
+
+  </com.google.android.material.bottomnavigation.BottomNavigationView>
+ </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
