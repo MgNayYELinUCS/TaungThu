@@ -36,6 +36,7 @@
 
  </com.google.android.material.appbar.AppBarLayout>
  <com.roacult.backdrop.BackdropLayout
+
          android:layout_width="match_parent"
          android:layout_height="match_parent"
          app:back_layout="@id/idback"
@@ -51,5 +52,20 @@
           layout="@layout/front_layout_activity"/>
 
  </com.roacult.backdrop.BackdropLayout>
+  <com.google.android.material.bottomnavigation.BottomNavigationView
+          android:id="@+id/nav_view"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/colorPrimary"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:itemBackground="@color/colorPrimary"
+          app:itemIconTint="?android:attr/windowBackground"
+          app:itemTextColor="?android:attr/windowBackground"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:menu="@menu/bottom_nav_menu">
 
+
+  </com.google.android.material.bottomnavigation.BottomNavigationView>
+ </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
