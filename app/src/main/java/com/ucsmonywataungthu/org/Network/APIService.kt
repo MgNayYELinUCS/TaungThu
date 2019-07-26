@@ -27,6 +27,10 @@ interface APIService  {
     fun inputValidate(@Field("name")name:String,@Field("email")email:String, @Field("password")password:String,@Field("confirm_password")confirm_password:String):Call<InputSuccess>
 
     @GET("cropSubCategory")
-    fun getCropList():Call<ServerResult>
+    fun getSubCategory():Call<ServerResult>
+
+    @POST("cropCategory/{id}")
+    @FormUrlEncoded
+    fun getCropCategory(@Path ("id")id:Int):Call<ServerResult>
 
 }

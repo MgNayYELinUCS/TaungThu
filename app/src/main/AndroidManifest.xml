@@ -16,10 +16,6 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-
-
-            android:theme="@style/AppTheme">
-
         <activity android:name=".Activity.LoginActivity"
         android:theme="@style/NoActionBar">
         </activity>
@@ -37,10 +33,7 @@
                 android:theme="@style/NoActionBar">
 
         </activity>
-        <activity
-                android:name=".Activity.LoginActivity"
-                android:theme="@style/NoActionBar">
-        </activity>
+
         <activity android:name=".Activity.RegisterActivity"
                   android:theme="@style/NoActionBar">
         </activity>
@@ -50,13 +43,7 @@
         </activity>
         <activity
                 android:name=".Activity.ChooseCropActivity"
-                android:parentActivityName=".Activity.MainActivity"
-                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
-
-        <activity
-                android:name=".Activity.ChooseCropActivity"
-                android:parentActivityName=".Activity.MainActivity" >
+                android:parentActivityName=".Activity.MainActivity">
         </activity>
 
         <activity
