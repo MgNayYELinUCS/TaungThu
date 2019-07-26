@@ -23,6 +23,7 @@ import com.ucsmonywataungthu.org.fragment.MediaFragment
 import com.ucsmonywataungthu.org.fragment.NewsFragment
 import com.ucsmonywataungthu.org.fragment.NofiticationFragment
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_trade_center.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -98,9 +99,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.search, menu)
-        val mSearch = menu!!.findItem(R.id.search)
-        val searchView=mSearch.actionView as SearchView
+        menuInflater.inflate(R.menu.search_view, menu)
+
+        val item = menu!!.findItem(R.id.action_search)
+        search_main.setMenuItem(item)
 
         return super.onCreateOptionsMenu(menu)
     }

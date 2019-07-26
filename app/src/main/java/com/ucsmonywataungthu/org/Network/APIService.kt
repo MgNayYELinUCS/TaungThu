@@ -3,6 +3,7 @@ package com.ucsmonywataungthu.org.Network
 
 import com.ucsmonywataungthu.org.model.InputSuccess
 import com.ucsmonywataungthu.org.model.RequestSuccess
+import com.ucsmonywataungthu.org.model.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -24,5 +25,12 @@ interface APIService  {
     @POST("validate")
     @FormUrlEncoded
     fun inputValidate(@Field("name")name:String,@Field("email")email:String, @Field("password")password:String,@Field("confirm_password")confirm_password:String):Call<InputSuccess>
+
+    @GET("cropSubCategory")
+    fun getCropSubCategory():Call<ServerResult>
+
+    @POST("cropCategory/{id}")
+    @FormUrlEncoded
+    fun getCropCategory(@Path ("id")id:Int):Call<ServerResult>
 
 }

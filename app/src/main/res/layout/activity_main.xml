@@ -8,26 +8,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Activity.MainActivity">
- <androidx.appcompat.widget.Toolbar
-         android:id="@+id/toolbar"
-         android:background="@color/colorPrimary"
-         app:titleTextColor="#fff"
+
+ <com.google.android.material.appbar.AppBarLayout
+         android:layout_height="wrap_content"
          android:layout_width="match_parent"
+         android:id="@+id/appBarLayout">
+  <FrameLayout
+          android:id="@+id/toolbar_container"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
 
-         android:layout_height="wrap_content">
+   <androidx.appcompat.widget.Toolbar
+           android:id="@+id/toolbar"
+           android:layout_width="match_parent"
+           app:titleTextColor="#fff"
+           android:layout_height="?attr/actionBarSize"
+           android:background="?attr/colorPrimary" />
 
-   <TextView
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:textColor="#ffffff"
-           android:textSize="20dp"
-           android:layout_centerVertical="true"
-           android:text="Taung Thu"
-   />
+   <com.miguelcatalan.materialsearchview.MaterialSearchView
+           android:id="@+id/search_main"
+           android:hint="Search"
+           style="@style/MaterialSearchViewStyle"
+           android:textColor="#000"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content" />
+  </FrameLayout>
 
-
- </androidx.appcompat.widget.Toolbar>
-
+ </com.google.android.material.appbar.AppBarLayout>
  <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
                                                     android:layout_height="match_parent">
  <com.roacult.backdrop.BackdropLayout

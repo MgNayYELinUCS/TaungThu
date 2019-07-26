@@ -7,20 +7,69 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Activity.ChooseCropActivity">
-    <androidx.appcompat.widget.Toolbar
-            android:background="@color/colorPrimaryDark"
+    <HorizontalScrollView
             android:layout_width="match_parent"
+            android:scrollbars="none"
             android:layout_height="wrap_content">
-        <TextView
+
+
+    <com.google.android.material.chip.ChipGroup
+            app:singleLine="true"
+            android:id="@+id/chipGroup"
+            app:singleSelection="true"
+            android:layout_marginTop="10dp"
+            android:theme="@style/AppTheme.Chip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <com.google.android.material.chip.Chip
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#fff"
-                android:textSize="20dp"
-                android:text="Choose Crop"
+                android:text="အာလံုး"
+                app:chipStrokeWidth="1dp"
+                app:chipStrokeColor="@color/colorPrimary"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
         />
+        <com.google.android.material.chip.Chip
+                android:outlineAmbientShadowColor="@color/colorPrimary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:chipStrokeWidth="1dp"
+                app:chipStrokeColor="@color/colorPrimary"
+                android:text="ႏွံစားသီးႏွံ"
+                style="@style/Widget.MaterialComponents.Chip.Filter"
+        />
+            <com.google.android.material.chip.Chip
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipStrokeWidth="1dp"
+                    app:chipStrokeColor="@color/colorPrimary"
+                    android:text="ဆီထြက္သီးႏွံ"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+            />
+            <com.google.android.material.chip.Chip
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipStrokeWidth="1dp"
+                    app:chipStrokeColor="@color/colorPrimary"
+                    android:text="ပဲမ်ိဳးစုံ"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+            />
+            <com.google.android.material.chip.Chip
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:chipStrokeWidth="1dp"
+                    app:chipStrokeColor="@color/colorPrimary"
+                    android:text="စက္မႈသီးႏွံ"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+            />
 
-    </androidx.appcompat.widget.Toolbar>
-    <androidx.recyclerview.widget.RecyclerView
+    </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/choose_crop_recycle"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
