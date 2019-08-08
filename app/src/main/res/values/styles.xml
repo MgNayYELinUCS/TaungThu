@@ -22,11 +22,22 @@
 
 
 
+
     <style name="MaterialSearchViewStyle">
         <item name="android:textColorHint">#474646</item>
         <item name="android:hint">Search Items</item>
     </style>
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+    </style>
+
+
+    <style name="DialogThemeAnim">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+    <style name="customizedAlert" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@drawable/dialog_round</item>
+
     </style>
 
 

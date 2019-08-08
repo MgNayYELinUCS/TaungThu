@@ -32,7 +32,7 @@ class ChooseCropAdapter (val context: Context, val cropList:List<CropSubcategory
 
     override fun onBindViewHolder(holder: MyHolder1, position: Int) {
 
-        Glide.with(context).load("http://192.168.65.106/TaungThu/"+cropList[position].crop_subcategory_image)
+        Glide.with(context).load("http://192.168.43.250/TaungThu/"+cropList[position].crop_subcategory_image)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(holder.homeImg)
         holder.txtCropName.text = cropList[position].crop_subcategory_name

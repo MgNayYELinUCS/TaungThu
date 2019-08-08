@@ -10,7 +10,7 @@
     <View android:background="@color/colorPrimary"
           android:layout_width="fill_parent"
           android:layout_height="220.0dip"
-          tools:ignore="MissingConstraints" android:id="@+id/view" android:layout_marginTop="8dp"
+          tools:ignore="MissingConstraints" android:id="@+id/view"
           app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.cardview.widget.CardView

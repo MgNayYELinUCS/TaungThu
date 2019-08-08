@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/main_content"
+        android:background="@color/grey_10"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout android:orientation="vertical"
+                  android:descendantFocusability="blocksDescendants"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+        <View android:layout_width="fill_parent"
+              android:layout_height="@dimen/spacing_medium" />
+        <androidx.cardview.widget.CardView
+                android:visibility="visible"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="4.0dip">
+            <LinearLayout android:orientation="vertical"
+                          android:layout_width="fill_parent"
+                          android:layout_height="wrap_content">
+                <LinearLayout android:gravity="center_vertical"
+                              android:orientation="horizontal"
+                              android:layout_width="fill_parent"
+                              android:layout_height="wrap_content"
+                              android:layout_marginLeft="@dimen/spacing_large"
+                              android:layout_marginTop="@dimen/spacing_large"
+                              android:layout_marginRight="@dimen/spacing_large"
+                              android:layout_marginBottom="@dimen/spacing_medium">
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                            android:id="@+id/q_user_profile"
+                            android:layout_width="@dimen/spacing_xxlarge"
+                            android:layout_height="@dimen/spacing_xxlarge"
+                            android:foreground="@color/overlay_light_20"
+                            android:src="@drawable/photo_female_1"
+                            app:civ_border="false" app:civ_shadow="true"
+                            app:civ_shadow_radius="0.0" />
+                    <View android:layout_width="@dimen/spacing_large"
+                          android:layout_height="0.0dip" />
+                    <LinearLayout android:orientation="vertical"
+                                  android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <TextView android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+                                  android:id="@+id/q_username"
+                                  android:textColor="@color/grey_60"
+                                  android:gravity="center_vertical"
+                                  android:layout_width="fill_parent"
+                                  android:layout_height="wrap_content"
+                                  android:text="Emma Richmond"
+                        />
+                        <LinearLayout android:orientation="horizontal"
+
+                                      android:layout_width="wrap_content"
+                                      android:layout_height="wrap_content"
+                                      android:layout_marginTop="@dimen/spacing_small">
+                            <TextView android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                                      android:textColor="@color/grey_40" android:gravity="center_vertical"
+                                      android:layout_width="fill_parent" android:layout_height="wrap_content"
+                                      android:text="in " />
+                            <TextView android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                                      android:textStyle="bold"
+                                      android:textColor="@color/light_blue_400"
+                                      android:gravity="center_vertical"
+                                      android:layout_width="fill_parent" android:layout_height="wrap_content"
+                                      android:text="Hwy, Carthage" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                          android:id="@+id/q_detail"
+                          android:textColor="@color/grey_60" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:layout_margin="@dimen/spacing_large"
+                          android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etian efficiut ipsum in place adi moilestie.Fusce wuids marids ad enime sollicitudim"
+                          android:lineSpacingExtra="4.0dip" />
+                <ImageView android:layout_width="match_parent"
+                           android:id="@+id/q_image"
+                           android:src="@drawable/image_2"
+                           android:layout_height="wrap_content"
+                           android:scaleType="centerCrop" />
+
+                <View android:background="@color/grey_5"
+                      android:layout_width="fill_parent"
+                      android:layout_height="1.0dip"
+                      android:layout_marginTop="@dimen/spacing_medium" />
+                <LinearLayout android:gravity="center_vertical"
+                              android:orientation="horizontal"
+                              android:paddingLeft="@dimen/spacing_large"
+                              android:paddingRight="@dimen/spacing_large"
+                              android:layout_width="fill_parent"
+                              android:layout_height="@dimen/spacing_xxlarge">
+                    <LinearLayout android:gravity="center_vertical"
+                                  android:orientation="horizontal"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content">
+                        <ImageView android:layout_width="@dimen/spacing_mlarge"
+                                   android:layout_height="@dimen/spacing_mlarge"
+                                   android:layout_marginRight="@dimen/spacing_middle"
+                                   android:tint="@color/colorAccent"
+                                   android:layout_marginEnd="@dimen/spacing_middle"
+                                   app:srcCompat="@drawable/ic_thumb_up" />
+                        <TextView android:textAppearance="@style/TextAppearance.AppCompat.Caption" android:textColor="@color/grey_40" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12 likes" />
+                    </LinearLayout>
+                    <View android:layout_width="@dimen/spacing_large" android:layout_height="0.0dip" />
+                    <LinearLayout
+
+                            android:id="@+id/q_answer"
+                            android:clickable="true"
+                            android:gravity="center_vertical"
+                                  android:orientation="horizontal"
+                                  android:layout_width="0.0dip"
+                                  android:layout_height="match_parent"
+                                  android:layout_weight="1.0">
+                        <ImageView android:layout_width="@dimen/spacing_mlarge"
+                                   android:layout_height="@dimen/spacing_mlarge"
+                                   android:layout_marginRight="@dimen/spacing_middle"
+                                   android:tint="@color/light_blue_400"
+                                   android:layout_marginEnd="@dimen/spacing_middle"
+                                   app:srcCompat="@drawable/ic_textsms"
+                        />
+                        <TextView android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                                  android:textColor="@color/grey_40"
+                                  android:gravity="center_vertical"
+                                  android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="4 Comments" />
+                    </LinearLayout>
+                    <TextView android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                              android:textColor="@color/grey_40"
+                              android:gravity="end"
+                              android:layout_width="wrap_content"
+                              android:layout_height="wrap_content"
+                              android:text="3h ago" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <View android:layout_width="fill_parent"
+              android:layout_height="@dimen/spacing_medium" />
+
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
