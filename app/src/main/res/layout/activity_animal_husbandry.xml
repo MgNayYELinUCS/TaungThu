@@ -4,7 +4,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activity.AnimalHusbandry">
+        tools:context=".Activity.AnimalHusbandryActivity">
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/animalhusrecycler"
             android:layout_width="match_parent"

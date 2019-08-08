@@ -10,9 +10,8 @@ class APIInitiate  {
 
     companion object {
 
-
-        val BASE_URL = "http://192.168.1.146/TaungThu/api/"
-
+        val BASE_URL = "http://192.168.43.99/TaungThu/api/"
+        val PIC_URL = "http://192.168.43.99/TaungThu/"
         var retrofit: Retrofit? = null
         val client: Retrofit
             get() {

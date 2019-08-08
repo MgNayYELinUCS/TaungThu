@@ -8,27 +8,26 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string-array name="Animals">
-        <item>Select Animal!!</item>
-        <item>Lion</item>
-        <item>Tiger</item>
-        <item>Elephant</item>
-        <item>Zebra</item>
-        <item>Giraffe</item>
-        <item>Deer</item>
-        <item>Select Animal!!</item>
-        <item>Lion</item>
-        <item>Tiger</item>
-        <item>Elephant</item>
-        <item>Zebra</item>
-        <item>Giraffe</item>
-        <item>Deer</item>
-        <item>Select Animal!!</item>
-        <item>Lion</item>
-        <item>Tiger</item>
-        <item>Elephant</item>
-        <item>Zebra</item>
-        <item>Giraffe</item>
-        <item>Deer</item>
+        <item>တိုင္းႏွင့္ ျပည္နယ္ေရြးပါ!!</item>
+        <item>စစ္ကိုင္းတိုင္း</item>
+        <item>မႏၱေလးတိုင္း</item>
+        <item>ရန္ကုန္တိုင္း</item>
+        <item>မေကြးတိုင္း</item>
+        <item>aရာ၀တီတိုင္း</item>
+        <item>ပဲခူးတိုင္း</item>
+        <item>တႏသာရီတိုင္း</item>
+        <item>ရွမ္းျပည္နယ္</item>
+        <item>ကခ်င္ျပည္နယ္</item>
+        <item>မြန္ပည္နယ္</item>
+        <item>ကယားပည္နယ္</item>
+        <item>ရခိုင္ပည္နယ္</item>
+        <item>ခ်င္းပည္နယ္</item>
+        <item>ကရင္ပည္နယ္</item>
+    </string-array>
+    <string-array name="Animals1">
+        <item>ျမိဳ႕နယ္ ေရြပ္</item>
+        <item>မံုရြာ</item>
+        <item>စစ္ကိုင္း</item>
     </string-array>
     <string-array name="query_suggestions">
         <item>Android</item>

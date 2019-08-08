@@ -8,11 +8,66 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Activity.CropDetailActivity">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginTop="25dp"
+            android:layout_margin="10dp"
+            android:layout_height="match_parent">
+      <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+              android:id="@+id/spinner_detail"
+              android:padding="10dp"
+              android:background="@color/colorPrimary"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
 
-    <TextView
+      </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+         <TextView
+            android:id="@+id/cropdetail_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textSize="17dp"
             android:text="Hi Detail "/>
+        <View
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:layout_height="1dp"/>
+        <TextView
+                android:id="@+id/cropdetail_dees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="17dp"
+                android:text="Hi Detail "/>
+        <View
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:layout_height="1dp"/>
+    <TextView
+            android:id="@+id/cropdetail_store"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="17dp"
+            android:text="Hi Detail "/>
+        <View
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:layout_height="1dp"/>
+    <TextView
+            android:id="@+id/cropdetail_fertilizer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="17dp"
+            android:text="Hi Detail "/>
+
+    </LinearLayout>
+
+
 
 </androidx.core.widget.NestedScrollView>

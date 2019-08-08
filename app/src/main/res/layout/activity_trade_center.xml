@@ -6,7 +6,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".Activity.TradeCenter">
+        tools:context=".Merchant.MerchantActivity">
 
     <com.google.android.material.appbar.AppBarLayout
             android:layout_height="wrap_content"
@@ -31,21 +31,40 @@
                     android:textColor="#000"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
+
         </FrameLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:weightSum="2"
+            android:layout_height="wrap_content">
 
     <com.toptoche.searchablespinnerlibrary.SearchableSpinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
+            android:id="@+id/spinner1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:padding="15dp"
             android:layout_height="wrap_content">
 
     </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+        <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spinner2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:padding="15dp"
+                android:layout_height="wrap_content">
+
+        </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
+</LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/tradecneterrecycle"
             android:layout_margin="5dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </LinearLayout>

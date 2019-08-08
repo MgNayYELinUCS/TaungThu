@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TableLayout
+            android:layout_margin="5dp"
+            android:padding="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TableRow android:weightSum="3">
+
+
+            <TextView
+                    android:id="@+id/merchant_price_name"
+                    android:text="အမည္"
+                    style="@style/tablelayout_textview"
+
+            />
+            <TextView
+                    android:id="@+id/merchant_price_unit"
+                    android:text="ယူနစ္"
+                    style="@style/tablelayout_textview"
+
+            />
+            <TextView
+                    android:id="@+id/merchant_price_price"
+                    android:text="ေစ်း"
+                    style="@style/tablelayout_textview"
+
+            />
+
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.cardview.widget.CardView>

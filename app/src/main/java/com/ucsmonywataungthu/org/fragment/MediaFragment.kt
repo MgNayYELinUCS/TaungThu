@@ -1,68 +1,65 @@
 package com.ucsmonywataungthu.org.fragment
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import android.net.Uri
-import com.ucsmonywataungthu.org.R
-import kotlinx.android.synthetic.main.activity_media_fragment.*
-import android.media.MediaPlayer
 import android.widget.*
-import kotlinx.android.synthetic.main.activity_media_fragment.view.*
+import com.pierfrancescosoffritti.youtubeplayer.player.AbstractYouTubePlayerListener
+import com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerInitListener
+import androidx.recyclerview.widget.RecyclerView
+import com.ucsmonywataungthu.org.R
+import androidx.recyclerview.widget.GridLayoutManager
+import com.ucsmonywataungthu.org.adapter.VideoAdapter
+import com.ucsmonywataungthu.org.model.VideoModel
 
-
-class MediaFragment : Fragment(), AdapterView.OnItemClickListener {
-    override fun onItemClick(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-        when(position) {
-            0 ->Toast.makeText(context,"q",Toast.LENGTH_SHORT).show()
-            1-> Toast.makeText(context,"qd",Toast.LENGTH_SHORT).show()
-            2 ->Toast.makeText(context,"q1",Toast.LENGTH_SHORT).show()
-            else -> println("Number too high")
-        }
-    }
-
+class MediaFragment() : Fragment() {
     var video_list:ArrayList<String>?=null
+    var videoId:String?=null
+    var youtube_video:com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerView? = null
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view: View =inflater.inflate(com.ucsmonywataungthu.org.R.layout.activity_media_fragment, container, false)
 
-        video_list=ArrayList<String>()
-        video_list!!.add("hi")
-        video_list!!.add("hi")
-        video_list!!.add("hi")
-
-        var adapter1=ArrayAdapter(context,android.R.layout.simple_list_item_1,video_list)
-
-        view!!.video_listview.adapter=adapter1
-        view!!.video_listview.setOnItemClickListener(this)
+        val videoList = ArrayList<VideoModel>()
+        videoList.add(VideoModel( "ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel( "ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel( "ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel(  "ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel( "ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel("ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
 
 
-        val video = view.findViewById(com.ucsmonywataungthu.org.R.id.video) as VideoView
-        video.setOnPreparedListener {
-            video.requestFocus()
-            video.start()
-        }
-        video.setVideoURI(Uri.parse("android.resource://" + getActivity()!!.getPackageName() + "/" + com.ucsmonywataungthu.org.R.raw.g))
-        video.setMediaController(MediaController(context))
-        video.requestFocus()
+        var mainListRecycler= view.findViewById<RecyclerView>(R.id.video_recycler)
+        mainListRecycler.layoutManager = GridLayoutManager(context,1) as RecyclerView.LayoutManager?
+        var adapter = VideoAdapter(context!!,videoList)
+        mainListRecycler.adapter = adapter
+
+
+        youtube_video=view.findViewById(R.id.youtube_vv)
+        videoId="ZbZSe6N_BXs"
+        playvideo(videoId)
+
+
         return view
 
     }
-    /*override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        video_list=ArrayList<String>()
-        video_list!!.add("hi")
-        video_list!!.add("hi")
-        video_list!!.add("hi")
+    fun playvideo(videoId: String?) {
+        youtube_video!!.initialize(YouTubePlayerInitListener { initializedYouTubePlayer ->
+            initializedYouTubePlayer.addListener(object : AbstractYouTubePlayerListener() {
+                override fun onReady() {
+                    val videoId = videoId
+                    initializedYouTubePlayer.loadVideo(this@MediaFragment.videoId.toString(), 0f)
+                    initializedYouTubePlayer.pause()
+                }
+            })
+        }, true)
+        val uiController = youtube_video!!.getPlayerUIController()
 
-        var adapter1=ArrayAdapter(context,android.R.layout.simple_list_item_1,video_list)
+    }
 
-        view!!.video_listview.adapter=adapter1
-        view!!.video_listview.setOnItemClickListener(this)
-    }*/
 
 }
