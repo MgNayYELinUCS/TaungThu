@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:id="@+id/news_layout"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+
+    <ImageView
+            android:id="@+id/news_img"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@color/colorPrimary"
+    />
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_height="wrap_content">
+        <TextView
+                android:id="@+id/txt_news_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:text="July 29"
+        />
+    <TextView
+            android:id="@+id/txt_news_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18dp"
+            android:maxWidth="200dp"
+            android:textColor="#000"
+            android:text="News Title"
+    />
+        <TextView
+                android:id="@+id/txt_news_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="News Description"
+        />
+
+    </LinearLayout>
+
+</LinearLayout>
