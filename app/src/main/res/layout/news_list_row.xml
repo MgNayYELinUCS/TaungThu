@@ -4,6 +4,7 @@
             xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/news_row"
             android:background="?selectableItemBackground">
 
         <TextView
@@ -28,12 +29,12 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-                android:id="@+id/tv_news_source"
+                android:id="@+id/tv_news_created_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
 
-                android:text="Source"
+                android:text="time"
                 android:textColor="@color/search_layover_bg"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="@id/tv_news_title"

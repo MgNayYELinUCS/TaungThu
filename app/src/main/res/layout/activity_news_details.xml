@@ -15,17 +15,16 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:background="@color/grey_10"
-            app:layout_constraintBottom_toBottomOf="@id/tv_news_source"
+            app:layout_constraintBottom_toTopOf="@id/tv_newsdetail_desc"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_news_image" />
+            app:layout_constraintTop_toBottomOf="@id/iv_newsdetail_image" />
 
     <ImageView
-            android:id="@+id/iv_news_image"
+            android:id="@+id/iv_newsdetail_image"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:contentDescription="image_desc"
-            android:foreground="@drawable/photo_female_1"
             app:layout_constraintDimensionRatio="h,16:9"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -60,24 +59,12 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/tv_news_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_newsdetail_title"
             tools:text="@tools:sample/date/ddmmyy" />
 
-    <TextView
-            android:id="@+id/tv_news_source"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:paddingBottom="18dp"
-            android:text="source name"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/tv_time"
-            tools:text="The Washington Post" />
 
     <TextView
-            android:id="@+id/tv_news_title"
+            android:id="@+id/tv_newsdetail_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -88,10 +75,10 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/iv_news_image"/>
+            app:layout_constraintTop_toBottomOf="@id/iv_newsdetail_image"/>
 
     <TextView
-            android:id="@+id/tv_news_desc"
+            android:id="@+id/tv_newsdetail_desc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
@@ -102,11 +89,11 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@id/guideline_right"
             app:layout_constraintStart_toStartOf="@id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@id/tv_news_source"
+            app:layout_constraintTop_toBottomOf="@id/tv_time"
             tools:layout_editor_absoluteY="365dp"/>
 
     <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/news_detail_toolbar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="?actionBarItemBackground"
@@ -116,14 +103,14 @@
             app:layout_constraintTop_toTopOf="parent"
             app:navigationIcon="@drawable/ic_close" />
 
-    <android.support.constraint.Guideline
+    <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_begin="12dp" />
 
-    <android.support.constraint.Guideline
+    <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

@@ -6,45 +6,53 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.pierfrancescosoffritti.youtubeplayer.player.AbstractYouTubePlayerListener
-import com.ucsmonywataungthu.org.Activity.NewsViewActivity
-import com.ucsmonywataungthu.org.Activity.VideoFullViewActivity
+import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.ucsmonywataungthu.org.Activity.NewsDetailActivity
+import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.R
-import com.ucsmonywataungthu.org.model.NewsModel
+import com.ucsmonywataungthu.org.model.News
 
-class NewsAdapter (val context: Context, val newsList:List<NewsModel>) : RecyclerView.Adapter<MyHolder6>(){
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder6 {
-        return MyHolder6(LayoutInflater.from(parent.context).inflate(R.layout.news_item_row, parent, false))
+class NewsAdapter(val context: Context, val newList:List<News>) : RecyclerView.Adapter<NewViewModel>(){
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewViewModel {
+        return  NewViewModel(LayoutInflater.from(parent.context).inflate(R.layout.news_list_row, parent, false))
+
     }
 
     override fun getItemCount(): Int {
-        return newsList.size
-
+        return newList!!.size
     }
 
-    override fun onBindViewHolder(holder: MyHolder6, position: Int) {
-        holder.new_img.setImageResource(newsList.get(position).new_img)
-        holder.txt_news_title.text=newsList.get(position).new_title
-        holder.txt_news_des.text=newsList.get(position).new_description
+    override fun onBindViewHolder(holder: NewViewModel, position: Int) {
+        holder.tv_news_time.text=newList.get(position).created_at.toString()
+        holder.tv_news_title.text=newList.get(position).news_title
 
-        holder.news_layout.setOnClickListener{
-            val intent=Intent(context,NewsViewActivity::class.java)
-            intent.putExtra("news_image",newsList.get(position).new_img)
-            intent.putExtra("news_title",newsList.get(position).new_title)
-            intent.putExtra("news_des",newsList.get(position).new_description)
+        Glide.with(context!!)
+            .load(APIInitiate.PIC_URL+newList.get(position).news_photo)
+            .transition(DrawableTransitionOptions.withCrossFade())
+            .into(holder.iv_news_image)
+
+        holder.new_row.setOnClickListener {
+            val intent=Intent(context,NewsDetailActivity::class.java)
+            intent.putExtra("title",newList.get(position).news_title)
+            intent.putExtra("desc",newList.get(position).news_description)
+            intent.putExtra("image",newList.get(position).news_photo)
+            intent.putExtra("time",newList.get(position).created_at.toString())
             context.startActivity(intent)
-        }
 
+
+        }
     }
 }
 
-class MyHolder6(view: View): RecyclerView.ViewHolder(view) {
-    val new_img=view.findViewById<ImageView>(R.id.news_img)
-    val txt_news_time=view.findViewById<TextView>(R.id.txt_news_time)
-    val txt_news_title=view.findViewById<TextView>(R.id.txt_news_title)
-    val txt_news_des=view.findViewById<TextView>(R.id.txt_news_description)
-    val news_layout=view.findViewById<LinearLayout>(R.id.news_layout)
+class NewViewModel (view: View): RecyclerView.ViewHolder(view) {
+val iv_news_image:ImageView=view.findViewById(R.id.iv_news_image)
+    val  tv_news_title:TextView=view.findViewById(R.id.tv_news_title)
+    val tv_news_time:TextView=view.findViewById(R.id.tv_news_created_time)
+    val new_row:ConstraintLayout=view.findViewById(R.id.news_row)
+
+
 }

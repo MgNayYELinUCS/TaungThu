@@ -60,6 +60,8 @@ interface APIService  {
 
     @GET("question")
     fun getQuestion():Call<Question>
+    @GET("news")
+    fun getNews():Call<List<News>>
 
     @Multipart
     @POST("knowledge/insert")

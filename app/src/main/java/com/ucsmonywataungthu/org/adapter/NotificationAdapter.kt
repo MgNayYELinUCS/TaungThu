@@ -9,13 +9,13 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.ucsmonywataungthu.org.Activity.NewsViewActivity
+import com.ucsmonywataungthu.org.Activity.NotificationViewActivity
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.NotificationModel
 
 class NotificationAdapter (val context: Context, val notificationList:List<NotificationModel>) : RecyclerView.Adapter<MyHolder0>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder0 {
-        return MyHolder0(LayoutInflater.from(parent.context).inflate(R.layout.news_item_row, parent, false))
+        return MyHolder0(LayoutInflater.from(parent.context).inflate(R.layout.noti_list_row, parent, false))
     }
 
     override fun getItemCount(): Int {
@@ -29,10 +29,10 @@ class NotificationAdapter (val context: Context, val notificationList:List<Notif
         holder.txt_news_des.text=notificationList.get(position).notification_description
 
         holder.news_layout.setOnClickListener{
-            val intent= Intent(context, NewsViewActivity::class.java)
-            //intent.putExtra("news_image",notificationList.get(position).new_img)
-            intent.putExtra("news_title",notificationList.get(position).notification_title)
-            intent.putExtra("news_des",notificationList.get(position).notification_description)
+            val intent= Intent(context, NotificationViewActivity::class.java)
+            //intent.putExtra("noti_image",notificationList.get(position).no)
+            intent.putExtra("noti_title",notificationList.get(position).notification_title)
+            intent.putExtra("noti_des",notificationList.get(position).notification_description)
             context.startActivity(intent)
         }
 
@@ -40,9 +40,9 @@ class NotificationAdapter (val context: Context, val notificationList:List<Notif
 }
 
 class MyHolder0(view: View): RecyclerView.ViewHolder(view) {
-    val new_img=view.findViewById<ImageView>(R.id.news_img)
-    val txt_news_time=view.findViewById<TextView>(R.id.txt_news_time)
-    val txt_news_title=view.findViewById<TextView>(R.id.txt_news_title)
-    val txt_news_des=view.findViewById<TextView>(R.id.txt_news_description)
+    val new_img=view.findViewById<ImageView>(R.id.noti_img)
+    val txt_news_time=view.findViewById<TextView>(R.id.txt_noti_time)
+    val txt_news_title=view.findViewById<TextView>(R.id.txt_noti_title)
+    val txt_news_des=view.findViewById<TextView>(R.id.txt_noti_description)
     val news_layout=view.findViewById<LinearLayout>(R.id.news_layout)
 }

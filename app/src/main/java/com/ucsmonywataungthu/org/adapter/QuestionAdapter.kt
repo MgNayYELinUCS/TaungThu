@@ -8,6 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.ucsmonywataungthu.org.Activity.QuestionActivity
 import com.ucsmonywataungthu.org.Interface.AnswerButtonClick
+import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.QuestionGetAll
 
@@ -45,7 +46,7 @@ class QuestionAdapter(val context: Context, val qlist: List<QuestionGetAll>) : R
         holder.user_name.text=qlist.get(position).users.name
         holder.qdetail.text=qlist.get(position).question_description
         Glide.with(context)
-            .load("http://192.168.1.146/TaungThu/"+qlist.get(position).question_photo)
+            .load(APIInitiate.PIC_URL+qlist.get(position).question_photo)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(holder.qimage)
         holder.qans.setOnClickListener {

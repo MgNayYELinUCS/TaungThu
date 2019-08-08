@@ -1,6 +1,5 @@
 package com.ucsmonywataungthu.org.fragment
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,8 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.Network.APIService
 import com.ucsmonywataungthu.org.R
-import com.ucsmonywataungthu.org.adapter.HomeAdapter
-import com.ucsmonywataungthu.org.adapter.NewsAdapter
 import com.ucsmonywataungthu.org.adapter.NotificationAdapter
 import com.ucsmonywataungthu.org.model.*
 import retrofit2.Call
