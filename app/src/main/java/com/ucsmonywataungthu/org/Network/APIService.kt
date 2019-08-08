@@ -34,6 +34,19 @@ interface APIService  {
     @POST("cropCategory/{id}")
     fun getCropCategory(@Path("id")id:Int):Call<CropResult>
 
+    @GET("question")
+    fun getQuestion():Call<Question>
+
+    @Multipart
+    @POST("knowledge/insert")
+    fun photoUpload(@Part("title") title: RequestBody,
+                    @Part("description") description: RequestBody,
+                    @Part photo:MultipartBody.Part):Call<SuccessUpload>
+
+    @POST("question/{id}")
+    fun getAnswer(@Path ("id")id:Int):Call<Answer>
+    @POST("question/{id}")
+    fun sendAnswer(@Path ("id")id:Int):Call<Answer>
     @POST("cropSubCategory/{id}")
     fun getCropDetailCategory(@Path("id")id:Int):Call<CropDetailResult>
 
@@ -58,19 +71,8 @@ interface APIService  {
     @GET("notification")
     fun getNotification():Call <List<NotificationModel>>
 
-    @GET("question")
-    fun getQuestion():Call<Question>
     @GET("news")
-    fun getNews():Call<List<News>>
+    fun getNews():Call <List<News>>
 
-    @Multipart
-    @POST("knowledge/insert")
-    fun photoUpload(@Part("title") title: RequestBody,
-                    @Part("description") description: RequestBody,
-                    @Part photo:MultipartBody.Part):Call<SuccessUpload>
 
-    @POST("question/{id}")
-    fun getAnswer(@Path ("id")id:Int):Call<Answer>
-    @POST("question/{id}")
-    fun sendAnswer(@Path ("id")id:Int):Call<Answer>
 }
