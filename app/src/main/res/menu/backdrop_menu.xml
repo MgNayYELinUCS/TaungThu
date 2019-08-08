@@ -14,7 +14,7 @@
             android:title="Contace Us"/>
     <item
             android:id="@+id/nav4"
-            android:icon="@mipmap/logout"
+            android:icon="@drawable/initial"
             android:title="LogOut"/>
 
 </menu>

@@ -1,0 +1,34 @@
+package com.ucsmonywataungthu.org.DrawerActivity
+
+import android.icu.text.IDNA
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.ucsmonywataungthu.org.R
+import com.ucsmonywataungthu.org.adapter.ContactUsAdapter
+import com.ucsmonywataungthu.org.adapter.NewsAdapter
+import com.ucsmonywataungthu.org.model.InfoModel
+import com.ucsmonywataungthu.org.model.NewsModel
+
+class ContactUsActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_contact_us)
+        setTitle("Contact Us")
+
+        val infoList = ArrayList<InfoModel>()
+        infoList.add(InfoModel(R.drawable.phoneicon, "web site ကိုလာေရာက္ေလ့လာရန္"))
+        infoList.add(InfoModel(R.mipmap.plant, "facebook စာမ်က္ႏွာသြားရန္"))
+        infoList.add(InfoModel(R.drawable.phoneicon, "09691626426"))
+        infoList.add(InfoModel(R.mipmap.plant, "monywacu.taungthu@gmail.com"))
+
+
+        var mainListRecycler= findViewById<RecyclerView>(R.id.contactus_recycle
+        )
+        mainListRecycler.layoutManager = GridLayoutManager(applicationContext,1) as RecyclerView.LayoutManager?
+        var adapter = ContactUsAdapter(applicationContext!!,infoList)
+        mainListRecycler.adapter = adapter
+    }
+}

@@ -6,24 +6,22 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
-import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
-import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
+import com.ucsmonywataungthu.org.DrawerActivity.ContactUsActivity
+import com.ucsmonywataungthu.org.DrawerActivity.ProfileInformationActivity
+import com.ucsmonywataungthu.org.DrawerActivity.SettingActivity
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.fragment.HomeFargment
 import com.ucsmonywataungthu.org.fragment.MediaFragment
 import com.ucsmonywataungthu.org.fragment.NewsFragment
 import com.ucsmonywataungthu.org.fragment.NofiticationFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_trade_center.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -57,9 +55,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         true
     }
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -79,10 +74,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(menu: MenuItem): Boolean {
         when (menu.itemId) {
+            R.id.nav1->{
+                startActivity(Intent(applicationContext,ProfileInformationActivity::class.java))
+            }
+            R.id.nav2->{
+                startActivity(Intent(applicationContext,SettingActivity::class.java))
+            }
+            R.id.nav3->{
+                startActivity(Intent(applicationContext,ContactUsActivity::class.java))
+            }
 
             R.id.nav4 -> {
-
-
                 sharePreferences.edit().clear().commit()
 
                 //start login

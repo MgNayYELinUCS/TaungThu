@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:id="@+id/merchant_cardview_saleandbuy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <TableLayout
+            android:layout_margin="5dp"
+            android:padding="2dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TableRow android:weightSum="6">
+            <CheckBox
+                    android:id="@+id/checkbox_buyandsale"
+                    android:layout_weight="1"/>
+
+
+            <TextView
+                    android:id="@+id/merchant_price_saleandbuy_name"
+                    android:text="အမည္"
+                    style="@style/tablelayout_textview"
+
+            />
+            <TextView
+                    android:id="@+id/merchant_price_saleandbuy_unit"
+                    android:text="ယူနစ္"
+                    style="@style/tablelayout_textview"
+
+            />
+            <TextView
+                    android:id="@+id/merchant_price_saleandbuy_price"
+                    android:text="ေစ်း"
+                    style="@style/tablelayout_textview"
+
+            />
+            <EditText
+                    android:visibility="invisible"
+
+                    android:id="@+id/merchant_ed_quality"
+                    style="@style/tablelayout_textview"
+            />
+            <TextView
+                    android:id="@+id/merchant_price_total"
+                    android:text="total"
+                    android:visibility="invisible"
+                    style="@style/tablelayout_textview"
+
+            />
+
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.cardview.widget.CardView>

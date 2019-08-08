@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:background="@color/primary_light"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_margin="5dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+            android:id="@+id/merchant_cardview"
+            android:elevation="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <LinearLayout
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+                tools:layout_editor_absoluteX="0dp" app:layout_constraintVertical_bias="1.0">
+            <ImageView
+                    android:id="@+id/merchant_image"
+                    android:src="@mipmap/home"
+                    android:padding="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"/>
+
+                <LinearLayout
+                        android:background="@color/colorPrimary"
+                        android:orientation="vertical"
+                        android:padding="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                <TextView
+                        android:id="@+id/txt_merchant_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/primary_light"
+                        android:text="Thire Mandalar"/>
+                <TextView
+                        android:id="@+id/txt_merchant_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary_light"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Crop Marchant"/>
+                </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
