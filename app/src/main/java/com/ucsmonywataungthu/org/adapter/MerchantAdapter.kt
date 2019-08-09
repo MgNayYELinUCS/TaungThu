@@ -27,7 +27,7 @@ class MerchantAdapter (val context: Context, val merchantList: List<MerchantMode
 
         holder.merchant_image.setImageResource(R.mipmap.img1)
         holder.txt_merchant_name.text = merchantList[position].merchant_name
-        holder.txt_merchant_type.text = merchantList[position].merchant_type.merchant_type_name.toString()
+        holder.txt_merchant_type.text = merchantList[position].merchant_type.merchant_type_name
 
         holder.merchant_cardview.setOnClickListener{
             val intent=Intent(context, MerchantListandPriceActivity::class.java)

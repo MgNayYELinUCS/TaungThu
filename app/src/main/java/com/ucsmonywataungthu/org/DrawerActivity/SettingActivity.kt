@@ -5,10 +5,8 @@ import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ucsmonywataungthu.org.R
-import com.ucsmonywataungthu.org.adapter.NewsAdapter
 import com.ucsmonywataungthu.org.adapter.SettingAdapter
 import com.ucsmonywataungthu.org.model.InfoModel
-import com.ucsmonywataungthu.org.model.NewsModel
 
 class SettingActivity : AppCompatActivity() {
 
