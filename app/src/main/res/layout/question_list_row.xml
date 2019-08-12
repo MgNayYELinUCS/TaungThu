@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/main_content"
-        android:background="@color/grey_10"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -67,17 +66,19 @@
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-                <TextView android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                <TextView
                           android:id="@+id/q_detail"
-                          android:textColor="@color/grey_60" android:layout_width="wrap_content"
-                          android:layout_height="wrap_content" android:layout_margin="@dimen/spacing_large"
+                          android:textColor="@color/secondary_text"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_margin="@dimen/spacing_large"
                           android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etian efficiut ipsum in place adi moilestie.Fusce wuids marids ad enime sollicitudim"
                           android:lineSpacingExtra="4.0dip" />
-                <ImageView android:layout_width="match_parent"
+                <ImageView android:layout_width="wrap_content"
                            android:id="@+id/q_image"
                            android:src="@drawable/image_2"
                            android:layout_height="wrap_content"
-                           android:scaleType="centerCrop" />
+                           android:scaleType="fitXY" />
 
                 <View android:background="@color/grey_5"
                       android:layout_width="fill_parent"
@@ -125,7 +126,9 @@
                                   android:layout_height="wrap_content"
                                   android:text="4 Comments" />
                     </LinearLayout>
-                    <TextView android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    <TextView
+                            android:id="@+id/q_time"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                               android:textColor="@color/grey_40"
                               android:gravity="end"
                               android:layout_width="wrap_content"

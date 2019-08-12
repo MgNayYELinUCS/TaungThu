@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/knowledge_row"
+        android:background="?selectableItemBackground">
+
+    <TextView
+            android:id="@+id/knowledge_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="title"
+            android:textSize="16sp"
+            android:minLines="3"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/knowledge_image"
+            app:layout_constraintTop_toTopOf="@id/knowledge_image" />
+    <TextView
+            android:id="@+id/knowledge_created_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textColor="@color/search_layover_bg"
+
+            android:text="time"
+
+
+            app:layout_constraintStart_toStartOf="@id/knowledge_title"
+            app:layout_constraintTop_toBottomOf="@id/knowledge_title"/>
+
+    <ImageView
+            android:id="@+id/knowledge_image"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:contentDescription="image_desc"
+            android:src="@drawable/photo_female_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+   <!-- <TextView
+            android:id="@+id/knowledge_description"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/knowledge_title"
+            app:layout_constraintTop_toBottomOf="@id/knowledge_created_time" />-->
+<!--
+    <ImageButton
+            android:id="@+id/knowledge_option"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?selectableItemBackgroundBorderless"
+            android:contentDescription="hello"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/knowledge_title"
+            app:srcCompat="@android:drawable/ic_menu_more" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

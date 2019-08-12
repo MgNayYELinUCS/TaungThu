@@ -8,14 +8,18 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.ucsmonywataungthu.org.Activity.QuestionActivity
 import com.ucsmonywataungthu.org.Interface.AnswerButtonClick
+import com.ucsmonywataungthu.org.Interface.ImageClick
 import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.QuestionGetAll
+import org.w3c.dom.Text
 
 
 class QuestionAdapter(val context: Context, val qlist: List<QuestionGetAll>) : RecyclerView.Adapter<QuestionAdapter.ViewHolder>() {
 
     lateinit var buttonClick: AnswerButtonClick
+
+    lateinit var imageClick: ImageClick
 
 
 
@@ -26,11 +30,15 @@ class QuestionAdapter(val context: Context, val qlist: List<QuestionGetAll>) : R
         var qdetail:TextView=view.findViewById(R.id.q_detail)
         var qimage:ImageView=view.findViewById(R.id.q_image)
         var qans:LinearLayout=view.findViewById(R.id.q_answer)
+        var qtime:TextView=view.findViewById(R.id.q_time)
     }
 
 
-    fun serOnItemClickListener(clickListener: QuestionActivity) {
+    fun setOnItemClickListener(clickListener: QuestionActivity) {
         this.buttonClick=clickListener
+    }
+    fun setOnImageClickListener(clickListener: QuestionActivity) {
+        this.imageClick=clickListener
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -45,12 +53,19 @@ class QuestionAdapter(val context: Context, val qlist: List<QuestionGetAll>) : R
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.user_name.text=qlist.get(position).users.name
         holder.qdetail.text=qlist.get(position).question_description
+        holder.qtime.text=qlist.get(position).created_at
+
+
         Glide.with(context)
             .load(APIInitiate.PIC_URL+qlist.get(position).question_photo)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(holder.qimage)
         holder.qans.setOnClickListener {
             buttonClick.onAnswerClickListener(position)
+        }
+        holder.qimage.setOnClickListener {
+            imageClick.onImageClickListener(qlist.get(position).question_photo)
+
         }
     }
 }

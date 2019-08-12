@@ -14,11 +14,9 @@ import com.ucsmonywataungthu.org.Network.APIService
 
 
 import com.ucsmonywataungthu.org.R
-import com.ucsmonywataungthu.org.model.FailLogin
 import com.ucsmonywataungthu.org.model.LoginFail
 import com.ucsmonywataungthu.org.model.RequestSuccess
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_register.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -69,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
 
 
                         //Toast.makeText(loginActivity,success.success.token.toString(), Toast.LENGTH_SHORT).show()
-                        loginActivity.saveToken(success!!.success.token)
+                        loginActivity.saveUser(success!!.success.token,success!!.success.id)
 
 
                         loginActivity.finishAffinity()
@@ -122,9 +120,10 @@ class LoginActivity : AppCompatActivity() {
 
         }
     }
-    fun saveToken(token: String) {
+    fun saveUser(token: String, id: Int) {
         var editor=sharedPreferences.edit()
         editor.putString("token",token)
+        editor.putInt("user_id",id)
         editor.commit()
     }
 }
