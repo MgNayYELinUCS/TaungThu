@@ -21,7 +21,9 @@ interface APIService  {
 
     @POST("sendmail")
     @FormUrlEncoded
-    fun sendmail(@Field("name")name:String, @Field("email")email:String,@Field("code")code:String):Call<InputSuccess>
+    fun sendmail(@Field("name")name:String,
+                 @Field("email")email:String,
+                 @Field("code")code:String):Call<InputSuccess>
 
 
     @POST("validate")
@@ -37,14 +39,38 @@ interface APIService  {
     @GET("question")
     fun getQuestion():Call<Question>
 
+    @GET("knowledge")
+    fun getKnowledge():Call<Knowledge>
+
+
+
     @Multipart
     @POST("knowledge/insert")
     fun photoUpload(@Part("title") title: RequestBody,
                     @Part("description") description: RequestBody,
                     @Part photo:MultipartBody.Part):Call<SuccessUpload>
 
+    @Multipart
+    @POST("newQuestion/insert")
+    fun insertQuestion(@Part("question_title") question_title: RequestBody,
+                       @Part("question_description") question_description: RequestBody,
+                       @Part("user_id") user_id: RequestBody,
+                       @Part question_photo:MultipartBody.Part?):Call<SuccessUpload>
+
+
+
     @POST("question/{id}")
     fun getAnswer(@Path ("id")id:Int):Call<Answer>
+
+
+
+
+    @POST("answer/insert")
+    @FormUrlEncoded
+    fun setAnswer(@Field("answer_description")answer_description:String, @Field("user_id")user_id:Int,
+                  @Field("question_id")question_id:Int):Call<SuccessUpload>
+
+
     @POST("question/{id}")
     fun sendAnswer(@Path ("id")id:Int):Call<Answer>
     @POST("cropSubCategory/{id}")

@@ -28,7 +28,7 @@
             app:layout_constraintDimensionRatio="h,16:9"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
+<!--
     <ImageButton
             android:id="@+id/iv_save"
             android:layout_width="48dp"
@@ -48,7 +48,7 @@
             android:contentDescription="image_desc_share_button"
             app:layout_constraintEnd_toStartOf="@id/guideline_right"
             app:layout_constraintTop_toTopOf="@id/tv_time"
-            app:srcCompat="@android:drawable/ic_menu_share" />
+            app:srcCompat="@android:drawable/ic_menu_share" />-->
 
     <TextView
             android:id="@+id/tv_time"
@@ -95,9 +95,11 @@
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/news_detail_toolbar"
             android:layout_width="0dp"
+            app:titleTextColor="@color/colorPrimary"
             android:layout_height="wrap_content"
             android:background="?actionBarItemBackground"
             android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"

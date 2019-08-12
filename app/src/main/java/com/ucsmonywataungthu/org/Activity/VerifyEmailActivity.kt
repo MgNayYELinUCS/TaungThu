@@ -3,12 +3,8 @@ package com.ucsmonywataungthu.org.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.content.res.ColorStateList
-import android.graphics.Color
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -23,8 +19,6 @@ import kotlinx.android.synthetic.main.activity_verify_email.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import java.text.DecimalFormat
-import java.text.NumberFormat
 import java.util.concurrent.TimeUnit
 import kotlin.random.Random
 
@@ -155,7 +149,7 @@ class VerifyEmailActivity : AppCompatActivity() {
                         Log.i("Mail", success!!.success.name + "//" + success!!.success.token)
 
                         Toast.makeText(this@VerifyEmailActivity, "Success", Toast.LENGTH_SHORT).show()
-                        saveToken(success!!.success.token)
+                        saveUser(success!!.success.token,success!!.success.id)
                         finishAffinity()
 
                         startActivity(Intent(this@VerifyEmailActivity, MainActivity::class.java))
@@ -172,9 +166,10 @@ class VerifyEmailActivity : AppCompatActivity() {
         }
     }
 
-    fun saveToken(token: String) {
+    fun saveUser(token: String, id: Int) {
         var editor = sharedPreferences.edit()
         editor.putString("token", token)
+        editor.putInt("user_id",id)
         editor.commit()
 
     }

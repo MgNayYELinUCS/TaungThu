@@ -46,7 +46,6 @@ class RegisterActivity : AppCompatActivity() {
                 override fun onFailure(call: Call<InputSuccess>, t: Throwable) {
 
                     Toast.makeText(this@RegisterActivity, "Connection Lose.!! Try again", Toast.LENGTH_LONG).show()
-
                 }
 
                 override fun onResponse(call: Call<InputSuccess>, response: Response<InputSuccess>) {

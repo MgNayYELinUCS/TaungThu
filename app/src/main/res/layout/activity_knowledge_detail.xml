@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp"
+            tools:context=".ui.news.DetailActivity">
+
+        <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@color/grey_10"
+                app:layout_constraintBottom_toTopOf="@id/tv_knowledge_detail_desc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_knowledge_detail_image" />
+
+        <ImageView
+                android:id="@+id/iv_knowledge_detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:contentDescription="image_desc"
+                app:layout_constraintDimensionRatio="h,16:9"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <TextView
+                android:id="@+id/tv_knowledge_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="publish at"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/tv_knowledge_detail_title"
+                tools:text="@tools:sample/date/ddmmyy" />
+
+
+        <TextView
+                android:id="@+id/tv_knowledge_detail_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:lineSpacingMultiplier="1.1"
+                android:text="title"
+                android:textColor="@color/grey_60"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/guideline_right"
+                app:layout_constraintStart_toStartOf="@id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@id/iv_knowledge_detail_image"/>
+
+        <TextView
+                android:id="@+id/tv_knowledge_detail_desc"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:alpha="0.6"
+                android:lineSpacingMultiplier="1.3"
+                android:text="news description"
+                android:textColor="@color/grey_60"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@id/guideline_right"
+                app:layout_constraintStart_toStartOf="@id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@id/tv_knowledge_time"
+                tools:layout_editor_absoluteY="365dp"/>
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/knowledge_detail_toolbar"
+                android:layout_width="0dp"
+                app:titleTextColor="@color/colorPrimary"
+                android:layout_height="wrap_content"
+                android:background="?actionBarItemBackground"
+                android:fitsSystemWindows="true"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navigationIcon="@drawable/ic_close" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="12dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="12dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
