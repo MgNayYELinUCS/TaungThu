@@ -74,12 +74,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(menu: MenuItem): Boolean {
         when (menu.itemId) {
-            R.id.nav1->{
+           /* R.id.nav1->{
                 startActivity(Intent(applicationContext,ProfileInformationActivity::class.java))
             }
             R.id.nav2->{
                 startActivity(Intent(applicationContext,SettingActivity::class.java))
-            }
+            }*/
             R.id.nav3->{
                 startActivity(Intent(applicationContext,ContactUsActivity::class.java))
             }
@@ -100,12 +100,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+   /* override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.search_view, menu)
 
         val item = menu!!.findItem(R.id.action_search)
         search_main.setMenuItem(item)
 
         return super.onCreateOptionsMenu(menu)
-    }
+    }*/
 }

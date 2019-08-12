@@ -92,7 +92,7 @@ interface APIService  {
     fun getMerchantFliter(@Path("id")id:Int):Call <List<MerchantModel>>
 
     @POST("merchantPrice/{id}")
-    fun getMerchantPrice(@Path("id")id:Int):Call <List<MerchantPriceModel>>
+    fun getMerchantPrice(@Path("id")id:Int):Call <List<DailyPriceModel>>
 
     @GET("notification")
     fun getNotification():Call <List<NotificationModel>>

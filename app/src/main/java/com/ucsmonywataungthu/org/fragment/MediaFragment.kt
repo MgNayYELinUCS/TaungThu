@@ -13,53 +13,60 @@ import com.ucsmonywataungthu.org.R
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ucsmonywataungthu.org.adapter.VideoAdapter
 import com.ucsmonywataungthu.org.model.VideoModel
+import com.ucsmonywataungthu.org.Interface.VideoPositionClick
 
-class MediaFragment() : Fragment() {
-    var video_list:ArrayList<String>?=null
-    var videoId:String?=null
+
+class MediaFragment() : Fragment(), VideoPositionClick {
     var youtube_video:com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerView? = null
+    val videoList = ArrayList<VideoModel>()
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view: View =inflater.inflate(com.ucsmonywataungthu.org.R.layout.activity_media_fragment, container, false)
 
-        val videoList = ArrayList<VideoModel>()
         videoList.add(VideoModel( "ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
         videoList.add(VideoModel( "ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
         videoList.add(VideoModel( "ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
-        videoList.add(VideoModel(  "ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
-        videoList.add(VideoModel( "ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
-        videoList.add(VideoModel("ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel(  "ZbZSe6N_BXs","ဆန္ video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel( "ZbZSe6N_BXs","ဆန္ video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel("ZbZSe6N_BXs","ဆန္ video ေလးတင္ေပးလုိက္ပါတယ္"))
 
 
         var mainListRecycler= view.findViewById<RecyclerView>(R.id.video_recycler)
-        mainListRecycler.layoutManager = GridLayoutManager(context,1) as RecyclerView.LayoutManager?
+        mainListRecycler.layoutManager = GridLayoutManager(context,1)
         var adapter = VideoAdapter(context!!,videoList)
         mainListRecycler.adapter = adapter
+        adapter.setOnItemClickListener(this)
 
 
-        youtube_video=view.findViewById(R.id.youtube_vv)
-        videoId="ZbZSe6N_BXs"
-        playvideo(videoId)
+        youtube_video=view.findViewById(com.ucsmonywataungthu.org.R.id.youtube_vv)
+        val videoId="ZbZSe6N_BXs"
+        playvideo(videoId,false)
+
 
 
         return view
 
     }
-    fun playvideo(videoId: String?) {
+    fun playvideo(vId: String,play:Boolean) {
         youtube_video!!.initialize(YouTubePlayerInitListener { initializedYouTubePlayer ->
             initializedYouTubePlayer.addListener(object : AbstractYouTubePlayerListener() {
                 override fun onReady() {
-                    val videoId = videoId
-                    initializedYouTubePlayer.loadVideo(this@MediaFragment.videoId.toString(), 0f)
-                    initializedYouTubePlayer.pause()
+                    initializedYouTubePlayer.loadVideo(vId, 0f)
+                    if (play){
+                        initializedYouTubePlayer.play()
+                    }else{
+                        initializedYouTubePlayer.pause()
+                    }
+                    //initializedYouTubePlayer.play()
                 }
             })
         }, true)
-        val uiController = youtube_video!!.getPlayerUIController()
+    }
+    override fun onVideoPositionClickListener(position: Int) {
+        Toast.makeText(context,videoList.get(position).video_uri, Toast.LENGTH_LONG).show()
+        playvideo(videoList.get(position).video_uri,true)
 
     }
-
-
 }

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content">
+    <com.github.florent37.expansionpanel.ExpansionHeader
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:background="@color/colorPrimary"
+            android:padding="10dp"
+            app:expansion_headerIndicator="@id/headerIndicator"
+            app:expansion_layout="@id/expansionLayout"
+            app:expansion_toggleOnClick="true">
+
+        <TextView
+                android:id="@+id/dail_price_title"
+                android:text="Header"
+                android:textColor="@color/primary_light"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <ImageView
+                android:adjustViewBounds="true"
+                android:id="@+id/headerIndicator"
+                android:layout_gravity="center_vertical|right"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                app:srcCompat="@drawable/ic_expansion_header_indicator_grey_24dp" />
+
+
+    </com.github.florent37.expansionpanel.ExpansionHeader>
+
+    <com.github.florent37.expansionpanel.ExpansionLayout
+            android:id="@+id/expansionLayout"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+      <androidx.recyclerview.widget.RecyclerView
+              android:id="@+id/daily_pric_row_rcycle"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"></androidx.recyclerview.widget.RecyclerView>
+
+    </com.github.florent37.expansionpanel.ExpansionLayout>
+
+</LinearLayout>

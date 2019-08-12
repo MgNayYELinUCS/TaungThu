@@ -33,7 +33,7 @@ class HomeAdapter (val context: Context,val cropList:List<HomeModel>) : Recycler
                 2 -> context.startActivity(Intent(context, MerchantActivity::class.java))
                 3 -> context.startActivity(Intent(context, KnowledgeActivity::class.java))
                 4 -> context.startActivity(Intent(context, QuestionActivity::class.java))
-                5 -> context.startActivity(Intent(context, LoginActivity::class.java))
+                5 -> context.startActivity(Intent(context, PriceActivity::class.java))
 
 
 

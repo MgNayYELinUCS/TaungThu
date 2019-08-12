@@ -16,10 +16,10 @@ class ContactUsActivity : AppCompatActivity() {
         setTitle("Contact Us")
 
         val infoList = ArrayList<InfoModel>()
-        infoList.add(InfoModel(R.drawable.phoneicon, "web site ကိုလာေရာက္ေလ့လာရန္"))
-        infoList.add(InfoModel(R.mipmap.plant, "facebook စာမ်က္ႏွာသြားရန္"))
+        infoList.add(InfoModel(R.drawable.website_icon, "web site ကိုလာေရာက္ေလ့လာရန္"))
+        infoList.add(InfoModel(R.drawable.facebook, "facebook စာမ်က္ႏွာသြားရန္"))
         infoList.add(InfoModel(R.drawable.phoneicon, "09691626426"))
-        infoList.add(InfoModel(R.mipmap.plant, "monywacu.taungthu@gmail.com"))
+        infoList.add(InfoModel(R.drawable.gmailicon, "monywacu.taungthu@gmail.com"))
 
 
         var mainListRecycler= findViewById<RecyclerView>(R.id.contactus_recycle

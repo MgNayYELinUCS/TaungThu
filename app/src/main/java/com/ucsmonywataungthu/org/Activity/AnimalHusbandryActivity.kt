@@ -26,6 +26,7 @@ class AnimalHusbandryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_animal_husbandry)
+        this.setTitle("Animals")
 
         var mainListRecycler= findViewById<RecyclerView>(R.id.animalhusrecycler)
         mainListRecycler.layoutManager = GridLayoutManager(this,2) as RecyclerView.LayoutManager?

@@ -3,7 +3,7 @@
 <item
         android:id="@+id/nearby_menu"
         android:title="hi"
-        android:icon="@drawable/news"
+        android:icon="@drawable/location"
         app:showAsAction="always"
 />
 </menu>
