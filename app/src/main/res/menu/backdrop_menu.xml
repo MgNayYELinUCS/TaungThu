@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
+   <!-- <item
             android:id="@+id/nav1"
             android:icon="@mipmap/profile"
             android:title="Profile Information"/>
     <item
             android:id="@+id/nav2"
             android:icon="@mipmap/setting"
-            android:title="Setting"/>
+            android:title="Setting"/>-->
     <item
             android:id="@+id/nav3"
             android:icon="@mipmap/contactme"
             android:title="Contace Us"/>
     <item
             android:id="@+id/nav4"
-            android:icon="@drawable/initial"
+            android:icon="@drawable/logoutwhite"
             android:title="LogOut"/>
 
 </menu>

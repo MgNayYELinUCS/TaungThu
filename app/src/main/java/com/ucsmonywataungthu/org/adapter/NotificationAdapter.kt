@@ -26,7 +26,7 @@ class NotificationAdapter (val context: Context, val notificationList:List<Notif
     override fun onBindViewHolder(holder: MyHolder0, position: Int) {
         holder.new_img.setImageResource(R.mipmap.plant)
         holder.txt_news_title.text=notificationList.get(position).notification_title
-        holder.txt_news_des.text=notificationList.get(position).notification_description
+        //holder.txt_news_des.text=notificationList.get(position).notification_description
 
         holder.news_layout.setOnClickListener{
             val intent= Intent(context, NotificationViewActivity::class.java)
@@ -41,8 +41,6 @@ class NotificationAdapter (val context: Context, val notificationList:List<Notif
 
 class MyHolder0(view: View): RecyclerView.ViewHolder(view) {
     val new_img=view.findViewById<ImageView>(R.id.noti_img)
-    val txt_news_time=view.findViewById<TextView>(R.id.txt_noti_time)
     val txt_news_title=view.findViewById<TextView>(R.id.txt_noti_title)
-    val txt_news_des=view.findViewById<TextView>(R.id.txt_noti_description)
     val news_layout=view.findViewById<LinearLayout>(R.id.news_layout)
 }

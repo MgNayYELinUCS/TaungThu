@@ -2,27 +2,22 @@ package com.ucsmonywataungthu.org.Merchant
 
 import android.app.AlertDialog
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.widget.ArrayAdapter
 import kotlinx.android.synthetic.main.activity_trade_center.*
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.Network.APIService
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.adapter.MerchantAdapter
-import com.ucsmonywataungthu.org.model.CropDetailsGetAll
 import com.ucsmonywataungthu.org.model.MerchantModel
 import com.ucsmonywataungthu.org.model.RegionModel
 import com.ucsmonywataungthu.org.model.TownshipModel
-import kotlinx.android.synthetic.main.content_scrolling.*
 import retrofit2.Call
 import retrofit2.Response
 
@@ -60,9 +55,8 @@ class MerchantActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<RegionModel>>, response: Response<List<RegionModel>>) {
                 merchantRegion=response.body()
 
-                val adapter1 = ArrayAdapter(applicationContext, android.R.layout.simple_spinner_dropdown_item, merchantRegion)
-                //val adapter1 = ArrayAdapter(applicationContext, android.R.layout.simple_spinner_item, merchantRegion)
-                //adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                val adapter1 = ArrayAdapter(applicationContext, R.layout.spinner_item_row, merchantRegion)
+                adapter1.setDropDownViewResource(R.layout.spinner_item_row)
                 spinner1.adapter=adapter1
 
                 spinner1.onItemSelectedListener=object :AdapterView.OnItemSelectedListener{
@@ -85,8 +79,8 @@ class MerchantActivity : AppCompatActivity() {
             {
                 merchant_Township=response.body()
 
-                val adapter2 = ArrayAdapter(applicationContext, android.R.layout.simple_spinner_item, merchant_Township)
-                adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+                val adapter2 = ArrayAdapter(applicationContext,R.layout.spinner_item_row, merchant_Township)
+                adapter2.setDropDownViewResource(R.layout.spinner_item_row)
                 spinner2.adapter=adapter2
 
                 spinner2.onItemSelectedListener=object :AdapterView.OnItemSelectedListener{
@@ -120,10 +114,10 @@ class MerchantActivity : AppCompatActivity() {
         tradecneterrecycle.adapter = adapter
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+  /*  override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.nearby_menu, menu)
         return true
-    }
+    }*/
 
     override fun onOptionsItemSelected(item: MenuItem?): Boolean {
         return when(item?.itemId){
@@ -149,7 +143,7 @@ class MerchantActivity : AppCompatActivity() {
         builder.setItems(array){dialog, which ->
             when(which){
                 0->{
-                    startActivity(Intent(applicationContext,MerchantSaleandBuyActivity::class.java))
+                    startActivity(Intent(applicationContext,MerchantDetailActivity::class.java))
                 }
                 1->{
 

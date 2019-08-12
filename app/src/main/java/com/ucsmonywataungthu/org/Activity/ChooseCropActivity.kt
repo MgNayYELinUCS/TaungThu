@@ -29,10 +29,9 @@ class ChooseCropActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_crop)
 
-        val categoryList = ArrayList<HomeModel>()
 
         var mainListRecycler= findViewById<RecyclerView>(R.id.choose_crop_recycle)
-        mainListRecycler.layoutManager = GridLayoutManager(this,3) as RecyclerView.LayoutManager?
+        mainListRecycler.layoutManager = GridLayoutManager(this,3)
 
         getAllCrop()
 

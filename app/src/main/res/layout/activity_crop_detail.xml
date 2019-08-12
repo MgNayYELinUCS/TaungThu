@@ -27,8 +27,7 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/img_crop"
-                    android:layout_marginTop="10dp"
-                    android:layout_margin="?actionBarSize"
+                    android:layout_margin="5dp"
                     android:src="@drawable/argilogo"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"/>

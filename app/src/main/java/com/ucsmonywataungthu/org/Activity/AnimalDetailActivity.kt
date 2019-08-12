@@ -16,6 +16,8 @@ class AnimalDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_animal_detail)
 
         val intent=intent
+
+        this.setTitle(intent.getSerializableExtra("animalname").toString()+" အေၾကာင္း")
         Glide.with(applicationContext).load(APIInitiate.PIC_URL+intent.getSerializableExtra("animalpicture").toString())
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(animal_detail_pic)

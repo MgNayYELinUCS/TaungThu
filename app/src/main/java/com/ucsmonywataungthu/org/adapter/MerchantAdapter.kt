@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import com.ucsmonywataungthu.org.Merchant.MerchantListandPriceActivity
+import com.ucsmonywataungthu.org.Merchant.MerchantDetailActivity
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.MerchantModel
 
@@ -27,14 +27,14 @@ class MerchantAdapter (val context: Context, val merchantList: List<MerchantMode
 
         holder.merchant_image.setImageResource(R.mipmap.img1)
         holder.txt_merchant_name.text = merchantList[position].merchant_name
-        holder.txt_merchant_type.text = merchantList[position].merchant_type.merchant_type_name
+//        holder.txt_merchant_type.text = merchantList[position].merchant_type.merchant_type_name
 
         holder.merchant_cardview.setOnClickListener{
-            val intent=Intent(context, MerchantListandPriceActivity::class.java)
+            val intent=Intent(context, MerchantDetailActivity::class.java)
             intent.putExtra("mid",merchantList[position].id)
             intent.putExtra("mname",merchantList[position].merchant_name)
             intent.putExtra("maddress",merchantList[position].merchant_address)
-            intent.putExtra("mtype",merchantList[position].merchant_type.merchant_type_name)
+            //intent.putExtra("mtype",merchantList[position].merchant_type.merchant_type_name)
             intent.putExtra("mphone",merchantList[position].phone_number)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
             context.startActivity(intent)

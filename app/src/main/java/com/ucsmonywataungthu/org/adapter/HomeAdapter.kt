@@ -8,10 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.ucsmonywataungthu.org.Activity.AnimalHusbandryActivity
-import com.ucsmonywataungthu.org.Activity.ChooseCropActivity
-import com.ucsmonywataungthu.org.Activity.LoginActivity
-import com.ucsmonywataungthu.org.Activity.QuestionActivity
+import com.ucsmonywataungthu.org.Activity.*
 import com.ucsmonywataungthu.org.Merchant.MerchantActivity
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.HomeModel
@@ -36,7 +33,7 @@ class HomeAdapter (val context: Context,val cropList:List<HomeModel>) : Recycler
                 2 -> context.startActivity(Intent(context, MerchantActivity::class.java))
                 3 -> context.startActivity(Intent(context, LoginActivity::class.java))
                 4 -> context.startActivity(Intent(context, QuestionActivity::class.java))
-                5 -> context.startActivity(Intent(context, LoginActivity::class.java))
+                5 -> context.startActivity(Intent(context, PriceActivity::class.java))
 
 
 

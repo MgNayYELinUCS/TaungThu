@@ -7,8 +7,9 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_logo"
@@ -19,10 +20,8 @@
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
 
-
-
         <activity
-                android:name=".Activity.SplashScreenActivity"
+                android:name=".Activity.MainActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:theme="@style/NoActionBar">
             <intent-filter>
@@ -31,7 +30,6 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
         <activity
                 android:name=".Activity.LoginActivity"
                 android:theme="@style/NoActionBar">
@@ -44,16 +42,13 @@
                 android:name=".Activity.VerifyEmailActivity"
                 android:theme="@style/NoActionBar">
         </activity>
-
+        <!--
         <activity
                 android:name=".Activity.MainActivity"
                 android:label="@string/app_name"
                 android:theme="@style/NoActionBar">
         </activity>
-
-
-
-
+        -->
         <activity
                 android:name=".Activity.ChooseCropActivity"
                 android:parentActivityName=".Activity.MainActivity">
@@ -61,15 +56,20 @@
         <activity
                 android:name=".Activity.CropDetailActivity"
                 android:parentActivityName=".Activity.ChooseCropActivity"/>
+
+
+
+        <activity android:name=".Merchant.MerchantDetailActivity"
+                    android:parentActivityName=".Merchant.MerchantActivity"/>
         <activity
                 android:name=".Merchant.MerchantActivity"
                 android:parentActivityName=".Activity.MainActivity"
                 android:theme="@style/NoActionBar"/>
 
+
         <activity android:name=".Activity.QuestionActivity">
         </activity>
-        <activity android:name=".Activity.AnimalHusbandryActivity">
-        </activity>
+
         <activity
                 android:name=".DrawerActivity.ContactUsActivity"
                 android:parentActivityName=".Activity.MainActivity">
@@ -82,23 +82,32 @@
                 android:name=".DrawerActivity.ProfileInformationActivity"
                 android:parentActivityName=".Activity.MainActivity">
         </activity>
+
         <activity
                 android:name=".Activity.AnimalDetailActivity"
                 android:parentActivityName=".Activity.AnimalHusbandryActivity">
         </activity>
+        <activity android:name=".Activity.AnimalHusbandryActivity"
+                  android:parentActivityName=".Activity.MainActivity"
+        >
+        </activity>
+
         <activity
                 android:name=".Activity.NotificationViewActivity"
                 android:parentActivityName=".Activity.NotificationViewActivity"
                 android:theme="@style/NoActionBar">
-
         </activity>
-        <activity android:name=".Activity.NewsDetailActivity"
-        android:theme="@style/NoActionBar"></activity>
+        <activity
+                android:name=".Activity.NewsDetailActivity"
+                android:theme="@style/NoActionBar"/>
         <activity
                 android:name=".Activity.VideoFullViewActivity"
                 android:parentActivityName=".Activity.MainActivity">
         </activity>
+        <activity android:name=".Activity.DailyPriceActivity">
+        </activity>
 
+        <activity android:name=".Activity.PriceActivity"></activity>
     </application>
 
 </manifest>
