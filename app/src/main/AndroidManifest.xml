@@ -58,6 +58,8 @@
                 android:name=".Merchant.MerchantActivity"
                 android:parentActivityName=".Activity.MainActivity"
                 android:theme="@style/NoActionBar"/>
+
+        <activity android:name=".Merchant.MerchantDetailActivity"></activity>
         <activity
                 android:name=".Activity.QuestionActivity"
                 android:theme="@style/NoActionBar">
@@ -92,7 +94,8 @@
         <activity android:name=".Activity.KnowledgeDetailActivity"
                   android:theme="@style/NoActionBar">
         </activity>
-        <activity android:name=".Activity.KnowledgeActivity">
+        <activity android:name=".Activity.KnowledgeActivity"
+        android:theme="@style/NoActionBar">
         </activity>
         <activity
                 android:name=".Activity.VideoFullViewActivity"

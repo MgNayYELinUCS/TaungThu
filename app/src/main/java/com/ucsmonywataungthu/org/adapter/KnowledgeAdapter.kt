@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.view.WindowManager
 import android.widget.ImageButton
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
@@ -64,7 +65,7 @@ class KnowledgeViewModel (view: View): RecyclerView.ViewHolder(view) {
    // var k_desc:TextView=view.findViewById(R.id.knowledge_description)
     var k_time: TextView =view.findViewById(R.id.knowledge_created_time)
     //var k_option:ImageButton=view.findViewById(R.id.knowledge_option)
-    var k_row: ConstraintLayout =view.findViewById(R.id.knowledge_row)
+    var k_row: RelativeLayout =view.findViewById(R.id.knowledge_row)
 
 
 }
