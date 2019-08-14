@@ -13,12 +13,14 @@ class NewsDetailActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news_details)
         setSupportActionBar(news_detail_toolbar)
+
+        supportActionBar?.setDisplayShowTitleEnabled(false)
         news_detail_toolbar.setNavigationOnClickListener { this.onBackPressed() }
 
         val intent=intent
         val title=intent.getSerializableExtra("title").toString()
 
-        news_detail_toolbar.title=title
+        tv_newsdetail_title.text=title
         tv_newsdetail_desc.text=intent.getSerializableExtra("desc").toString()
         tv_time.text=intent.getSerializableExtra("time").toString()
         val img=intent.getSerializableExtra("image").toString()

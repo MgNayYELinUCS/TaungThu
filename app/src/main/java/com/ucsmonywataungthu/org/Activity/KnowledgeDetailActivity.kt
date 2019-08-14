@@ -14,12 +14,12 @@ class KnowledgeDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_knowledge_detail)
         setSupportActionBar(knowledge_detail_toolbar)
+        supportActionBar?.setDisplayShowTitleEnabled(false)
         knowledge_detail_toolbar.setNavigationOnClickListener { this.onBackPressed() }
 
         val intent=intent
         val title=intent.getSerializableExtra("title").toString()
-
-        knowledge_detail_toolbar.title=title
+        tv_knowledge_detail_title.text=title
         tv_knowledge_detail_desc.text=intent.getSerializableExtra("desc").toString()
         tv_knowledge_time.text=intent.getSerializableExtra("time").toString()
         val img=intent.getSerializableExtra("image").toString()

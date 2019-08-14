@@ -19,6 +19,8 @@ class KnowledgeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_knowledge)
+        setSupportActionBar(knowledge_toolbar)
+        knowledge_toolbar.setNavigationOnClickListener { this.onBackPressed() }
         apiService= APIInitiate.client.create((APIService::class.java))
 
         knowledge_recycler.layoutManager=LinearLayoutManager(this)

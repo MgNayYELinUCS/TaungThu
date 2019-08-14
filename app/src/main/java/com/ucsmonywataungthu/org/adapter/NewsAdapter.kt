@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
@@ -52,7 +53,7 @@ class NewViewModel (view: View): RecyclerView.ViewHolder(view) {
 val iv_news_image:ImageView=view.findViewById(R.id.iv_news_image)
     val  tv_news_title:TextView=view.findViewById(R.id.tv_news_title)
     val tv_news_time:TextView=view.findViewById(R.id.tv_news_created_time)
-    val new_row:ConstraintLayout=view.findViewById(R.id.news_row)
+    val new_row:RelativeLayout=view.findViewById(R.id.news_row)
 
 
 }
