@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
             android:allowBackup="true"
@@ -49,20 +50,23 @@
         </activity>
         <activity
                 android:name=".Activity.ChooseCropActivity"
-                android:parentActivityName=".Activity.MainActivity">
+        android:theme="@style/NoActionBar">
         </activity>
         <activity
                 android:name=".Activity.CropDetailActivity"
                 android:parentActivityName=".Activity.ChooseCropActivity"/>
         <activity
                 android:name=".Merchant.MerchantActivity"
-                android:parentActivityName=".Activity.MainActivity"
                 android:theme="@style/NoActionBar"/>
+        <activity android:name=".Merchant.MerchantDetailActivity"
+                  android:theme="@style/NoActionBar"
+        />
         <activity
                 android:name=".Activity.QuestionActivity"
                 android:theme="@style/NoActionBar">
         </activity>
-        <activity android:name=".Activity.AnimalHusbandryActivity">
+        <activity android:name=".Activity.AnimalHusbandryActivity"
+        android:theme="@style/NoActionBar">
         </activity>
         <activity
                 android:name=".DrawerActivity.ContactUsActivity"

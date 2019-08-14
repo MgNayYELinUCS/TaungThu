@@ -21,6 +21,7 @@
                     android:id="@+id/toolbar_trade_center"
                     android:layout_width="match_parent"
                     app:titleTextColor="#fff"
+                    app:navigationIcon="@drawable/ic_back"
                     android:layout_height="?attr/actionBarSize"
                     android:background="?attr/colorPrimary" />
 

@@ -8,8 +8,7 @@ import android.view.View
 import android.widget.AdapterView
 import androidx.recyclerview.widget.GridLayoutManager
 import android.widget.ArrayAdapter
-import kotlinx.android.synthetic.main.activity_trade_center.*
-import android.view.Menu
+import kotlinx.android.synthetic.main.activity_merchant_list.*
 import android.view.MenuItem
 import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.Network.APIService
@@ -32,9 +31,9 @@ class MerchantActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_trade_center)
+        setContentView(R.layout.activity_merchant_list)
         setSupportActionBar(toolbar_trade_center)
-
+        toolbar_trade_center.setNavigationOnClickListener { this.onBackPressed() }
         tradecneterrecycle.layoutManager = GridLayoutManager(applicationContext, 1)
 
         val callMerchant=apiService.getMerchant()

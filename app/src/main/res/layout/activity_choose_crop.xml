@@ -7,6 +7,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Activity.ChooseCropActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_Crop"
+            android:layout_width="match_parent"
+            app:titleTextColor="#fff"
+            app:navigationIcon="@drawable/ic_back"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary" />
+
     <HorizontalScrollView
             android:layout_width="match_parent"
             android:scrollbars="none"

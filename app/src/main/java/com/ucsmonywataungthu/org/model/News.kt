@@ -1,8 +1,8 @@
 package com.ucsmonywataungthu.org.model
 
 data class News(
-    val created_at: Any,
-    val deleted_at: Any,
+    val created_at: Any?,
+    val deleted_at: Any?,
     val id: Int,
     val news_description: String,
     val news_photo: String,

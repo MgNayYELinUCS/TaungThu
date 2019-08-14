@@ -25,12 +25,12 @@ class MediaFragment() : Fragment(), VideoPositionClick {
                               savedInstanceState: Bundle?): View? {
         val view: View =inflater.inflate(com.ucsmonywataungthu.org.R.layout.activity_media_fragment, container, false)
 
-        videoList.add(VideoModel( "ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
-        videoList.add(VideoModel( "ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
-        videoList.add(VideoModel( "ru0K8uYEZWw","ေျမပဲစိုက္နည္း video ေလးတင္ေပးလုိက္ပါတယ္"))
-        videoList.add(VideoModel(  "ZbZSe6N_BXs","ဆန္ video ေလးတင္ေပးလုိက္ပါတယ္"))
-        videoList.add(VideoModel( "ZbZSe6N_BXs","ဆန္ video ေလးတင္ေပးလုိက္ပါတယ္"))
-        videoList.add(VideoModel("ZbZSe6N_BXs","ဆန္ video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel( "kQMD4dfYHkE","ခရမ္းသီး video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel( "kQMD4dfYHkE","ၾကက္သြန္နီ video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel( "bMUjKd9W43g","ဒူးရင္းသီး video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel(  "CFL_adByryg","ဆန္ video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel( "CFL_adByryg","ဆန္ video ေလးတင္ေပးလုိက္ပါတယ္"))
+        videoList.add(VideoModel("CFL_adByryg","ဆန္ video ေလးတင္ေပးလုိက္ပါတယ္"))
 
 
         var mainListRecycler= view.findViewById<RecyclerView>(R.id.video_recycler)
@@ -41,7 +41,7 @@ class MediaFragment() : Fragment(), VideoPositionClick {
 
 
         youtube_video=view.findViewById(com.ucsmonywataungthu.org.R.id.youtube_vv)
-        val videoId="ZbZSe6N_BXs"
+        val videoId="CFL_adByryg"
         playvideo(videoId,false)
 
 

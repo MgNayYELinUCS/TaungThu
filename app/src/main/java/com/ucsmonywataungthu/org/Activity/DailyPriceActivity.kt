@@ -46,19 +46,6 @@ class DailyPriceActivity : AppCompatActivity() {
             this,
             com.ucsmonywataungthu.org.R.array.Animals, R.layout.spinner_item_row
         )
-        adapterregion.setDropDownViewResource(R.layout.spinner_item_row);
-        daily_price_spinner_region.adapter=adapterregion
-        daily_price_spinner_township.adapter=adapterregion
-        val options = applicationContext.getResources().getStringArray(R.array.Animals);
-        daily_price_spinner_region.onItemSelectedListener=object :AdapterView.OnItemSelectedListener{
-            override fun onNothingSelected(parent: AdapterView<*>?) {
 
-            }
-
-            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
-                Toast.makeText(applicationContext, " You select >> "+options[position], Toast.LENGTH_SHORT).show()
-            }
-
-        }
     }
 }
