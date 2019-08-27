@@ -28,22 +28,27 @@ class PriceActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daily_price)
-        this.setTitle("Daily Price")
+        this.setTitle("ေန႕စဥ္ကုန္စည္ေစ်းႏႈနး")
         sectionedRecyclerViewAdapter= SectionedRecyclerViewAdapter()
 
 
         val cropPriceList=ArrayList<CropPriceModel>()
-        cropPriceList.add(CropPriceModel(1,"nay ffffffffffff","1 thin","5000"))
-        cropPriceList.add(CropPriceModel(1,"seccond","1 thin","5000"))
-        cropPriceList.add(CropPriceModel(1,"gggg char","1 thin","5000"))
+        cropPriceList.add(CropPriceModel(1,"ရက္တစ္ရာ","၁တင္း","25000"))
+        cropPriceList.add(CropPriceModel(1,"ေစာရႈပ္","၁တင္း","25000"))
+        cropPriceList.add(CropPriceModel(1,"မေနာ္ဆင္ဆင္","၁တင္း","35000"))
+        cropPriceList.add(CropPriceModel(1,"ဧရာမင္း","၁တင္း","25000"))
+        cropPriceList.add(CropPriceModel(1,"သုခၾကြယ္","၁တင္း","35000"))
+        cropPriceList.add(CropPriceModel(1,"ပုလဲသြယ္","၁တင္း","28000"))
+        cropPriceList.add(CropPriceModel(1,"ေပၚဆန္းေမႊး","၁တင္း","30000"))
+
+        val cropPriceList1=ArrayList<CropPriceModel>()
+        cropPriceList1.add(CropPriceModel(1,"နွံစားေျပာင္း","၁တင္း","25000"))
+        cropPriceList1.add(CropPriceModel(1,"ထြက္တိုးေျပာင္း","၁တင္း","35000"))
 
         Log.i(cropPriceList.size.toString(),"crop sice")
         val dialyPriceList=ArrayList<DailyPriceModel>()
-        dialyPriceList.add(DailyPriceModel(1,"Rice Crops",cropPriceList))
-        dialyPriceList.add(DailyPriceModel(2,"Oil Crops",cropPriceList))
-
-        dialyPriceList.add(DailyPriceModel(3,"Crops",cropPriceList))
-
+        dialyPriceList.add(DailyPriceModel(1,"ဆန္",cropPriceList))
+        dialyPriceList.add(DailyPriceModel(2,"ေျပာင္း",cropPriceList1))
 
 
         for (list in dialyPriceList){

@@ -8,27 +8,7 @@
         android:layout_height="match_parent"
         tools:context=".Activity.DailyPriceActivity">
 
-    <TableLayout
-            android:weightSum="2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <TableRow>
-            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
-                    android:layout_weight="1"
-                    android:id="@+id/daily_price_spinner_region"
-                    android:padding="15dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-            </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
-            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
-                    android:layout_weight="1"
-                    android:id="@+id/daily_price_spinner_township"
-                    android:padding="15dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-            </com.toptoche.searchablespinnerlibrary.SearchableSpinner>
-        </TableRow>
-    </TableLayout>
+
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/daily_price_recycle"
             android:layout_width="match_parent"

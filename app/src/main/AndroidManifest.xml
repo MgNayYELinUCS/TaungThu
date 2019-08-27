@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.CALL_PHONE"/>
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
 
     <application
             android:allowBackup="true"
@@ -19,7 +20,10 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-
+        <activity android:name=".Activity.MerchantRegisterActivity">
+        </activity>
+        <activity android:name=".Activity.DailyPriceActivityNew">
+        </activity>
         <activity
                 android:name=".Activity.SplashScreenActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
@@ -49,22 +53,24 @@
         </activity>
         <activity
                 android:name=".Activity.ChooseCropActivity"
-                android:parentActivityName=".Activity.MainActivity">
+                android:theme="@style/NoActionBar">
         </activity>
         <activity
                 android:name=".Activity.CropDetailActivity"
                 android:parentActivityName=".Activity.ChooseCropActivity"/>
         <activity
                 android:name=".Merchant.MerchantActivity"
-                android:parentActivityName=".Activity.MainActivity"
                 android:theme="@style/NoActionBar"/>
-
-        <activity android:name=".Merchant.MerchantDetailActivity"></activity>
+        <activity
+                android:name=".Merchant.MerchantDetailActivity"
+                android:theme="@style/NoActionBar"/>
         <activity
                 android:name=".Activity.QuestionActivity"
                 android:theme="@style/NoActionBar">
         </activity>
-        <activity android:name=".Activity.AnimalHusbandryActivity">
+        <activity
+                android:name=".Activity.AnimalHusbandryActivity"
+                android:theme="@style/NoActionBar">
         </activity>
         <activity
                 android:name=".DrawerActivity.ContactUsActivity"
@@ -90,12 +96,13 @@
         <activity
                 android:name=".Activity.NewsDetailActivity"
                 android:theme="@style/NoActionBar"/>
-
-        <activity android:name=".Activity.KnowledgeDetailActivity"
-                  android:theme="@style/NoActionBar">
+        <activity
+                android:name=".Activity.KnowledgeDetailActivity"
+                android:theme="@style/NoActionBar">
         </activity>
-        <activity android:name=".Activity.KnowledgeActivity"
-        android:theme="@style/NoActionBar">
+        <activity
+                android:name=".Activity.KnowledgeActivity"
+                android:theme="@style/NoActionBar">
         </activity>
         <activity
                 android:name=".Activity.VideoFullViewActivity"
@@ -105,11 +112,9 @@
                 android:name=".Activity.AskQuestion"
                 android:theme="@style/NoActionBar">
         </activity>
-
-        <activity android:name=".Activity.DailyPriceActivity">
-        </activity>
-
-        <activity android:name=".Activity.PriceActivity"></activity>
+        <activity
+                android:name=".Activity.PriceActivity"
+                android:parentActivityName=".Activity.MainActivity"/>
     </application>
 
 </manifest>

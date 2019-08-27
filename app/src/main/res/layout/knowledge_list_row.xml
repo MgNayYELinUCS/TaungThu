@@ -17,7 +17,7 @@
             android:layout_marginTop="@dimen/_8dp"
             android:layout_marginRight="10dp"
             android:maxLength="60"
-            android:text="Title"
+            android:text="Title "
             android:textColor="@color/primary_text"
             android:layout_toEndOf="@id/knowledge_image"
             android:textSize="16sp"/>

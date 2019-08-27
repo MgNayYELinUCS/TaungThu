@@ -14,6 +14,7 @@ import com.ucsmonywataungthu.org.model.AnimalModel
 import com.ucsmonywataungthu.org.model.CropResult
 import com.ucsmonywataungthu.org.model.CropSubcategory
 import com.ucsmonywataungthu.org.model.HomeModel
+import kotlinx.android.synthetic.main.activity_animal_husbandry.*
 import kotlinx.android.synthetic.main.activity_choose_crop.*
 import retrofit2.Call
 import retrofit2.Response
@@ -26,7 +27,8 @@ class AnimalHusbandryActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_animal_husbandry)
-        this.setTitle("Animals")
+        setSupportActionBar(toolbar_animal)
+        toolbar_animal.setNavigationOnClickListener { this.onBackPressed() }
 
         var mainListRecycler= findViewById<RecyclerView>(R.id.animalhusrecycler)
         mainListRecycler.layoutManager = GridLayoutManager(this,2) as RecyclerView.LayoutManager?

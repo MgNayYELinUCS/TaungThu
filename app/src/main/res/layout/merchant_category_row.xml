@@ -13,7 +13,6 @@
             android:layout_height="wrap_content">
         <LinearLayout
                 android:orientation="vertical"
-                android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
@@ -21,7 +20,7 @@
             <ImageView
                     android:id="@+id/merchant_image"
                     android:src="@mipmap/home"
-                    android:padding="10dp"
+                    android:layout_marginBottom="3dp"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"/>
 

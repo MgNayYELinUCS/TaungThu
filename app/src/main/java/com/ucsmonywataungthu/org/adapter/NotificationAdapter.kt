@@ -24,7 +24,7 @@ class NotificationAdapter (val context: Context, val notificationList:List<Notif
     }
 
     override fun onBindViewHolder(holder: MyHolder0, position: Int) {
-        holder.new_img.setImageResource(R.mipmap.plant)
+        holder.new_img.setImageResource(R.drawable.notification_icon)
         holder.txt_news_title.text=notificationList.get(position).notification_title
         //holder.txt_news_des.text=notificationList.get(position).notification_description
 

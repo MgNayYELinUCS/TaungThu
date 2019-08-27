@@ -29,7 +29,7 @@
             android:foreground="@drawable/image_round"
             android:layout_centerVertical="true"
             android:contentDescription="image_desc"
-            android:src="@drawable/photo_female_1"/>
+            android:src="@mipmap/usericon"/>
 
     <TextView
             android:id="@+id/tv_news_created_time"
