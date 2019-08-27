@@ -7,6 +7,15 @@ import kotlinx.android.synthetic.main.activity_merchant_detail.*
 import kotlinx.android.synthetic.main.content_scrolling_merchant_detail.*
 import android.content.Intent
 import android.net.Uri
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.ucsmonywataungthu.org.adapter.DailyPriceNewAdapter
+import com.ucsmonywataungthu.org.adapter.MerchantPriceAdapter
+import com.ucsmonywataungthu.org.model.CropPriceModel
+import com.ucsmonywataungthu.org.model.DailyPriceModel
+import com.ucsmonywataungthu.org.model.HomeModel
+import kotlinx.android.synthetic.main.activity_daily_price_new.*
+import java.util.ArrayList
 
 class MerchantDetailActivity : AppCompatActivity() {
 
@@ -14,6 +23,14 @@ class MerchantDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_merchant_detail)
+
+
+        val categoryList = ArrayList<CropPriceModel>()
+        categoryList.add(CropPriceModel(1,"HII","HII","1000"))
+
+        merchant_price_recycle.layoutManager = GridLayoutManager(applicationContext,1) as RecyclerView.LayoutManager?
+        var adapter = MerchantPriceAdapter(applicationContext,categoryList)
+        merchant_price_recycle.adapter = adapter
 
         val intent=intent
         setTitle(intent.getSerializableExtra("mname").toString())
@@ -37,6 +54,7 @@ class MerchantDetailActivity : AppCompatActivity() {
             intent.data = Uri.parse("tel:"+phone_no)
             startActivity(intent)
         }
+
 
     }
 }

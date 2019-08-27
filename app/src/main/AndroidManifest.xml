@@ -20,6 +20,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.MerchantRegisterActivity">
+        </activity>
         <activity android:name=".Activity.DailyPriceActivityNew">
         </activity>
         <activity

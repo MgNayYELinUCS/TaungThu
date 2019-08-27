@@ -9,6 +9,10 @@
         android:layout_marginTop="30dp"
         android:layout_height="match_parent"
         tools:context=".Merchant.MerchantDetailActivity">
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         <TableLayout
                 android:background="@drawable/spinner_background"
                 android:layout_margin="5dp"
@@ -73,19 +77,15 @@
             </TableRow>
 
         </TableLayout>
-
-    <TableLayout
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/merchant_price_recycle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <TableRow>
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="dddd"
-            />
-        </TableRow>
+            android:layout_margin="10dp"
+            android:layout_height="match_parent">
 
-    </TableLayout>
+    </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+
 
 
 </androidx.core.widget.NestedScrollView>
