@@ -28,7 +28,7 @@ class ChooseCropActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_crop)
-setSupportActionBar(toolbar_Crop)
+        setSupportActionBar(toolbar_Crop)
         toolbar_Crop.setNavigationOnClickListener { this.onBackPressed() }
 
         var mainListRecycler= findViewById<RecyclerView>(R.id.choose_crop_recycle)

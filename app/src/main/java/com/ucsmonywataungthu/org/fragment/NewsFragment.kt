@@ -36,7 +36,9 @@ class NewsFragment : Fragment(){
             override fun onResponse(call: Call<List<News>>, response: Response<List<News>>) {
 
                 newsList=response.body()
-                newRecycler.adapter= NewsAdapter(context!!,newsList!!)
+                if (!newsList!!.isEmpty()) {
+                    newRecycler.adapter = NewsAdapter(context!!, newsList!!)
+                }
             }
 
 

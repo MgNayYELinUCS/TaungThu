@@ -18,11 +18,11 @@ class KnowledgeDetailActivity : AppCompatActivity() {
         knowledge_detail_toolbar.setNavigationOnClickListener { this.onBackPressed() }
 
         val intent=intent
-        val title=intent.getSerializableExtra("title").toString()
+        val title=intent.getSerializableExtra("title")?.toString()
         tv_knowledge_detail_title.text=title
-        tv_knowledge_detail_desc.text=intent.getSerializableExtra("desc").toString()
-        tv_knowledge_time.text=intent.getSerializableExtra("time").toString()
-        val img=intent.getSerializableExtra("image").toString()
+        tv_knowledge_detail_desc.text=intent.getSerializableExtra("desc")?.toString()
+        tv_knowledge_time.text=intent.getSerializableExtra("time")?.toString()
+        val img=intent.getSerializableExtra("image")?.toString()
 
         Glide.with(this)
             .load(APIInitiate.PIC_URL+img)

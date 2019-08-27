@@ -10,6 +10,7 @@
             android:id="@+id/toolbar_animal"
             android:layout_width="match_parent"
             app:titleTextColor="#fff"
+            app:title="ေမြးျမဴေရး"
             app:navigationIcon="@drawable/ic_back"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary" />

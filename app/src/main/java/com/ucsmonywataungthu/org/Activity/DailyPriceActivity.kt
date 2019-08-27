@@ -20,13 +20,11 @@ import com.ucsmonywataungthu.org.model.CropPriceModel
 
 class DailyPriceActivity : AppCompatActivity() {
     var apiService: APIService = APIInitiate.client.create((APIService::class.java))
-    var daily_price_Region:List<RegionModel>?=null
-    var daily_price_Township:List<TownshipModel>?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daily_price)
-        this.setTitle("Daily Price")
+        this.setTitle("ေန႕စဥ္ကုန္စည္ေစ်းႏႈနး")
 
         val cropPriceList=ArrayList<CropPriceModel>()
         cropPriceList.add(CropPriceModel(1,"nay ffffffffffff","1 thin","5000"))

@@ -33,7 +33,7 @@
                             android:layout_width="@dimen/spacing_xxlarge"
                             android:layout_height="@dimen/spacing_xxlarge"
                             android:foreground="@color/overlay_light_20"
-                            android:src="@drawable/photo_female_1"
+                            android:src="@mipmap/usericon"
                             app:civ_border="false" app:civ_shadow="true"
                             app:civ_shadow_radius="0.0" />
                     <View android:layout_width="@dimen/spacing_large"
@@ -56,9 +56,10 @@
                             <TextView android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                                       android:textColor="@color/grey_40" android:gravity="center_vertical"
                                       android:layout_width="fill_parent" android:layout_height="wrap_content"
-                                      android:text="in " />
+                                      android:text="at  " />
                             <TextView android:textAppearance="@style/TextAppearance.AppCompat.Caption"
                                       android:textStyle="bold"
+                                      android:id="@+id/q_time"
                                       android:textColor="@color/light_blue_400"
                                       android:gravity="center_vertical"
                                       android:layout_width="fill_parent" android:layout_height="wrap_content"
@@ -76,6 +77,7 @@
                           android:lineSpacingExtra="4.0dip" />
                 <ImageView android:layout_width="wrap_content"
                            android:id="@+id/q_image"
+                           android:layout_gravity="center"
                            android:src="@drawable/image_2"
                            android:layout_height="wrap_content"
                            android:scaleType="fitXY" />
@@ -90,7 +92,7 @@
                               android:paddingRight="@dimen/spacing_large"
                               android:layout_width="fill_parent"
                               android:layout_height="@dimen/spacing_xxlarge">
-                    <LinearLayout android:gravity="center_vertical"
+                    <!--<LinearLayout android:gravity="center_vertical"
                                   android:orientation="horizontal"
                                   android:layout_width="wrap_content"
                                   android:layout_height="wrap_content">
@@ -101,7 +103,7 @@
                                    android:layout_marginEnd="@dimen/spacing_middle"
                                    app:srcCompat="@drawable/ic_thumb_up" />
                         <TextView android:textAppearance="@style/TextAppearance.AppCompat.Caption" android:textColor="@color/grey_40" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="12 likes" />
-                    </LinearLayout>
+                    </LinearLayout>-->
                     <View android:layout_width="@dimen/spacing_large" android:layout_height="0.0dip" />
                     <LinearLayout
 
@@ -124,16 +126,9 @@
                                   android:gravity="center_vertical"
                                   android:layout_width="wrap_content"
                                   android:layout_height="wrap_content"
-                                  android:text="4 Comments" />
+                                  android:text="Answers" />
                     </LinearLayout>
-                    <TextView
-                            android:id="@+id/q_time"
-                            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                              android:textColor="@color/grey_40"
-                              android:gravity="end"
-                              android:layout_width="wrap_content"
-                              android:layout_height="wrap_content"
-                              android:text="3h ago" />
+
                 </LinearLayout>
             </LinearLayout>
         </androidx.cardview.widget.CardView>

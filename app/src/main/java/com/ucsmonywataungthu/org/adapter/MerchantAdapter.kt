@@ -25,7 +25,7 @@ class MerchantAdapter (val context: Context, val merchantList: List<MerchantMode
 
     override fun onBindViewHolder(holder: MyHolder3, position: Int) {
 
-        holder.merchant_image.setImageResource(R.drawable.wherehouse)
+        holder.merchant_image.setImageResource(R.mipmap.home)
         holder.txt_merchant_name.text = merchantList[position].merchant_name
         holder.txt_merchant_type.text = merchantList[position].merchant_type.merchant_type_name
 

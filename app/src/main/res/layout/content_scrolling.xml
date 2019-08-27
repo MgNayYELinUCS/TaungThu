@@ -74,7 +74,7 @@
              <TextView
                      android:id="@+id/crop_detail_des"
                      android:layout_width="wrap_content"
-                     android:textSize="20dp"
+                     android:textSize="18sp"
                      android:layout_height="wrap_content"/>
             </androidx.cardview.widget.CardView>
         </com.github.florent37.expansionpanel.ExpansionLayout>
@@ -119,7 +119,7 @@
             <TextView
                     android:id="@+id/crop_detail_store_method"
                     android:layout_width="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="18sp"
                     android:layout_height="wrap_content"/>
             </androidx.cardview.widget.CardView>
         </com.github.florent37.expansionpanel.ExpansionLayout>
@@ -165,7 +165,7 @@
             <TextView
                     android:id="@+id/crop_detail_store_fertilizer"
                     android:layout_width="wrap_content"
-                    android:textSize="20dp"
+                    android:textSize="18sp"
                     android:layout_height="wrap_content"/>
             </androidx.cardview.widget.CardView>
         </com.github.florent37.expansionpanel.ExpansionLayout>

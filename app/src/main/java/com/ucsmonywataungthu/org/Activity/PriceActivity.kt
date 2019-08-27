@@ -28,7 +28,7 @@ class PriceActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daily_price)
-        this.setTitle("Daily Price")
+        this.setTitle("ေန႕စဥ္ကုန္စည္ေစ်းႏႈနး")
         sectionedRecyclerViewAdapter= SectionedRecyclerViewAdapter()
 
 

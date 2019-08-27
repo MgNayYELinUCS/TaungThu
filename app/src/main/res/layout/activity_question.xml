@@ -19,7 +19,7 @@
             android:id="@+id/q_toolbar"
             android:layout_width="match_parent"
             android:background="@color/colorPrimary"
-            app:title="@string/app_name"
+            app:title="အေမးအေျဖက႑"
             app:navigationIcon="@drawable/ic_back"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:layout_height="?attr/actionBarSize">
@@ -73,7 +73,7 @@
                 android:layout_width="match_parent" android:layout_height="?attr/actionBarSize">
         <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/question_user_profile"
-                android:src="@drawable/photo_female_1"
+                android:src="@mipmap/usericon"
                 android:layout_gravity="center_vertical"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
@@ -114,7 +114,8 @@
             android:id="@+id/full_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

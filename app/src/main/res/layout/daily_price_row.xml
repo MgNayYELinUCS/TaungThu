@@ -17,6 +17,7 @@
         <TextView
                 android:id="@+id/dail_price_title"
                 android:text="Header"
+                android:textSize="20dp"
                 android:textColor="@color/primary_light"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>

@@ -13,6 +13,7 @@
             android:id="@+id/toolbar_Crop"
             android:layout_width="match_parent"
             app:titleTextColor="#fff"
+            app:title="စိုက္ပ်ိဳးေရး"
             app:navigationIcon="@drawable/ic_back"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary" />
@@ -72,7 +73,7 @@
                     android:layout_height="wrap_content"
                     app:chipStrokeWidth="1dp"
                     app:chipStrokeColor="@color/colorPrimary"
-                    android:text="စက္မႈသီးႏွံ"
+                    android:text="အျခားသီးႏွံ"
                     style="@style/Widget.MaterialComponents.Chip.Filter"
             />
 

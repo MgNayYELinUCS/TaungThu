@@ -51,7 +51,7 @@ class QuestionAdapter(val context: Context, val qlist: List<QuestionGetAll>) : R
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.user_name.text=qlist.get(position).users.name
+        holder.user_name.text=qlist.get(position).users?.name
         holder.qdetail.text=qlist.get(position).question_description
         holder.qtime.text=qlist.get(position).created_at
 
@@ -64,7 +64,7 @@ class QuestionAdapter(val context: Context, val qlist: List<QuestionGetAll>) : R
             buttonClick.onAnswerClickListener(position)
         }
         holder.qimage.setOnClickListener {
-            imageClick.onImageClickListener(qlist.get(position).question_photo)
+            imageClick.onImageClickListener(qlist.get(position).question_photo!!)
 
         }
     }
