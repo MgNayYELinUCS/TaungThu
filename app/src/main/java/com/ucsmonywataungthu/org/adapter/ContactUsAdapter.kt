@@ -43,7 +43,7 @@ class ContactUsAdapter (val context: Context, val infoList:List<InfoModel>) : Re
                 context.startActivity(intent)
 
             } else if (infoList.get(position).info_title.equals("facebook စာမ်က္ႏွာသြားရန္")) {
-                val url: String = "https://www.google.com"
+                val url: String = "https://www.facebook.com"
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.setData(Uri.parse(url))
                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK

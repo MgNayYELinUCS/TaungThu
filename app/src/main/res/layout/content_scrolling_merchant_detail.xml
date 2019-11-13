@@ -13,21 +13,24 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
         <TableLayout
-                android:background="@drawable/spinner_background"
-                android:layout_margin="5dp"
-                android:padding="5dp"
+                android:padding="10dp"
+                android:background="@color/grey_10"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayout_merchant_detail">
             <TableRow
                     android:weightSum="2">
                 <TextView
                         style="@style/tablelayout_textview"
                         android:textStyle="bold"
+                        android:layout_weight="1"
                         android:text="ပြဲရံု အမည္ "
 
                 />
                 <TextView
+                        android:layout_weight="1"
                         android:id="@+id/txt_merchant_detail_name"
                         style="@style/tablelayout_textview"
                         android:text="thti"
@@ -36,12 +39,16 @@
             <TableRow
                     android:weightSum="2">
                 <TextView
+                        android:layout_weight="1"
+
                         android:textStyle="bold"
                         style="@style/tablelayout_textview"
                         android:text="ပြဲရံု လိပ္စာ "
 
                 />
                 <TextView
+                        android:layout_weight="1"
+
                         android:id="@+id/txt_merchant_main_address"
                         style="@style/tablelayout_textview"
                         android:text="thti"
@@ -50,12 +57,16 @@
             <TableRow
                     android:weightSum="2">
                 <TextView
+                        android:layout_weight="1"
+
                         android:textStyle="bold"
                         style="@style/tablelayout_textview"
                         android:text="ပြဲရံု အမ်ိဳးအစား"
 
                 />
                 <TextView
+                        android:layout_weight="1"
+
                         android:id="@+id/txt_merchant_main_type"
                         style="@style/tablelayout_textview"
                         android:text="thti"
@@ -64,12 +75,17 @@
             <TableRow
                     android:weightSum="2">
                 <TextView
+                        android:layout_weight="1"
+
                         style="@style/tablelayout_textview"
                         android:textStyle="bold"
                         android:text="ပြဲရံု ဖုန္း "
 
                 />
                 <TextView
+                        android:layout_weight="1"
+
+
                         android:id="@+id/txt_merchant_main_phone"
                         style="@style/tablelayout_textview"
                         android:text="thti"
@@ -77,10 +93,49 @@
             </TableRow>
 
         </TableLayout>
+
+
+        <TableLayout
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+            <TableRow android:weightSum="3">
+                <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:textSize="18dp"
+                        android:textColor="@color/white"
+                        android:textAlignment="textStart"
+                        android:layout_weight="1"
+                        android:text="Name"/>
+
+                <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:textSize="18dp"
+                        android:textColor="@color/white"
+
+                        android:textAlignment="textEnd"
+
+                        android:layout_weight="1"
+                        android:text="Unit"/>
+                <TextView
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+
+                        android:layout_width="0dp"
+                        android:textAlignment="textEnd"
+
+                        android:textSize="18dp"
+                        android:layout_weight="1"
+                        android:text="Price"/>
+            </TableRow>
+
+        </TableLayout>
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/merchant_price_recycle"
             android:layout_width="match_parent"
-            android:layout_margin="10dp"
             android:layout_height="match_parent">
 
     </androidx.recyclerview.widget.RecyclerView>

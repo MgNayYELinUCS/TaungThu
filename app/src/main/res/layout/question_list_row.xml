@@ -33,7 +33,7 @@
                             android:layout_width="@dimen/spacing_xxlarge"
                             android:layout_height="@dimen/spacing_xxlarge"
                             android:foreground="@color/overlay_light_20"
-                            android:src="@mipmap/usericon"
+                            android:src="@drawable/usericon"
                             app:civ_border="false" app:civ_shadow="true"
                             app:civ_shadow_radius="0.0" />
                     <View android:layout_width="@dimen/spacing_large"

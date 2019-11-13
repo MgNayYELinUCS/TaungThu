@@ -90,7 +90,7 @@
                 app:expansion_toggleOnClick="true">
 
             <TextView
-                    android:text="သိုလ္ေလာင္နည္း"
+                    android:text="သိုေလွာင္နည္း"
                     android:textColor="@color/primary_light"
                     android:layout_width="wrap_content"
                     android:textSize="20dp"

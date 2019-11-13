@@ -109,7 +109,7 @@ class MerchantActivity : AppCompatActivity() {
     }
 
     fun recyclerDatabind(merchantList:List<MerchantModel>){
-        var adapter = MerchantAdapter(applicationContext, merchantList!!)
+        var adapter = MerchantAdapter(applicationContext, merchantList)
         tradecneterrecycle.adapter = adapter
     }
 
@@ -129,11 +129,12 @@ class MerchantActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (search_trade_center.isSearchOpen()) {
+       /* if (search_trade_center.isSearchOpen()) {
             search_trade_center.closeSearch()
         } else {
             super.onBackPressed()
-        }
+        }*/
+        super.onBackPressed()
     }
     fun showDialog(){
         val array= arrayOf("H","h")

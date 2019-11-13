@@ -67,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
 
 
                         //Toast.makeText(loginActivity,success.success.token.toString(), Toast.LENGTH_SHORT).show()
-                        loginActivity.saveUser(success!!.success.token,success!!.success.id)
+                        loginActivity.saveUser(success!!.success.token,success!!.success.id,success!!.success.role,success.success.name)
 
 
                         loginActivity.finishAffinity()
@@ -120,10 +120,12 @@ class LoginActivity : AppCompatActivity() {
 
         }
     }
-    fun saveUser(token: String, id: Int) {
+    fun saveUser(token: String, id: Int, role: String, name: String) {
         var editor=sharedPreferences.edit()
         editor.putString("token",token)
         editor.putInt("user_id",id)
+        editor.putString("user_name",name)
+        editor.putString("role",role)
         editor.commit()
     }
 }

@@ -149,7 +149,7 @@ class VerifyEmailActivity : AppCompatActivity() {
                         Log.i("Mail", success!!.success.name + "//" + success!!.success.token)
 
                         Toast.makeText(this@VerifyEmailActivity, "Success", Toast.LENGTH_SHORT).show()
-                        saveUser(success!!.success.token,success!!.success.id)
+                        saveUser(success!!.success.token,success!!.success.id,success.success.role,success.success.name)
                         finishAffinity()
 
                         startActivity(Intent(this@VerifyEmailActivity, MainActivity::class.java))
@@ -166,11 +166,12 @@ class VerifyEmailActivity : AppCompatActivity() {
         }
     }
 
-    fun saveUser(token: String, id: Int) {
-        var editor = sharedPreferences.edit()
-        editor.putString("token", token)
+    fun saveUser(token: String, id: Int, role: String, name: String) {
+        var editor=sharedPreferences.edit()
+        editor.putString("token",token)
         editor.putInt("user_id",id)
+        editor.putString("user_name",name)
+        editor.putString("role",role)
         editor.commit()
-
     }
 }

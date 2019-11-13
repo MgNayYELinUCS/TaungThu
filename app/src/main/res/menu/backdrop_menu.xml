@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-   <!-- <item
+    <item
             android:id="@+id/nav1"
+            android:visible="false"
             android:icon="@mipmap/profile"
-            android:title="Profile Information"/>
+            android:title="Merchant Register"/>
     <item
             android:id="@+id/nav2"
-            android:icon="@mipmap/setting"
-            android:title="Setting"/>-->
+            android:visible="false"
+            android:icon="@mipmap/profile"
+            android:title="Merchant Profile"/>
     <item
             android:id="@+id/nav3"
             android:icon="@mipmap/contactme"

@@ -14,10 +14,10 @@ class AnimalDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_animal_detail)
-
+        setSupportActionBar(toolbar_animal_detail)
+        toolbar_animal_detail.setNavigationOnClickListener { onBackPressed() }
         val intent=intent
-
-        this.setTitle(intent.getSerializableExtra("animalname").toString()+" အေၾကာင္း")
+        supportActionBar!!.title=intent.getSerializableExtra("animalname").toString()+" အေၾကာင္း"
         Glide.with(applicationContext).load(APIInitiate.PIC_URL+intent.getSerializableExtra("animalpicture").toString())
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(animal_detail_pic)

@@ -20,6 +20,9 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.MerchantProfileActivity"
+        android:theme="@style/NoActionBar">
+        </activity>
         <activity android:name=".Activity.MerchantRegisterActivity">
         </activity>
         <activity android:name=".Activity.DailyPriceActivityNew">
@@ -86,7 +89,7 @@
         </activity>
         <activity
                 android:name=".Activity.AnimalDetailActivity"
-                android:parentActivityName=".Activity.AnimalHusbandryActivity">
+                android:theme="@style/NoActionBar">
         </activity>
         <activity
                 android:name=".Activity.NotificationViewActivity"

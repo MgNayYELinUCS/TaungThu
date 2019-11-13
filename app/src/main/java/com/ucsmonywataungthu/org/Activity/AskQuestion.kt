@@ -48,6 +48,7 @@ class AskQuestion : AppCompatActivity() {
         setContentView(R.layout.activity_ask_question)
         setSupportActionBar(ask_question_toolbar)
         sharedPreferences=getSharedPreferences("MyPref", Context.MODE_PRIVATE)
+        val name=sharedPreferences.getString("user_name","")
         user_id=sharedPreferences.getInt("user_id",0)
         apiService= APIInitiate.client.create((APIService::class.java))
 

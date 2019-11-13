@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
@@ -15,21 +16,31 @@ import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 import com.ucsmonywataungthu.org.DrawerActivity.ContactUsActivity
 import com.ucsmonywataungthu.org.DrawerActivity.ProfileInformationActivity
-import com.ucsmonywataungthu.org.DrawerActivity.SettingActivity
+import com.ucsmonywataungthu.org.Network.APIInitiate
+import com.ucsmonywataungthu.org.Network.APIService
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.fragment.HomeFargment
 import com.ucsmonywataungthu.org.fragment.MediaFragment
 import com.ucsmonywataungthu.org.fragment.NewsFragment
 import com.ucsmonywataungthu.org.fragment.NofiticationFragment
+import com.ucsmonywataungthu.org.model.Merchant
+import com.ucsmonywataungthu.org.model.MerchantModel
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     lateinit var sharePreferences: SharedPreferences
+    lateinit var apiService: APIService
 
     private lateinit var textMessage: TextView
     var fragment: Fragment? = null
-
+    lateinit var merchantModel:List<MerchantModel>
+    lateinit var nav:NavigationView
+    var user_id:Int = 0
+lateinit var navMenu:Menu
     private val onNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             R.id.navigation_home -> {
@@ -61,10 +72,51 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(toolbar)
         toolbar.setTitle("Taung Thu")
         sharePreferences=getSharedPreferences("MyPref", Context.MODE_PRIVATE)
-
+        val role=sharePreferences.getInt("role",0)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
-        val nav:NavigationView=findViewById(R.id.bd_nav)
+        nav=findViewById(R.id.bd_nav)
         nav.setNavigationItemSelectedListener(this)
+        navMenu=nav.menu
+
+        /*if (role==0){
+            navMenu.findItem(R.id.nav1).setVisible(true)
+            navMenu.findItem(R.id.nav2).setVisible(false)
+        }else if (role==1){
+            navMenu.findItem(R.id.nav1).setVisible(false)
+            navMenu.findItem(R.id.nav2).setVisible(true)
+        }*/
+       user_id=sharePreferences.getInt("user_id",0)
+        apiService= APIInitiate.client.create((APIService::class.java))
+        Log.i("userid",user_id.toString())
+        apiService.getMerchantByUser(user_id).enqueue(object : Callback<Merchant>{
+            override fun onFailure(call: Call<Merchant>, t: Throwable) {
+                Toast.makeText(applicationContext,"error",Toast.LENGTH_SHORT).show()
+                Log.i("error",t.toString())
+
+            }
+
+            override fun onResponse(call: Call<Merchant>, response: Response<Merchant>) {
+
+                if (response.isSuccessful){
+                    if (!response.body()!!.merchant.isEmpty()) {
+                         merchantModel= response.body()!!.merchant
+                        if (merchantModel[0]!!.status==1){
+
+                        }
+
+                        navMenu.findItem(R.id.nav1).setVisible(false)
+                        navMenu.findItem(R.id.nav2).setVisible(true)
+                    }
+                    else{
+
+                        navMenu.findItem(R.id.nav1).setVisible(true)
+                        navMenu.findItem(R.id.nav2).setVisible(false)
+
+                    }
+
+                }
+            }
+        })
         val transition = supportFragmentManager.beginTransaction()
         transition.replace(R.id.frameLayout, HomeFargment()).commit()
         transition.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
@@ -74,12 +126,17 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(menu: MenuItem): Boolean {
         when (menu.itemId) {
-           /* R.id.nav1->{
-                startActivity(Intent(applicationContext,ProfileInformationActivity::class.java))
+            R.id.nav1->{
+                startActivity(Intent(applicationContext,MerchantRegisterActivity::class.java))
             }
             R.id.nav2->{
-                startActivity(Intent(applicationContext,SettingActivity::class.java))
-            }*/
+
+                var intent=Intent(applicationContext,MerchantProfileActivity::class.java)
+                /*intent.putExtra("status",merchantModel[0]!!.status)
+                intent.putExtra("merchant_id",merchantModel[0]!!.id)
+*/
+                startActivity(intent)
+            }
             R.id.nav3->{
                 startActivity(Intent(applicationContext,ContactUsActivity::class.java))
             }

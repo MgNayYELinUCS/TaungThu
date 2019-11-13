@@ -5,9 +5,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/knowledge_row"
-        android:layout_margin="2dp"
-
-        android:background="?selectableItemBackground">
+        android:background="@color/white"
+        android:layout_margin="2dp">
 
     <TextView
             android:id="@+id/knowledge_title"

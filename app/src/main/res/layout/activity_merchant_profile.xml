@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+              android:orientation="vertical"
+            android:layout_height="match_parent">
+    <LinearLayout
+            android:id="@+id/success_state"
+            android:visibility="gone"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_merchant_profile"
+                android:layout_width="match_parent"
+                app:titleTextColor="#fff"
+                app:title="Merchant Profile"
+                app:navigationIcon="@drawable/ic_back"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary" />
+
+   <!--     <ImageView
+                android:src="@mipmap/home"
+                android:layout_gravity="center"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+        android:layout_marginBottom="10dp"/>-->
+
+        <TableLayout
+                android:padding="10dp"
+                android:background="@color/grey_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tableLayout">
+            <TableRow
+                    android:weightSum="2">
+                <TextView
+                        style="@style/tablelayout_textview"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:text="ပြဲရံု အမည္ "
+
+                />
+
+                    <EditText
+                            android:singleLine="true"
+                            android:layout_weight="1"
+                            android:id="@+id/tv_merchant_name"
+                            style="@style/tablelayout_textview"
+                            android:text=""
+                    />
+
+
+
+            </TableRow>
+            <TableRow
+                    android:weightSum="2">
+                <TextView
+                        android:layout_weight="1"
+
+                        android:textStyle="bold"
+                        style="@style/tablelayout_textview"
+                        android:text="ပြဲရံု လိပ္စာ "
+
+                />
+                <EditText
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:id="@+id/tv_merchant_address"
+                        style="@style/tablelayout_textview"
+                        android:text=""
+                />
+            </TableRow>
+            <TableRow
+            android:weightSum="2">
+                <TextView
+                        android:layout_weight="1"
+                />
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                        android:id="@+id/spinner_merchant_city"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow
+                    android:weightSum="2">
+                <TextView
+                        android:layout_weight="1"
+
+                        android:textStyle="bold"
+                        style="@style/tablelayout_textview"
+                        android:text="ပြဲရံု အမ်ိဳးအစား"
+
+                />
+                <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                        android:id="@+id/spinner_merchant_type"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+            </TableRow>
+            <TableRow
+                    android:weightSum="2">
+                <TextView
+                        android:layout_weight="1"
+
+                        style="@style/tablelayout_textview"
+                        android:textStyle="bold"
+                        android:text="ပြဲရံု ဖုန္း "
+
+                />
+                <EditText
+                        android:singleLine="true"
+                        android:layout_weight="1"
+
+
+                        android:id="@+id/tv_merchant_phone"
+                        style="@style/tablelayout_textview"
+                        android:text=""
+                />
+            </TableRow>
+
+        </TableLayout>
+
+
+
+        <LinearLayout
+
+                android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+            <TextView
+                    android:text="Crop Price"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+            />
+            <Button
+                    android:id="@+id/add_item"
+                    android:background="@color/colorAccent"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add Item"/>
+        </LinearLayout>
+        <TableLayout
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:padding="10dp"
+                android:layout_height="wrap_content">
+            <TableRow android:weightSum="3">
+                <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:textSize="18dp"
+                        android:textColor="@color/white"
+                        android:textAlignment="textStart"
+                        android:layout_weight="1"
+                        android:text="Name"/>
+
+                <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:textSize="18dp"
+                        android:textColor="@color/white"
+
+                        android:textAlignment="textEnd"
+
+                        android:layout_weight="1"
+                        android:text="Unit"/>
+                <TextView
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+
+                        android:layout_width="0dp"
+                        android:textAlignment="textEnd"
+
+                        android:textSize="18dp"
+                        android:layout_weight="1"
+                        android:text="Price"/>
+            </TableRow>
+
+        </TableLayout>
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/merchant_profile_recycler"
+                app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+                >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </LinearLayout>
+    <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/wait_state"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorPrimary">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"/>
+    </LinearLayout>
+
+</LinearLayout>

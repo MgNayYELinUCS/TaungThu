@@ -73,7 +73,7 @@
                 android:layout_width="match_parent" android:layout_height="?attr/actionBarSize">
         <com.mikhaellopez.circularimageview.CircularImageView
                 android:id="@+id/question_user_profile"
-                android:src="@mipmap/usericon"
+                android:src="@drawable/usericon"
                 android:layout_gravity="center_vertical"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
