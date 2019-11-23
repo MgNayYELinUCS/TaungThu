@@ -23,9 +23,11 @@
         <activity android:name=".Activity.MerchantProfileActivity"
         android:theme="@style/NoActionBar">
         </activity>
-        <activity android:name=".Activity.MerchantRegisterActivity">
+        <activity android:name=".Activity.MerchantRegisterActivity"
+                android:theme="@style/NoActionBar">
         </activity>
-        <activity android:name=".Activity.DailyPriceActivityNew">
+        <activity android:name=".Activity.DailyPriceActivityNew"
+                android:theme="@style/NoActionBar">
         </activity>
         <activity
                 android:name=".Activity.SplashScreenActivity"

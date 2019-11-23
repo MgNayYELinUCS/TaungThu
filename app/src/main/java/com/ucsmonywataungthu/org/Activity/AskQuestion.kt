@@ -49,6 +49,7 @@ class AskQuestion : AppCompatActivity() {
         setSupportActionBar(ask_question_toolbar)
         sharedPreferences=getSharedPreferences("MyPref", Context.MODE_PRIVATE)
         val name=sharedPreferences.getString("user_name","")
+        ask_question_username.text=name
         user_id=sharedPreferences.getInt("user_id",0)
         apiService= APIInitiate.client.create((APIService::class.java))
 
@@ -61,9 +62,10 @@ class AskQuestion : AppCompatActivity() {
             inputMethodManager.showSoftInput(ask_question_detail,InputMethodManager.SHOW_IMPLICIT)
         }
         ask_question_pickImage.setOnClickListener {
-            askRequiredPermissions()
             if (arePermissionGranted()){
                 pickImage()
+            }else{
+                askRequiredPermissions()
             }
 
         }
@@ -74,7 +76,6 @@ class AskQuestion : AppCompatActivity() {
 
     fun pickImage() {
         val selectImageIntent= Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
-
         selectImageIntent.type="image/*"
         val  mimeTypes = arrayOf("image/jpeg","image/png")
         selectImageIntent.putExtra(Intent.EXTRA_MIME_TYPES,mimeTypes)
@@ -86,7 +87,6 @@ class AskQuestion : AppCompatActivity() {
             RC_PERMISSIONS -> {
                 if (grantResults.isEmpty() || grantResults[0] != PackageManager.PERMISSION_GRANTED && grantResults[1] != PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(this,"Permission Denied", Toast.LENGTH_SHORT).show()
-                    askRequiredPermissions()
                 }
                 else{
                     Toast.makeText(this,"Permission Granted",Toast.LENGTH_SHORT).show()
@@ -203,22 +203,14 @@ class AskQuestion : AppCompatActivity() {
     }
 
     private fun askRequiredPermissions() {
-        if (!arePermissionGranted()) {
             ActivityCompat.requestPermissions(this,PERMISSIONS_REQUIRED,RC_PERMISSIONS)
-        }
+
     }
 
     private fun arePermissionGranted(): Boolean {
-        if (ContextCompat.checkSelfPermission(
-                this,
-
-                Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED &&
-
-            ContextCompat.checkSelfPermission(
-                this,
-
+        if (ContextCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE)
+            != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ){
-
             return false
 
         }

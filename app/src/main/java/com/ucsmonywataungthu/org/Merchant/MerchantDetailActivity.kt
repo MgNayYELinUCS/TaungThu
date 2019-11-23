@@ -30,6 +30,7 @@ class MerchantDetailActivity : AppCompatActivity(){
         setContentView(R.layout.activity_merchant_detail)
         apiService= APIInitiate.client.create((APIService::class.java))
 
+        toolbar.setNavigationOnClickListener { onBackPressed() }
         val categoryList = ArrayList<CropPriceModel>()
         categoryList.add(CropPriceModel(1,"HII","HII","1000"))
 

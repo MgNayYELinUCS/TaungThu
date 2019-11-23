@@ -32,6 +32,8 @@ import retrofit2.Response
 
 
 class QuestionActivity : AppCompatActivity() ,AnswerButtonClick,ImageClick{
+
+
     override fun onImageClickListener(img_url: String) {
         /*Glide.with(this)
             .load(APIInitiate.PIC_URL+img_url)
@@ -44,17 +46,7 @@ class QuestionActivity : AppCompatActivity() ,AnswerButtonClick,ImageClick{
         super.onResume()
         readQuestion()
     }
-/*
-    override fun onStart() {
-        super.onStart()
 
-        readQuestion()
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        readQuestion()
-    }*/
     lateinit var alert:AlertDialog
     lateinit var apiService: APIService
     lateinit var question_adapter:QuestionAdapter
@@ -83,7 +75,8 @@ class QuestionActivity : AppCompatActivity() ,AnswerButtonClick,ImageClick{
             }
             else{
                  val comment:String=commentEdit.text.toString()
-                apiService.setAnswer(comment,user_id,position+1).enqueue(object :Callback<SuccessUpload>{
+                apiService.setAnswer(comment,user_id,position).enqueue(object :Callback<SuccessUpload>{
+
                     override fun onFailure(call: Call<SuccessUpload>, t: Throwable) {
                         Toast.makeText(this@QuestionActivity,"Connection Fail,Try again", Toast.LENGTH_LONG).show()
 
@@ -113,7 +106,7 @@ class QuestionActivity : AppCompatActivity() ,AnswerButtonClick,ImageClick{
     }
 
     private fun getAnswer(position: Int) {
-        val call=apiService.getAnswer(position+1).enqueue(object :Callback<Answer>{
+        val call=apiService.getAnswer(position).enqueue(object :Callback<Answer>{
             override fun onFailure(call: Call<Answer>, t: Throwable) {
                 Toast.makeText(this@QuestionActivity,"Connection Fail,", Toast.LENGTH_LONG).show()
 
@@ -150,49 +143,6 @@ class QuestionActivity : AppCompatActivity() ,AnswerButtonClick,ImageClick{
         user_id=sharedPreferences.getInt("user_id",0)
         apiService= APIInitiate.client.create((APIService::class.java))
 
-        /*val gesture=GestureDetectorCompat(this,object :GestureDetector.OnGestureListener{
-            override fun onShowPress(e: MotionEvent?) {
-                if (alert!=null){
-                    alert.dismiss()
-
-                }            }
-
-            override fun onSingleTapUp(e: MotionEvent?): Boolean {
-                if (alert!=null){
-                    alert.dismiss()
-
-                }            }
-
-            override fun onLongPress(e: MotionEvent?) {
-                if (alert!=null){
-                    alert.dismiss()
-
-                }            }
-
-            override fun onDown(e: MotionEvent?): Boolean {
-
-                if (alert!=null){
-                    alert.dismiss()
-
-                }
-                return  true
-            }
-
-            override fun onFling(e1: MotionEvent?, e2: MotionEvent?, velocityX: Float, velocityY: Float): Boolean {
-                if (alert!=null){
-                    alert.dismiss()
-
-                }
-                return  true            }
-
-            override fun onScroll(e1: MotionEvent?, e2: MotionEvent?, distanceX: Float, distanceY: Float): Boolean {
-                if (alert!=null){
-                    alert.dismiss()
-
-                }
-                return  true            }
-
-        })*/
         ask_Edit.setOnClickListener {
 
             startActivity(Intent(this,AskQuestion::class.java))

@@ -43,6 +43,8 @@ class MerchantRegisterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_merchant_register)
+        setSupportActionBar(toolbar_merchant_register)
+        toolbar_merchant_register.setNavigationOnClickListener { onBackPressed() }
         sharePreferences=getSharedPreferences("MyPref", Context.MODE_PRIVATE)
         apiService= APIInitiate.client.create((APIService::class.java))
         user_id=sharePreferences.getInt("user_id",0)
@@ -61,23 +63,42 @@ class MerchantRegisterActivity : AppCompatActivity() {
             city_id=merchant_Township!!.get(spinner_merchant_register_city.selectedItemPosition).id
             // city_id=spinner_merchant_register_city.selectedItemPosition+1
             phone=txt_merchant_register_phoneno.text.toString()
-            apiService.merchantRegister(name,type_id,address,phone,city_id,lat,long,user_id).enqueue(object :Callback<SuccessUpload>{
-                override fun onFailure(call: Call<SuccessUpload>, t: Throwable) {
+            if (address.equals("")){
+                txt_merchant_register_address.setError(
+                    "Enter merchant address"
+                )
+            }else if (name.equals("")){
+                txt_merchant_register_name.setError("Enter merchant name")
+            }
+            else if (phone.equals("")){
+                txt_merchant_register_phoneno.setError("Enter merchant phone number")
+            }
+            else
+            {
 
-                }
+                apiService.merchantRegister(name,type_id,address,phone,city_id,lat,long,user_id).enqueue(object :Callback<SuccessUpload>{
+                    override fun onFailure(call: Call<SuccessUpload>, t: Throwable) {
 
-                override fun onResponse(call: Call<SuccessUpload>, response: Response<SuccessUpload>) {
-
-                    if (response.isSuccessful){
-
-                        Toast.makeText(applicationContext,response.body()!!.message,Toast.LENGTH_SHORT).show()
-
-                        startActivity(Intent(this@MerchantRegisterActivity,MerchantProfileActivity::class.java))
-                        finish()
                     }
 
-                }
-            })
+                    override fun onResponse(call: Call<SuccessUpload>, response: Response<SuccessUpload>) {
+
+                        if (response.isSuccessful){
+
+                            Toast.makeText(applicationContext,response.body()!!.message,Toast.LENGTH_SHORT).show()
+
+                            startActivity(Intent(this@MerchantRegisterActivity,MerchantProfileActivity::class.java))
+                            finish()
+                        }
+
+                    }
+                })
+
+            }
+
+
+
+
 
 
         }

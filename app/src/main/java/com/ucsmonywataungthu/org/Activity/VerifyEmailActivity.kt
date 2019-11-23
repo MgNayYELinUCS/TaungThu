@@ -133,12 +133,10 @@ class VerifyEmailActivity : AppCompatActivity() {
             var apiService: APIService = APIInitiate.client.create((APIService::class.java))
             Log.i("email:password", email + password)
 
-            val call = apiService.register(name!!, email!!, password!!, confirm_password!!)
+            val call = apiService.register(name, email, password, confirm_password)
             call.enqueue(object : Callback<RequestSuccess> {
                 override fun onFailure(call: Call<RequestSuccess>, t: Throwable) {
-
                     Toast.makeText(this@VerifyEmailActivity, "no data", Toast.LENGTH_LONG).show()
-
                 }
 
                 override fun onResponse(call: Call<RequestSuccess>, response: Response<RequestSuccess>) {
@@ -146,14 +144,17 @@ class VerifyEmailActivity : AppCompatActivity() {
 
                     if (response.isSuccessful) {
                         val success = response.body()!!
-                        Log.i("Mail", success!!.success.name + "//" + success!!.success.token)
+                        Log.i("Mail", success.success.name + "//" + success.success.token)
 
                         Toast.makeText(this@VerifyEmailActivity, "Success", Toast.LENGTH_SHORT).show()
-                        saveUser(success!!.success.token,success!!.success.id,success.success.role,success.success.name)
+                        saveUser(success.success.token,success.success.id,success.success.role,success.success.name)
                         finishAffinity()
 
                         startActivity(Intent(this@VerifyEmailActivity, MainActivity::class.java))
                         finish()
+                    }
+                    else{
+                        Log.i("Response is not success",response.body().toString())
 
 
                     }
@@ -174,4 +175,5 @@ class VerifyEmailActivity : AppCompatActivity() {
         editor.putString("role",role)
         editor.commit()
     }
+
 }

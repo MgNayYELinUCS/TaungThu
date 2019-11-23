@@ -67,7 +67,7 @@ class LoginActivity : AppCompatActivity() {
 
 
                         //Toast.makeText(loginActivity,success.success.token.toString(), Toast.LENGTH_SHORT).show()
-                        loginActivity.saveUser(success!!.success.token,success!!.success.id,success!!.success.role,success.success.name)
+                        loginActivity.saveUser(success.success.token,success.success.id,success.success.role,success.success.name)
 
 
                         loginActivity.finishAffinity()

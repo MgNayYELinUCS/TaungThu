@@ -61,7 +61,7 @@ class QuestionAdapter(val context: Context, val qlist: List<QuestionGetAll>) : R
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(holder.qimage)
         holder.qans.setOnClickListener {
-            buttonClick.onAnswerClickListener(position)
+            buttonClick.onAnswerClickListener(qlist.get(position).id!!)
         }
         holder.qimage.setOnClickListener {
             imageClick.onImageClickListener(qlist.get(position).question_photo!!)

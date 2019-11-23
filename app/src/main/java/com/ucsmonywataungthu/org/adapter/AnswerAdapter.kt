@@ -1,10 +1,12 @@
 package com.ucsmonywataungthu.org.adapter
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ucsmonywataungthu.org.R
@@ -24,6 +26,13 @@ class AnswerAdapter(val context: Context, val ansList: List<AnswerGetOneQuestion
     override fun onBindViewHolder(holder: AnsViewHolder, position: Int) {
         holder.a_username.text=ansList[position].users.name
         holder.a_diss.text=ansList[position].answer_description
+        if (ansList[position].users.role=="expert"){
+            Log.i("**This is expert",position.toString()+ansList[position].answer_description)
+            holder.star.setImageResource(R.drawable.star_fill)
+        }
+        else{
+            Log.i("**This is not expert",position.toString()+ansList[position].answer_description)
+        }
     }
 
 }
@@ -31,6 +40,8 @@ class AnswerAdapter(val context: Context, val ansList: List<AnswerGetOneQuestion
 class AnsViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
     var a_username:TextView=view.findViewById(R.id.ans_user_name)
     var a_diss:TextView=view.findViewById(R.id.ans_diss)
+
+    var star:ImageView=view.findViewById(R.id.star)
 
 }
 

@@ -16,7 +16,10 @@ interface APIService  {
 
     @POST("register")
     @FormUrlEncoded
-    fun  register(@Field("name")name:String,@Field("email")email:String, @Field("password")password:String,@Field("confirm_password")confirm_password:String):Call<RequestSuccess>
+    fun  register(@Field("name")name:String,
+                  @Field("email")email:String,
+                  @Field("password")password:String,
+                  @Field("confirm_password")confirm_password:String):Call<RequestSuccess>
 
 
     @POST("sendmail")
@@ -177,7 +180,12 @@ interface APIService  {
     @GET("news")
     fun getNews():Call <List<News>>
 
+    @GET("dailyPricePhoto")
+    fun getDailyPrice():Call <List<DailyPricePhoto>>
 
+    @POST("dailyPricePhoto/{daily_price_date}")
+    @FormUrlEncoded
+    fun getDailyPhotoByDate(@Path("daily_price_date")daily_price_date:String):Call <List<DailyPricePhoto>>
 
 
 }

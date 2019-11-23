@@ -1,6 +1,7 @@
 package com.ucsmonywataungthu.org.Activity
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -306,4 +307,9 @@ class MerchantProfileActivity : AppCompatActivity(),CropPriceClickListener {
     }
 
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this@MerchantProfileActivity,MainActivity::class.java))
+        finishAffinity()
+    }
 }

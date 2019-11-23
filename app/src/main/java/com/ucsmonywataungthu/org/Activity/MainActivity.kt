@@ -72,7 +72,7 @@ lateinit var navMenu:Menu
         setSupportActionBar(toolbar)
         toolbar.setTitle("Taung Thu")
         sharePreferences=getSharedPreferences("MyPref", Context.MODE_PRIVATE)
-        val role=sharePreferences.getInt("role",0)
+        val role=sharePreferences.getString("role","")
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
         nav=findViewById(R.id.bd_nav)
         nav.setNavigationItemSelectedListener(this)
