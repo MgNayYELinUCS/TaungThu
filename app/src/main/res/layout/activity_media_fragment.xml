@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<LinearLayout
+        android:weightSum="4"
+        android:orientation="vertical"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="3dp"
         tools:context=".fragment.MediaFragment">
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Media Fragment"
-    />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.pierfrancescosoffritti.youtubeplayer.player.YouTubePlayerView
+            android:id="@+id/youtube_vv"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:layout_height="wrap_content"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/video_recycler"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:layout_margin="10dp"
+            android:dividerHeight="1dp"
+            android:clipToPadding="false"
+            android:clickable="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:divider="@color/colorPrimary"
+            android:nestedScrollingEnabled="true"
+            android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

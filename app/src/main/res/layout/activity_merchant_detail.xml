@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".Merchant.MerchantDetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
+            android:layout_height="180dp"
+            android:background="?actionBarItemBackground"
+            android:layout_width="match_parent"
+            android:theme="@style/AppTheme.AppBarOverlay">
+        <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_width="match_parent"
+                app:title="ပြဲရံု"
+                app:titleTextColor="@color/colorPrimary"
+                app:navigationIcon="@drawable/ic_close"
+                app:popupTheme="@style/AppTheme.PopupOverlay"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/news_detail_img"
+                    android:layout_width="100dp"
+                    android:src="@mipmap/home"
+                    android:layout_gravity="center"
+                    android:layout_height="100dp"/>
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_scrolling_merchant_detail"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_contact"
+            android:layout_width="wrap_content"
+            app:layout_anchor="@id/app_bar"
+            android:src="@drawable/phonecall"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            app:layout_anchorGravity="bottom|end"
+            android:layout_height="wrap_content"/>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@id/app_bar"
+            android:layout_marginRight="100dp"
+            app:layout_anchorGravity="bottom|end"
+            app:srcCompat="@drawable/message"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

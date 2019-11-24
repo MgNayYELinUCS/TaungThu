@@ -2,33 +2,124 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.ucsmonywataungthu.org">
 
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@mipmap/ic_logo"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
+            android:networkSecurityConfig="@xml/network_security_config"
+            android:roundIcon="@mipmap/ic_logo_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
-        <activity android:name=".ChooseCropActivity"
-                  android:parentActivityName=".MainActivity"
-                  android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-        >
+            android:theme="@style/AppTheme"
+            android:usesCleartextTraffic="true">
+        <activity android:name=".Activity.MerchantProfileActivity"
+        android:theme="@style/NoActionBar">
+        </activity>
+        <activity android:name=".Activity.MerchantRegisterActivity"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity android:name=".Activity.DailyPriceActivityNew"
+                android:theme="@style/NoActionBar">
         </activity>
         <activity
-                android:name=".CropDetailActivity"
-                android:parentActivityName=".MainActivity"
-                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        </activity>
-        <activity
-                android:name=".MainActivity"
-                android:label="@string/app_name"
-                android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+                android:name=".Activity.SplashScreenActivity"
+                android:configChanges="orientation|keyboardHidden|screenSize"
+                android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity
+                android:name=".Activity.LoginActivity"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activity.RegisterActivity"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activity.VerifyEmailActivity"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activity.MainActivity"
+                android:label="@string/app_name"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activity.ChooseCropActivity"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activity.CropDetailActivity"
+                android:parentActivityName=".Activity.ChooseCropActivity"/>
+        <activity
+                android:name=".Merchant.MerchantActivity"
+                android:theme="@style/NoActionBar"/>
+        <activity
+                android:name=".Merchant.MerchantDetailActivity"
+                android:theme="@style/NoActionBar"/>
+        <activity
+                android:name=".Activity.QuestionActivity"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activity.AnimalHusbandryActivity"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+                android:name=".DrawerActivity.ContactUsActivity"
+                android:parentActivityName=".Activity.MainActivity">
+        </activity>
+        <activity
+                android:name=".DrawerActivity.SettingActivity"
+                android:parentActivityName=".Activity.MainActivity">
+        </activity>
+        <activity
+                android:name=".DrawerActivity.ProfileInformationActivity"
+                android:parentActivityName=".Activity.MainActivity">
+        </activity>
+        <activity
+                android:name=".Activity.AnimalDetailActivity"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activity.NotificationViewActivity"
+                android:parentActivityName=".Activity.NotificationViewActivity"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activity.NewsDetailActivity"
+                android:theme="@style/NoActionBar"/>
+        <activity
+                android:name=".Activity.KnowledgeDetailActivity"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activity.KnowledgeActivity"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activity.VideoFullViewActivity"
+                android:parentActivityName=".Activity.MainActivity">
+        </activity>
+        <activity
+                android:name=".Activity.AskQuestion"
+                android:theme="@style/NoActionBar">
+        </activity>
+        <activity
+                android:name=".Activity.PriceActivity"
+                android:parentActivityName=".Activity.MainActivity"/>
     </application>
 
 </manifest>

@@ -1,51 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:orientation="vertical"
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true"
-        tools:context=".CropDetailActivity">
+        tools:context=".Activity.CropDetailActivity">
 
     <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar"
             android:fitsSystemWindows="true"
-            android:layout_height="180dp"
+            android:layout_height="280dp"
             android:layout_width="match_parent" >
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/toolbar_layout"
                 android:fitsSystemWindows="true"
+                android:background="#fff"
                 android:layout_width="match_parent"
                 android:layout_height="280dp"
-                android:background="@drawable/argilogo"
                 app:toolbarId="@+id/toolbar"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 app:contentScrim="?attr/colorPrimary">
 
-            <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_height="?attr/actionBarSize"
+            <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_crop"
+                    android:layout_margin="5dp"
+                    android:src="@drawable/argilogo"
                     android:layout_width="match_parent"
-                    android:background="@color/colorPrimary"
-                    app:layout_collapseMode="pin"
-            >
-            </androidx.appcompat.widget.Toolbar>
+                    android:layout_height="150dp"/>
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
     <include layout="@layout/content_scrolling"/>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="#ff8800"
-            app:layout_anchor="@id/app_bar"
-            app:layout_anchorGravity="bottom|end"
-            app:srcCompat="@android:drawable/ic_dialog_email"/>
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

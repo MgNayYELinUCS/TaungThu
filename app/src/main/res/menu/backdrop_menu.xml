@@ -2,19 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
             android:id="@+id/nav1"
-            android:icon="@drawable/initial"
-            android:title="Profile Information"/>
+            android:visible="false"
+            android:icon="@mipmap/profile"
+            android:title="Merchant Register"/>
     <item
             android:id="@+id/nav2"
-            android:icon="@drawable/initial"
-            android:title="Setting"/>
+            android:visible="false"
+            android:icon="@mipmap/profile"
+            android:title="Merchant Profile"/>
     <item
             android:id="@+id/nav3"
-            android:icon="@drawable/initial"
+            android:icon="@mipmap/contactme"
             android:title="Contace Us"/>
     <item
             android:id="@+id/nav4"
-            android:icon="@drawable/initial"
+            android:icon="@drawable/logoutwhite"
             android:title="LogOut"/>
 
 </menu>

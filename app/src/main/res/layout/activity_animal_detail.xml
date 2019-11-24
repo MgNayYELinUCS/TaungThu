@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        tools:context=".Activity.AnimalDetailActivity" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_animal_detail"
+            android:layout_width="match_parent"
+            app:titleTextColor="#fff"
+            app:navigationIcon="@drawable/ic_back"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary" />
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ImageView
+                    android:id="@+id/animal_detail_pic"
+                    android:layout_width="match_parent"
+                    android:layout_margin="5dp"
+                    android:layout_height="200dp"/>
+
+
+            <TextView
+            android:id="@+id/animal_detail_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cown"
+            android:padding="3dp"
+            android:background="@color/colorPrimaryDark"
+            android:gravity="center_horizontal"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
+            <TextView
+            android:id="@+id/animal_detail_des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.6"
+            android:textColor="@color/grey_60"
+
+            android:lineSpacingMultiplier="1.3"
+            android:textSize="18sp"
+            android:layout_margin="5dp"
+            android:text="They are cowns." />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+                android:id="@+id/q_user_profile"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:foreground="@color/overlay_light_20"
+                android:src="@drawable/usericon"
+                app:civ_border="false"
+                app:civ_shadow="true"
+                app:civ_shadow_radius="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintStart_toEndOf="@+id/q_user_profile"
+            tools:ignore="MissingConstraints">
+
+        <TextView
+                android:id="@+id/ans_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="name"
+                android:textSize="@dimen/spacing_large"
+                android:textStyle="bold" />
+
+        <TextView
+                android:id="@+id/ans_diss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="discussion" />
+    </LinearLayout>
+
+    <ImageView
+            android:id="@+id/star"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:foreground="@color/overlay_light_20"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>

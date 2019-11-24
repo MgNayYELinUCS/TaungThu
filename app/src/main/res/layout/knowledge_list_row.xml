@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/knowledge_row"
+        android:background="@color/white"
+        android:layout_margin="2dp">
+
+    <TextView
+            android:id="@+id/knowledge_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:layout_marginRight="10dp"
+            android:maxLength="60"
+            android:text="Title "
+            android:textColor="@color/primary_text"
+            android:layout_toEndOf="@id/knowledge_image"
+            android:textSize="16sp"/>
+    <TextView
+            android:id="@+id/knowledge_created_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="@dimen/_8dp"
+            android:layout_toEndOf="@id/knowledge_image"
+            android:layout_above="@id/view"
+            android:text="8am 5.5.5"
+            android:textColor="@color/secondary_text"
+            android:textSize="14sp"/>
+
+    <ImageView
+            android:id="@+id/knowledge_image"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:foreground="@drawable/image_round"
+            android:layout_centerVertical="true"
+            android:contentDescription="image_desc"
+            android:src="@drawable/photo_female_1" />
+
+
+
+    <View
+            android:id="@+id/view"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="match_parent" android:layout_height="0.7dp"
+            android:layout_below="@id/knowledge_image"
+            android:background="@color/grey_40"
+    ></View>
+</RelativeLayout>
