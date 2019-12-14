@@ -236,28 +236,52 @@ class MerchantProfileActivity : AppCompatActivity(),CropPriceClickListener {
         unit.setText(cropPriceList.get(position).crop_unit)
         btnCancel.setOnClickListener { dialog.cancel() }
         btnSave.setOnClickListener {
-            apiService.updateMerchantPrice(cropPriceList.get(position).id,name.text.trim().toString(),unit.text.toString().trim(),price.text.toString().trim())
-                .enqueue(object :Callback<SuccessUpload>{
-                    override fun onFailure(call: Call<SuccessUpload>, t: Throwable) {
-                        Toast.makeText(applicationContext,"error",Toast.LENGTH_SHORT).show()
+            if (name.text.equals(""))
+                name.setError("Enter Crop Name")
+            else if(unit.text.equals(""))
+                unit.setError("Enter Crop Unit")
+            else if(price.text.equals(""))
+                price.setError("Enter Crop Price")
+            else {
 
-                    }
 
-                    override fun onResponse(call: Call<SuccessUpload>, response: Response<SuccessUpload>) {
-                        if (response.isSuccessful){
-                            Toast.makeText(applicationContext, response.body()!!.message,Toast.LENGTH_SHORT).show()
-                            bindPrice(merchantId)
-                            dialog.dismiss()
-
-                        }else
-                        {
-                            Toast.makeText(applicationContext,"not successful",Toast.LENGTH_SHORT).show()
-
+                apiService.updateMerchantPrice(
+                    cropPriceList.get(position).id,
+                    name.text.trim().toString(),
+                    unit.text.toString().trim(),
+                    price.text.toString().trim()
+                )
+                    .enqueue(object : Callback<SuccessUpload> {
+                        override fun onFailure(call: Call<SuccessUpload>, t: Throwable) {
+                            Toast.makeText(applicationContext, "error", Toast.LENGTH_SHORT).show()
 
                         }
-                    }
-                })
 
+                        override fun onResponse(
+                            call: Call<SuccessUpload>,
+                            response: Response<SuccessUpload>
+                        ) {
+                            if (response.isSuccessful) {
+                                Toast.makeText(
+                                    applicationContext,
+                                    response.body()!!.message,
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                                bindPrice(merchantId)
+                                dialog.dismiss()
+
+                            } else {
+                                Toast.makeText(
+                                    applicationContext,
+                                    "not successful",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+
+
+                            }
+                        }
+                    })
+            }
 
         }
         dialog.setView(view)
@@ -283,7 +307,7 @@ class MerchantProfileActivity : AppCompatActivity(),CropPriceClickListener {
             tv_merchant_phone.setError("Enter phone")
         }
         else{
-            Toast.makeText(applicationContext,merchantId.toString()+""+name+""+type_id+""+address+""+phone+""+city_id,Toast.LENGTH_LONG).show()
+            //Toast.makeText(applicationContext,merchantId.toString()+""+name+""+type_id+""+address+""+phone+""+city_id,Toast.LENGTH_LONG).show()
 
             apiService.updateMerchantProfile(merchantId,name,type_id,address,phone,city_id)
                 .enqueue(object:Callback<SuccessUpload>{
