@@ -18,12 +18,12 @@ class HomeFargment : Fragment(){
         val view: View =inflater.inflate(R.layout.activity_home_fargment, container, false)
 
         val categoryList = ArrayList<HomeModel>()
-        categoryList.add(HomeModel(R.mipmap.plant, "စိုက္ပ်ိဴးေရး"))
-        categoryList.add(HomeModel(R.mipmap.cow, "ေမြးျမဴေရး"))
-        categoryList.add(HomeModel(R.mipmap.home, "ပြဲရံု"))
-        categoryList.add(HomeModel(R.mipmap.knowledge, "အေထြေထြဗဟုတုတ"))
-        categoryList.add(HomeModel(R.mipmap.question, "အေမးအေျဖ က႑"))
-        categoryList.add(HomeModel(R.mipmap.price, "ေန႕စဥ္ကုန္စည္ေစ်း"))
+        categoryList.add(HomeModel(R.mipmap.plant, "စိုက်ပျိုးရေး "))
+        categoryList.add(HomeModel(R.mipmap.cow, "မွေးမြူရေး"))
+        categoryList.add(HomeModel(R.mipmap.home, "ပွဲရုံ"))
+        categoryList.add(HomeModel(R.mipmap.knowledge, "အထွေထွေဗဟုတုတ"))
+        categoryList.add(HomeModel(R.mipmap.question, "အမေးအဖြေ ကဏ္ဍ"))
+        categoryList.add(HomeModel(R.mipmap.price, "နေ့စဉ်ကုန်စည်ဈေး"))
 
 
         var mainListRecycler= view.findViewById<RecyclerView>(R.id.homeRecycle)

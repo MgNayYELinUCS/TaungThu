@@ -17,6 +17,8 @@ import com.ucsmonywataungthu.org.Activity.CropDetailActivity
 import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.CropSubcategory
+import me.myatminsoe.mdetect.MDetect
+import me.myatminsoe.mdetect.Rabbit
 
 class ChooseCropAdapter (val context: Context, val cropList:List<CropSubcategory>) : RecyclerView.Adapter<MyHolder1>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder1 {
@@ -33,7 +35,12 @@ class ChooseCropAdapter (val context: Context, val cropList:List<CropSubcategory
         Glide.with(context).load(APIInitiate.PIC_URL+cropList[position].crop_subcategory_image)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(holder.homeImg)
-        holder.txtCropName.text = cropList[position].crop_subcategory_name
+        if(MDetect.isUnicode()){
+            holder.txtCropName.text = cropList[position].crop_subcategory_name
+        }else{
+            holder.txtCropName.text = Rabbit.uni2zg(cropList[position].crop_subcategory_name)
+        }
+
         holder.detail_view.setOnClickListener{
             //Toast.makeText(context,APIInitiate.PIC_URL+cropList[position].crop_subcategory_image,Toast.LENGTH_SHORT).show()
             val intent = Intent(context, CropDetailActivity::class.java)

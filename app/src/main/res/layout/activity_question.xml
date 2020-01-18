@@ -19,11 +19,15 @@
             android:id="@+id/q_toolbar"
             android:layout_width="match_parent"
             android:background="@color/colorPrimary"
-            app:title="အေမးအေျဖက႑"
             app:navigationIcon="@drawable/ic_back"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             android:layout_height="?attr/actionBarSize">
 
+        <me.myatminsoe.mdetect.MMTextView
+                android:text="အမေးအဖြေကဏ္ဍ"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
     </androidx.appcompat.widget.Toolbar>
     <!--<com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"

@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import com.ucsmonywataungthu.org.R
+import me.myatminsoe.mdetect.MDetect
 
 class SplashScreenActivity : AppCompatActivity() {
     lateinit var sharePreferences: SharedPreferences
@@ -14,6 +15,7 @@ class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
+        MDetect.init(this)
         sharePreferences=getSharedPreferences("MyPref", Context.MODE_PRIVATE)
 
         object:CountDownTimer(2000,1000){

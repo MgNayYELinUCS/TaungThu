@@ -16,6 +16,8 @@ import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.*
 import kotlinx.android.synthetic.main.activity_crop_detail.*
 import kotlinx.android.synthetic.main.content_scrolling.*
+import me.myatminsoe.mdetect.MDetect
+import me.myatminsoe.mdetect.Rabbit
 import retrofit2.Call
 import retrofit2.Response
 
@@ -55,7 +57,7 @@ class CropDetailActivity : AppCompatActivity(){
                 cropDetailList=response.body()!!.cropdetailresult
 
 
-                val adapter = ArrayAdapter(applicationContext, R.layout.spinner_item_row, cropDetailList)
+                val adapter = ArrayAdapter(applicationContext, R.layout.spinner_item_row, cropDetailList!!)
                 adapter.setDropDownViewResource(R.layout.spinner_item_row)
                 spinner_detail!!.adapter=adapter
 
@@ -77,10 +79,18 @@ class CropDetailActivity : AppCompatActivity(){
 
     }
     fun binddata(position: Int) {
-        txt_crop_detail_name.text = cropDetailList!!.get(position).crop_name
-        crop_detail_des.text=cropDetailList!!.get(position).crop_description
-        crop_detail_store_method.text=cropDetailList!!.get(position).crop_store_method
-        crop_detail_store_fertilizer.text=cropDetailList!!.get(position).crop_fertilizer
+        if(MDetect.isUnicode()){
+            txt_crop_detail_name.text = cropDetailList!!.get(position).crop_name
+            crop_detail_des.text=cropDetailList!!.get(position).crop_description
+            crop_detail_store_method.text=cropDetailList!!.get(position).crop_store_method
+            crop_detail_store_fertilizer.text=cropDetailList!!.get(position).crop_fertilizer
+        }else{
+            txt_crop_detail_name.text = Rabbit.uni2zg(cropDetailList!!.get(position).crop_name)
+            crop_detail_des.text = Rabbit.uni2zg(cropDetailList!!.get(position).crop_description)
+            crop_detail_store_method.text = Rabbit.uni2zg(cropDetailList!!.get(position).crop_store_method)
+            crop_detail_store_fertilizer.text = Rabbit.uni2zg(cropDetailList!!.get(position).crop_fertilizer)
+        }
+
 
     }
 

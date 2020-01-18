@@ -19,10 +19,8 @@ import com.ucsmonywataungthu.org.DrawerActivity.ProfileInformationActivity
 import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.Network.APIService
 import com.ucsmonywataungthu.org.R
-import com.ucsmonywataungthu.org.fragment.HomeFargment
-import com.ucsmonywataungthu.org.fragment.MediaFragment
-import com.ucsmonywataungthu.org.fragment.NewsFragment
-import com.ucsmonywataungthu.org.fragment.NofiticationFragment
+import com.ucsmonywataungthu.org.adapter.NewMdiaAdapter
+import com.ucsmonywataungthu.org.fragment.*
 import com.ucsmonywataungthu.org.model.Merchant
 import com.ucsmonywataungthu.org.model.MerchantModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -48,7 +46,7 @@ lateinit var navMenu:Menu
                 //return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_media -> {
-                fragment=MediaFragment()
+                fragment=MediaVideoFragment()
                 //return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_news ->{
@@ -157,7 +155,12 @@ lateinit var navMenu:Menu
         return true
     }
 
-   /* override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onBackPressed() {
+        super.onBackPressed()
+        //NewMdiaAdapter().pausePlayer()
+
+    }
+    /* override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.search_view, menu)
 
         val item = menu!!.findItem(R.id.action_search)

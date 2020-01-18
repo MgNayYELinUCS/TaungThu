@@ -12,6 +12,8 @@ import com.ucsmonywataungthu.org.Interface.ImageClick
 import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.QuestionGetAll
+import me.myatminsoe.mdetect.MDetect
+import me.myatminsoe.mdetect.Rabbit
 import org.w3c.dom.Text
 
 
@@ -51,8 +53,15 @@ class QuestionAdapter(val context: Context, val qlist: List<QuestionGetAll>) : R
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.user_name.text=qlist.get(position).users?.name
-        holder.qdetail.text=qlist.get(position).question_description
+
+        if(MDetect.isUnicode()){
+            holder.user_name.text=qlist.get(position).users?.name
+            holder.qdetail.text=qlist.get(position).question_description.toString()
+        }else{
+            holder.user_name.text=Rabbit.uni2zg(qlist.get(position).users?.name)
+            holder.qdetail.text=Rabbit.uni2zg(qlist.get(position).question_description.toString())
+        }
+
         holder.qtime.text=qlist.get(position).created_at
 
 

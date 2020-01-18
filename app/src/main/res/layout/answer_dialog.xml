@@ -28,7 +28,6 @@
         <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="0dp"
                 android:layout_weight="1"
-
                 android:hint="Enter a comment"
                 android:layout_height="wrap_content"
                 tools:ignore="MissingConstraints"

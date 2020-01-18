@@ -187,5 +187,7 @@ interface APIService  {
     @FormUrlEncoded
     fun getDailyPhotoByDate(@Path("daily_price_date")daily_price_date:String):Call <List<DailyPricePhoto>>
 
+    @GET("media")
+    fun getMediaList():Call<List<MediaModel>>
 
 }

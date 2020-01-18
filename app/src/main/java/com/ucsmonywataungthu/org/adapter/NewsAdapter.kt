@@ -16,6 +16,8 @@ import com.ucsmonywataungthu.org.Activity.NewsDetailActivity
 import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.News
+import me.myatminsoe.mdetect.MDetect
+import me.myatminsoe.mdetect.Rabbit
 
 class NewsAdapter(val context: Context, val newList:List<News>) : RecyclerView.Adapter<NewViewModel>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewViewModel {
@@ -29,7 +31,12 @@ class NewsAdapter(val context: Context, val newList:List<News>) : RecyclerView.A
 
     override fun onBindViewHolder(holder: NewViewModel, position: Int) {
         holder.tv_news_time.text=newList.get(position).created_at.toString()
-        holder.tv_news_title.text=newList.get(position).news_title
+        if(MDetect.isUnicode()){
+            holder.tv_news_title.text=newList.get(position).news_title
+        }else{
+            holder.tv_news_title.text= Rabbit.uni2zg(newList.get(position).news_title)
+        }
+
 
         Glide.with(context!!)
             .load(APIInitiate.PIC_URL+newList.get(position).news_photo)

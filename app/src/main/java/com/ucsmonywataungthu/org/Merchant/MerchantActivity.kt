@@ -32,6 +32,7 @@ class MerchantActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_merchant_list)
+        setTitle(null)
         setSupportActionBar(toolbar_trade_center)
         toolbar_trade_center.setNavigationOnClickListener { this.onBackPressed() }
         tradecneterrecycle.layoutManager = GridLayoutManager(applicationContext, 1)
@@ -54,7 +55,7 @@ class MerchantActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<RegionModel>>, response: Response<List<RegionModel>>) {
                 merchantRegion=response.body()
 
-                val adapter1 = ArrayAdapter(applicationContext, R.layout.spinner_item_row, merchantRegion)
+                val adapter1 = ArrayAdapter(applicationContext, R.layout.spinner_item_row, merchantRegion!!)
                 adapter1.setDropDownViewResource(R.layout.spinner_item_row)
                 spinner1.adapter=adapter1
 
@@ -78,7 +79,7 @@ class MerchantActivity : AppCompatActivity() {
             {
                 merchant_Township=response.body()
 
-                val adapter2 = ArrayAdapter(applicationContext,R.layout.spinner_item_row, merchant_Township)
+                val adapter2 = ArrayAdapter(applicationContext,R.layout.spinner_item_row, merchant_Township!!)
                 adapter2.setDropDownViewResource(R.layout.spinner_item_row)
                 spinner2.adapter=adapter2
 

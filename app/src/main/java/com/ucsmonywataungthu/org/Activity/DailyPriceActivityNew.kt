@@ -31,17 +31,12 @@ class DailyPriceActivityNew : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daily_price_new)
-setSupportActionBar(daily_price_toolbar)
+        setTitle(null)
+        setSupportActionBar(daily_price_toolbar)
         daily_price_toolbar.setNavigationOnClickListener { onBackPressed() }
         val categoryList = ArrayList<DailyPricePhoto>()
 
         apiService= APIInitiate.client.create((APIService::class.java))
-       /* categoryList.add(HomeModel(R.mipmap.plant, "စိုက္ပ်ိဴးေရး"))
-        categoryList.add(HomeModel(R.mipmap.cow, "ေမြးျမဴေရး"))
-        categoryList.add(HomeModel(R.mipmap.home, "ပြဲရံု"))
-        categoryList.add(HomeModel(R.mipmap.knowledge, "အေထြေထြဗဟုတုတ"))
-        categoryList.add(HomeModel(R.mipmap.question, "အေမးအေျဖ က႑"))
-        categoryList.add(HomeModel(R.mipmap.price, "ေန႕စဥ္ကုန္စည္ေစ်း"))*/
 
         val sdf = SimpleDateFormat("dd-M-yyyy")
         val currentDate = sdf.format(Date())

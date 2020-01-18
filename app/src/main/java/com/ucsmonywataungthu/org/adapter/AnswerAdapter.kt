@@ -11,6 +11,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.AnswerGetOneQuestion
+import me.myatminsoe.mdetect.MDetect
+import me.myatminsoe.mdetect.Rabbit
 
 class AnswerAdapter(val context: Context, val ansList: List<AnswerGetOneQuestion>) : RecyclerView.Adapter<AnsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AnsViewHolder {
@@ -24,8 +26,15 @@ class AnswerAdapter(val context: Context, val ansList: List<AnswerGetOneQuestion
     }
 
     override fun onBindViewHolder(holder: AnsViewHolder, position: Int) {
-        holder.a_username.text=ansList[position].users.name
-        holder.a_diss.text=ansList[position].answer_description
+
+        if(MDetect.isUnicode()){
+            holder.a_username.text=ansList[position].users.name.toString()
+            holder.a_diss.text=ansList[position].answer_description.toString()
+        }else{
+            holder.a_username.text= Rabbit.uni2zg(ansList[position].users.name.toString())
+            holder.a_diss.text=Rabbit.uni2zg(ansList[position].answer_description.toString())
+        }
+
         if (ansList[position].users.role=="expert"){
             Log.i("**This is expert",position.toString()+ansList[position].answer_description)
             holder.star.setImageResource(R.drawable.star_fill)

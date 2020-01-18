@@ -18,13 +18,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:textSize="24sp"
+            android:layout_margin="15dp"
             android:textColor="#000"
             android:text="Title"/>
     <TextView
             android:id="@+id/news_detail_des"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="15dp"
             android:textSize="18sp"
             android:text="Des"/>
     </LinearLayout>

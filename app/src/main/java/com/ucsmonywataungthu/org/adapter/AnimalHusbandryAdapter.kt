@@ -16,6 +16,8 @@ import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.AnimalModel
 import kotlinx.android.synthetic.main.activity_crop_detail.*
+import me.myatminsoe.mdetect.MDetect
+import me.myatminsoe.mdetect.Rabbit
 
 class AnimalHusbandryAdapter (val context: Context, val animalList:List<AnimalModel>) : RecyclerView.Adapter<MyHolder2>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder2 {
@@ -31,7 +33,12 @@ class AnimalHusbandryAdapter (val context: Context, val animalList:List<AnimalMo
         Glide.with(context).load(APIInitiate.PIC_URL+animalList[position].animal_picture)
             .transition(DrawableTransitionOptions.withCrossFade())
             .into(holder.animal_picture)
-        holder.animl_name.text = animalList[position].animal_name
+        if(MDetect.isUnicode()){
+            holder.animl_name.text = animalList[position].animal_name
+        }else{
+            holder.animl_name.text = Rabbit.uni2zg(animalList[position].animal_name)
+        }
+
         holder.animal_picture.setOnClickListener{
             val intent=Intent(context,AnimalDetailActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK

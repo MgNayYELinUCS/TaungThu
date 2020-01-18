@@ -17,6 +17,8 @@ import retrofit2.Response
 import javax.security.auth.callback.Callback
 import com.google.android.material.chip.Chip
 import com.ucsmonywataungthu.org.model.*
+import me.myatminsoe.mdetect.MDetect
+import me.myatminsoe.mdetect.Rabbit
 
 
 class ChooseCropActivity : AppCompatActivity() {
@@ -29,16 +31,45 @@ class ChooseCropActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_crop)
         setSupportActionBar(toolbar_Crop)
+        setTitle(null)
         toolbar_Crop.setNavigationOnClickListener { this.onBackPressed() }
 
         var mainListRecycler= findViewById<RecyclerView>(R.id.choose_crop_recycle)
         mainListRecycler.layoutManager = GridLayoutManager(this,3)
 
+        if(MDetect.isUnicode()){
+            chip1.setText("အာလုံး")
+            chip2.setText("နှံစားသီးနှံ")
+            chip3.setText("ဆီထွက်သီးနှံ")
+            chip4.setText("ပဲမျိုးစုံ")
+            chip5.setText("အခြားသီးနှံ")
+        }else{
+            chip1.setText(Rabbit.uni2zg("အာလုံး"))
+            chip2.setText(Rabbit.uni2zg("နှံစားသီးနှံ"))
+            chip3.setText(Rabbit.uni2zg("ဆီထွက်သီးနှံ"))
+            chip4.setText(Rabbit.uni2zg("ပဲမျိုးစုံ"))
+            chip5.setText(Rabbit.uni2zg("အခြားသီးနှံ"))
+        }
         getAllCrop()
 
+        chip1.setOnClickListener{
+            getAllCrop()
+        }
+        chip2.setOnClickListener {
+            filterCropSubCategory(1)
+        }
+        chip3.setOnClickListener {
+            filterCropSubCategory(2)
+        }
+        chip4.setOnClickListener {
+            filterCropSubCategory(3)
+        }
+        chip5.setOnClickListener {
+            filterCropSubCategory(4)
+        }
 
 
-        chipGroup.setOnCheckedChangeListener(ChipGroup.OnCheckedChangeListener { chipGroup, i ->
+       /* chipGroup.setOnCheckedChangeListener(ChipGroup.OnCheckedChangeListener { chipGroup, i ->
             val chip = chipGroup.findViewById<Chip>(i)
 
 
@@ -53,10 +84,10 @@ class ChooseCropActivity : AppCompatActivity() {
 
                 Toast.makeText(applicationContext, "Chip is "+i+"" + chip.text.toString(), Toast.LENGTH_SHORT).show()
 
-        })
+        })*/
     }
 
-    public fun filterCropSubCategory(i: Int) {
+     fun filterCropSubCategory(i: Int) {
         Log.i("id ",i.toString())
         val call=apiService.getCropCategory(i)
         call.enqueue(object : retrofit2.Callback<CropResult> {
@@ -74,7 +105,7 @@ class ChooseCropActivity : AppCompatActivity() {
         })
 
     }
-    public fun getAllCrop(){
+     fun getAllCrop(){
         val call=apiService.getCropSubCategory()
         call.enqueue(object : retrofit2.Callback<ServerResult> {
             override fun onFailure(call: Call<ServerResult>, t: Throwable) {

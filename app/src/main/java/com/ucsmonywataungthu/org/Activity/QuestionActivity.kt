@@ -26,6 +26,8 @@ import com.ucsmonywataungthu.org.model.Answer
 import com.ucsmonywataungthu.org.model.Question
 import com.ucsmonywataungthu.org.model.SuccessUpload
 import kotlinx.android.synthetic.main.activity_question.*
+import me.myatminsoe.mdetect.MDetect
+import me.myatminsoe.mdetect.Rabbit
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -74,7 +76,13 @@ class QuestionActivity : AppCompatActivity() ,AnswerButtonClick,ImageClick{
                 Toast.makeText(this@QuestionActivity,"Enter Comment ...", Toast.LENGTH_LONG).show()
             }
             else{
-                 val comment:String=commentEdit.text.toString()
+                 var comment:String =""
+                if(MDetect.isUnicode()){
+                    comment = commentEdit.text.toString()
+                }else{
+                    comment = Rabbit.zg2uni(commentEdit.text.toString())
+                }
+
                 apiService.setAnswer(comment,user_id,position).enqueue(object :Callback<SuccessUpload>{
 
                     override fun onFailure(call: Call<SuccessUpload>, t: Throwable) {
@@ -133,6 +141,7 @@ class QuestionActivity : AppCompatActivity() ,AnswerButtonClick,ImageClick{
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_question)
+        setTitle(null)
         setSupportActionBar(q_toolbar)
         q_toolbar.setNavigationOnClickListener {
             this.onBackPressed()

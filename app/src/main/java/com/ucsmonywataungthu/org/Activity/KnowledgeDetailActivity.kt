@@ -7,6 +7,8 @@ import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.R
 import kotlinx.android.synthetic.main.activity_knowledge_detail.*
+import me.myatminsoe.mdetect.MDetect
+import me.myatminsoe.mdetect.Rabbit
 
 class KnowledgeDetailActivity : AppCompatActivity() {
 
@@ -19,9 +21,16 @@ class KnowledgeDetailActivity : AppCompatActivity() {
 
         val intent=intent
         val title=intent.getSerializableExtra("title")?.toString()
-        tv_knowledge_detail_title.text=title
-        tv_knowledge_detail_desc.text=intent.getSerializableExtra("desc")?.toString()
-        tv_knowledge_time.text=intent.getSerializableExtra("time")?.toString()
+        if(MDetect.isUnicode()){
+            tv_knowledge_detail_title.text=title
+            tv_knowledge_detail_desc.text=intent.getSerializableExtra("desc")?.toString()
+            tv_knowledge_time.text=intent.getSerializableExtra("time")?.toString()
+        }else{
+            tv_knowledge_detail_title.text= Rabbit.uni2zg(title)
+            tv_knowledge_detail_desc.text=Rabbit.uni2zg(intent.getSerializableExtra("desc")?.toString())
+            tv_knowledge_time.text=intent.getSerializableExtra("time")?.toString()
+        }
+
         val img=intent.getSerializableExtra("image")?.toString()
 
         Glide.with(this)

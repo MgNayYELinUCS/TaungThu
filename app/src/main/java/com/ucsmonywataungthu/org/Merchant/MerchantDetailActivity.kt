@@ -16,6 +16,8 @@ import com.ucsmonywataungthu.org.adapter.MerchantDetailPriceAdapter
 import com.ucsmonywataungthu.org.adapter.MerchantPriceAdapter
 import com.ucsmonywataungthu.org.model.CropPriceModel
 import kotlinx.android.synthetic.main.activity_merchant_profile.*
+import me.myatminsoe.mdetect.MDetect
+import me.myatminsoe.mdetect.Rabbit
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -42,10 +44,20 @@ class MerchantDetailActivity : AppCompatActivity(){
         setTitle(intent.getSerializableExtra("mname").toString())
 
         val merchantId=intent.getSerializableExtra("mid") as Int
-        txt_merchant_detail_name.text=intent.getSerializableExtra("mname").toString()
-        txt_merchant_main_type.text=intent.getSerializableExtra("mtype").toString()
-        txt_merchant_main_address.text=intent.getSerializableExtra("maddress").toString()
-        txt_merchant_main_phone.text=intent.getSerializableExtra("mphone").toString()
+
+        if(MDetect.isUnicode()){
+            txt_merchant_detail_name.text = intent.getSerializableExtra("mname").toString()
+            txt_merchant_main_type.text = intent.getSerializableExtra("mtype").toString()
+            txt_merchant_main_address.text = intent.getSerializableExtra("maddress").toString()
+            txt_merchant_main_phone.text = intent.getSerializableExtra("mphone").toString()
+
+        }else{
+            txt_merchant_detail_name.text = Rabbit.uni2zg(intent.getSerializableExtra("mname").toString())
+            txt_merchant_main_type.text= Rabbit.uni2zg(intent.getSerializableExtra("mtype").toString())
+            txt_merchant_main_address.text= Rabbit.uni2zg(intent.getSerializableExtra("maddress").toString())
+            txt_merchant_main_phone.text= Rabbit.uni2zg(intent.getSerializableExtra("mphone").toString())
+
+        }
 
 
         apiService.getMerchantPrice(merchantId).enqueue(object: Callback<List<CropPriceModel>> {

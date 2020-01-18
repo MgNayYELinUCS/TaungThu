@@ -1,45 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:id="@+id/news_layout"
         android:layout_width="match_parent"
         android:layout_margin="10dp"
         android:layout_height="wrap_content">
 
-    <ImageView
-            android:id="@+id/noti_img"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/notification_icon"
-    />
-    <LinearLayout
+
+    <TableLayout
             android:layout_gravity="center"
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_height="wrap_content">
-        <LinearLayout
-                android:orientation="horizontal"
+        <TableRow
+                android:weightSum="5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
+            <ImageView
+                    android:id="@+id/noti_img"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="50dp"
+                    android:src="@drawable/notification_icon"
+                    />
 
-    <TextView
-            android:id="@+id/txt_noti_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="18dp"
-            android:text="News Title"/>
             <TextView
-                    android:layout_width="match_parent"
+                    android:id="@+id/txt_noti_title"
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_marginTop="10dp"
                     android:layout_height="wrap_content"
-                    android:textAlignment="textEnd"
-                    android:layout_gravity="center_horizontal|end"
-            android:text="29 July"/>
+                    android:textSize="18dp"
+                    android:text="News Title"/>
+            <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="2"
+                    android:layout_marginTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:text="29 July"/>
 
-        </LinearLayout>
+        </TableRow>
 
 
-    </LinearLayout>
+    </TableLayout>
+    <View
+            android:background="@color/colorPrimary"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
 
 </LinearLayout>

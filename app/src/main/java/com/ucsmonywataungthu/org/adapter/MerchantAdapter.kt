@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ucsmonywataungthu.org.Merchant.MerchantDetailActivity
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.MerchantModel
+import me.myatminsoe.mdetect.MDetect
+import me.myatminsoe.mdetect.Rabbit
 
 
 class MerchantAdapter (val context: Context, val merchantList: List<MerchantModel>) : RecyclerView.Adapter<MyHolder3>(){
@@ -27,8 +29,15 @@ class MerchantAdapter (val context: Context, val merchantList: List<MerchantMode
     override fun onBindViewHolder(holder: MyHolder3, position: Int) {
 
         holder.merchant_image.setImageResource(R.mipmap.home)
-        holder.txt_merchant_name.text = merchantList[position].merchant_name
-        holder.txt_merchant_type.text = merchantList[position].merchant_type.merchant_type_name
+        if(MDetect.isUnicode()){
+            holder.txt_merchant_name.text = merchantList[position].merchant_name
+            holder.txt_merchant_type.text = merchantList[position].merchant_type.merchant_type_name
+
+        }else{
+            holder.txt_merchant_name.text = Rabbit.uni2zg(merchantList[position].merchant_name)
+            holder.txt_merchant_type.text = Rabbit.uni2zg(merchantList[position].merchant_type.merchant_type_name)
+
+        }
 
         holder.merchant_cardview.setOnClickListener{
             val intent=Intent(context, MerchantDetailActivity::class.java)

@@ -12,11 +12,15 @@
     <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar_Crop"
             android:layout_width="match_parent"
-            app:titleTextColor="#fff"
-            app:title="စိုက္ပ်ိဳးေရး"
             app:navigationIcon="@drawable/ic_back"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary" />
+            android:background="?attr/colorPrimary" >
+        <me.myatminsoe.mdetect.MMTextView
+                android:text="စိုက်ပျိုးရေး"
+                android:textColor="@color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </androidx.appcompat.widget.Toolbar>
 
     <HorizontalScrollView
             android:layout_width="match_parent"
@@ -33,9 +37,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         <com.google.android.material.chip.Chip
+                android:id="@+id/chip1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="အာလံုး"
+                android:text="အာလုံး"
                 app:chipStrokeWidth="1dp"
                 app:chipStrokeColor="@color/colorPrimary"
                 style="@style/Widget.MaterialComponents.Chip.Filter"
@@ -43,37 +48,41 @@
         <com.google.android.material.chip.Chip
                 android:outlineAmbientShadowColor="@color/colorPrimary"
                 android:layout_width="wrap_content"
+                android:id="@+id/chip2"
                 android:layout_height="wrap_content"
                 app:chipStrokeWidth="1dp"
                 app:chipStrokeColor="@color/colorPrimary"
-                android:text="ႏွံစားသီးႏွံ"
+                android:text="နှံစားသီးနှံ"
                 style="@style/Widget.MaterialComponents.Chip.Filter"
         />
             <com.google.android.material.chip.Chip
                     android:outlineAmbientShadowColor="@color/colorPrimary"
                     android:layout_width="wrap_content"
+                    android:id="@+id/chip3"
                     android:layout_height="wrap_content"
                     app:chipStrokeWidth="1dp"
                     app:chipStrokeColor="@color/colorPrimary"
-                    android:text="ဆီထြက္သီးႏွံ"
+                    android:text="ဆီထွက်သီးနှံ"
+                    style="@style/Widget.MaterialComponents.Chip.Filter"
+            />
+            <com.google.android.material.chip.Chip
+                    android:outlineAmbientShadowColor="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/chip4"
+                    android:layout_height="wrap_content"
+                    app:chipStrokeWidth="1dp"
+                    app:chipStrokeColor="@color/colorPrimary"
+                    android:text="ပဲမျိုးစုံ"
                     style="@style/Widget.MaterialComponents.Chip.Filter"
             />
             <com.google.android.material.chip.Chip
                     android:outlineAmbientShadowColor="@color/colorPrimary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:id="@+id/chip5"
                     app:chipStrokeWidth="1dp"
                     app:chipStrokeColor="@color/colorPrimary"
-                    android:text="ပဲမ်ိဳးစုံ"
-                    style="@style/Widget.MaterialComponents.Chip.Filter"
-            />
-            <com.google.android.material.chip.Chip
-                    android:outlineAmbientShadowColor="@color/colorPrimary"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:chipStrokeWidth="1dp"
-                    app:chipStrokeColor="@color/colorPrimary"
-                    android:text="အျခားသီးႏွံ"
+                    android:text="အခြားသီးနှံ"
                     style="@style/Widget.MaterialComponents.Chip.Filter"
             />
 

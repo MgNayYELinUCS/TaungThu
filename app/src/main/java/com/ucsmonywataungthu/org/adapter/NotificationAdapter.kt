@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ucsmonywataungthu.org.Activity.NotificationViewActivity
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.NotificationModel
+import me.myatminsoe.mdetect.MDetect
+import me.myatminsoe.mdetect.Rabbit
 
 class NotificationAdapter (val context: Context, val notificationList:List<NotificationModel>) : RecyclerView.Adapter<MyHolder0>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyHolder0 {
@@ -25,8 +27,11 @@ class NotificationAdapter (val context: Context, val notificationList:List<Notif
 
     override fun onBindViewHolder(holder: MyHolder0, position: Int) {
         holder.new_img.setImageResource(R.drawable.notification_icon)
-        holder.txt_news_title.text=notificationList.get(position).notification_title
-        //holder.txt_news_des.text=notificationList.get(position).notification_description
+        if(MDetect.isUnicode()){
+            holder.txt_news_title.text=notificationList.get(position).notification_title
+        }else{
+            holder.txt_news_title.text=Rabbit.uni2zg(notificationList.get(position).notification_title)
+        }
 
         holder.news_layout.setOnClickListener{
             val intent= Intent(context, NotificationViewActivity::class.java)

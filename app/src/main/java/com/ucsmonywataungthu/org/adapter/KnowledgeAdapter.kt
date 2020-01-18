@@ -21,6 +21,8 @@ import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.Knowledge
 import com.ucsmonywataungthu.org.model.KnowledgeGetAll
 import com.ucsmonywataungthu.org.model.News
+import me.myatminsoe.mdetect.MDetect
+import me.myatminsoe.mdetect.Rabbit
 
 
 class KnowledgeAdapter(val context: Context, val knowledgeList:List<KnowledgeGetAll>) : RecyclerView.Adapter<KnowledgeViewModel>(){
@@ -34,8 +36,15 @@ class KnowledgeAdapter(val context: Context, val knowledgeList:List<KnowledgeGet
     }
 
     override fun onBindViewHolder(holder: KnowledgeViewModel, position: Int) {
-        holder.k_time.text=knowledgeList.get(position).created_at
-        holder.k_title.text=knowledgeList.get(position).title
+
+        if(MDetect.isUnicode()){
+            holder.k_time.text=knowledgeList.get(position).created_at
+            holder.k_title.text=knowledgeList.get(position).title
+        }else{
+            holder.k_time.text=knowledgeList.get(position).created_at
+            holder.k_title.text=Rabbit.uni2zg(knowledgeList.get(position).title)
+        }
+
        // holder.k_desc.text=knowledgeList.get(position).description
         Glide.with(context!!)
             .load(APIInitiate.PIC_URL+knowledgeList.get(position).photo)

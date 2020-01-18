@@ -28,6 +28,7 @@ class AnimalHusbandryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_animal_husbandry)
         setSupportActionBar(toolbar_animal)
+        setTitle(null)
         toolbar_animal.setNavigationOnClickListener { this.onBackPressed() }
 
         var mainListRecycler= findViewById<RecyclerView>(R.id.animalhusrecycler)
