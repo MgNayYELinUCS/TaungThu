@@ -36,40 +36,44 @@
   </FrameLayout>
 
  </com.google.android.material.appbar.AppBarLayout>
+
  <androidx.constraintlayout.widget.ConstraintLayout
          android:layout_width="match_parent"
          android:layout_height="match_parent">
- <com.roacult.backdrop.BackdropLayout
 
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         app:back_layout="@id/idback"
-         app:toolbarId="@id/toolbar"
-         app:front_layout="@id/idfont"
-         app:peekHeight="370dp"
-         app:menuDrawable="@drawable/menu"
- >
-  <include android:id="@+id/idback"
-           layout="@layout/back_layout_activity"/>
-  <include
-          android:id="@+id/idfont"
-          layout="@layout/front_layout_activity"/>
+  <com.roacult.backdrop.BackdropLayout
 
- </com.roacult.backdrop.BackdropLayout>
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          app:back_layout="@id/idback"
+          app:front_layout="@id/idfont"
+          app:menuDrawable="@drawable/menu"
+          app:peekHeight="500dp"
+          app:toolbarId="@id/toolbar">
+
+   <include
+           android:id="@+id/idback"
+           layout="@layout/back_layout_activity" />
+
+   <include
+           android:id="@+id/idfont"
+           layout="@layout/front_layout_activity" />
+
+  </com.roacult.backdrop.BackdropLayout>
+
   <com.google.android.material.bottomnavigation.BottomNavigationView
           android:id="@+id/nav_view"
-          android:visibility="visible"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          app:layout_scrollFlags="scroll|enterAlways|snap"
           android:background="@color/colorPrimary"
-          app:layout_constraintBottom_toBottomOf="parent"
+          android:visibility="visible"
           app:itemBackground="@color/colorPrimary"
           app:itemIconTint="?android:attr/windowBackground"
           app:itemTextColor="?android:attr/windowBackground"
-          app:layout_constraintLeft_toLeftOf="parent"
           app:labelVisibilityMode="selected"
           app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintLeft_toLeftOf="parent"
           app:layout_constraintRight_toRightOf="parent"
           app:menu="@menu/bottom_nav_menu">
 

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.ucsmonywataungthu.org">
+        package="com.ucsmonywataungthu.org">
 
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
 
     <application
             android:allowBackup="true"
@@ -20,106 +20,90 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             android:usesCleartextTraffic="true">
-        <activity android:name=".Activity.MerchantProfileActivity"
-        android:theme="@style/NoActionBar">
-        </activity>
-        <activity android:name=".Activity.MerchantRegisterActivity"
-                android:theme="@style/NoActionBar">
-        </activity>
-        <activity android:name=".Activity.DailyPriceActivityNew"
-                android:theme="@style/NoActionBar">
-        </activity>
+        <activity
+                android:name=".Activity.MerchantProfileActivity"
+                android:theme="@style/NoActionBar"></activity>
+        <activity
+                android:name=".Activity.MerchantRegisterActivity"
+                android:theme="@style/NoActionBar"></activity>
+        <activity
+                android:name=".Activity.DailyPriceActivityNew"
+                android:theme="@style/NoActionBar"></activity>
         <activity
                 android:name=".Activity.SplashScreenActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:theme="@style/NoActionBar">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
                 android:name=".Activity.LoginActivity"
-                android:theme="@style/NoActionBar">
-        </activity>
+                android:theme="@style/NoActionBar"></activity>
         <activity
                 android:name=".Activity.RegisterActivity"
-                android:theme="@style/NoActionBar">
-        </activity>
+                android:theme="@style/NoActionBar"></activity>
         <activity
                 android:name=".Activity.VerifyEmailActivity"
-                android:theme="@style/NoActionBar">
-        </activity>
+                android:theme="@style/NoActionBar"></activity>
         <activity
                 android:name=".Activity.MainActivity"
                 android:label="@string/app_name"
-                android:theme="@style/NoActionBar">
-        </activity>
+                android:theme="@style/NoActionBar"></activity>
         <activity
                 android:name=".Activity.ChooseCropActivity"
-                android:theme="@style/NoActionBar">
-        </activity>
+                android:theme="@style/NoActionBar"></activity>
         <activity
                 android:name=".Activity.CropDetailActivity"
-                android:parentActivityName=".Activity.ChooseCropActivity"/>
+                android:parentActivityName=".Activity.ChooseCropActivity" />
         <activity
                 android:name=".Merchant.MerchantActivity"
-                android:theme="@style/NoActionBar"/>
+                android:theme="@style/NoActionBar" />
         <activity
                 android:name=".Merchant.MerchantDetailActivity"
-                android:theme="@style/NoActionBar"/>
+                android:theme="@style/NoActionBar" />
         <activity
                 android:name=".Activity.QuestionActivity"
-                android:theme="@style/NoActionBar">
-        </activity>
+                android:theme="@style/NoActionBar"></activity>
         <activity
                 android:name=".Activity.AnimalHusbandryActivity"
-                android:theme="@style/NoActionBar">
-        </activity>
+                android:theme="@style/NoActionBar"></activity>
         <activity
                 android:name=".DrawerActivity.ContactUsActivity"
-                android:parentActivityName=".Activity.MainActivity">
-        </activity>
+                android:parentActivityName=".Activity.MainActivity"></activity>
         <activity
                 android:name=".DrawerActivity.SettingActivity"
-                android:parentActivityName=".Activity.MainActivity">
-        </activity>
+                android:parentActivityName=".Activity.MainActivity"></activity>
         <activity
                 android:name=".DrawerActivity.ProfileInformationActivity"
-                android:parentActivityName=".Activity.MainActivity">
-        </activity>
+                android:parentActivityName=".Activity.MainActivity"></activity>
         <activity
                 android:name=".Activity.AnimalDetailActivity"
-                android:theme="@style/NoActionBar">
-        </activity>
+                android:theme="@style/NoActionBar"></activity>
         <activity
                 android:name=".Activity.NotificationViewActivity"
                 android:parentActivityName=".Activity.NotificationViewActivity"
-                android:theme="@style/NoActionBar">
-        </activity>
+                android:theme="@style/NoActionBar"></activity>
         <activity
                 android:name=".Activity.NewsDetailActivity"
-                android:theme="@style/NoActionBar"/>
+                android:theme="@style/NoActionBar" />
         <activity
                 android:name=".Activity.KnowledgeDetailActivity"
-                android:theme="@style/NoActionBar">
-        </activity>
+                android:theme="@style/NoActionBar"></activity>
         <activity
                 android:name=".Activity.KnowledgeActivity"
-                android:theme="@style/NoActionBar">
-        </activity>
+                android:theme="@style/NoActionBar"></activity>
         <activity
                 android:name=".Activity.VideoFullViewActivity"
-                android:parentActivityName=".Activity.MainActivity">
-        </activity>
+                android:parentActivityName=".Activity.MainActivity"></activity>
         <activity
                 android:name=".Activity.AskQuestion"
-                android:theme="@style/NoActionBar">
-        </activity>
+                android:theme="@style/NoActionBar"></activity>
         <activity
                 android:name=".Activity.PriceActivity"
-                android:parentActivityName=".Activity.MainActivity"/>
+                android:parentActivityName=".Activity.MainActivity" />
     </application>
 
 </manifest>

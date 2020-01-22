@@ -6,6 +6,16 @@
         android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <androidx.appcompat.widget.Toolbar
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+        <ImageView
+                android:id="@+id/back"
+                android:src="@color/white"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+    </androidx.appcompat.widget.Toolbar>
     <androidx.cardview.widget.CardView
             android:elevation="1dp"
             android:layout_margin="15dp"

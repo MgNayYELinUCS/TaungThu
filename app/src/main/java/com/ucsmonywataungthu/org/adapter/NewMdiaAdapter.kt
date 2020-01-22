@@ -2,20 +2,22 @@ package com.ucsmonywataungthu.org.adapter
 
 import android.content.Context
 import android.net.Uri
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.exoplayer2.ExoPlayerFactory
-import com.google.android.exoplayer2.SimpleExoPlayer
+import com.google.android.exoplayer2.*
 import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory
 import com.google.android.exoplayer2.source.ExtractorMediaSource
+import com.google.android.exoplayer2.source.TrackGroupArray
 import com.google.android.exoplayer2.trackselection.DefaultTrackSelector
+import com.google.android.exoplayer2.trackselection.TrackSelectionArray
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.util.Util
+import com.google.android.exoplayer2.video.VideoListener
 import com.ucsmonywataungthu.org.Network.APIInitiate
 import com.ucsmonywataungthu.org.R
 import com.ucsmonywataungthu.org.model.MediaModel
@@ -27,22 +29,7 @@ class NewMdiaAdapter(val context: Context, val videoList:List<MediaModel>) : Rec
 
     var TAG = NewMdiaAdapter::class.java.simpleName
     var exoPlayer:SimpleExoPlayer? = null
-    /*companion object{
 
-        fun pausePlayer(){
-            if (exoPlayer != null) {
-                exoPlayer!!.setPlayWhenReady(false);
-                exoPlayer!!.stop()
-                exoPlayer!!.seekTo(0)
-            }
-
-            Log.i("hiii","back start")
-         }
-    }*/
-
-    fun pausePlayer(){
-
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MediaHolder {
         MDetect.init(context)
@@ -77,18 +64,18 @@ class NewMdiaAdapter(val context: Context, val videoList:List<MediaModel>) : Rec
         exoPlayer?.prepare(mediaSource)
 
 
-
-
-       /* if(!"NewMediaAdapter".equals(TAG)){
-            exoPlayer?.release()
-        }*/
+        holder.back.setOnClickListener{
+            Toast.makeText(context,"hi",Toast.LENGTH_LONG).show()
+            exoPlayer!!.setPlayWhenReady(false)
+            exoPlayer!!.stop()
+            exoPlayer!!.seekTo(0)
+        }
     }
-
-
 }
 
 class MediaHolder(view: View): RecyclerView.ViewHolder(view) {
     var video = view.findViewById<com.google.android.exoplayer2.ui.SimpleExoPlayerView>(R.id.exolayer_view)
     val media_title = view.findViewById<MMTextView>(R.id.media_title)
     val media_date = view.findViewById<TextView>(R.id.media_date)
+    val back = view.findViewById<ImageView>(R.id.back)
  }
